@@ -37,5 +37,5 @@ esac
 echo "HTTP/1.1 $STATUS"
 [ -n "$HEADER" ] && echo "$HEADER"
 echo
-[ -z "$FAIL" ] && echo ./find-datasets-with-link-pattern.sh $PATTERN_NAME $IDENTIFIER_PATTERN
+[ -z "$FAIL" ] && ./find-datasets-with-link-pattern.sh $PATTERN_NAME $IDENTIFIER_PATTERN
 
