@@ -12,7 +12,7 @@ IDENTIFIER_PATTERN=${2:-"http://arctos.database.museum/guid/UAM:Herb:74954"}
 
 set -xe
 
-kafkacat -e -b localhost:9092 -t ${PATTERN_NAME}\
+kafkacat -C -e -b localhost:9092 -t ${PATTERN_NAME}\
  | grep "$IDENTIFIER_PATTERN"\
  | cut -f2\
  | uniq\
