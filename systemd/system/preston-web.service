@@ -4,7 +4,8 @@ Description=Web interface for Preston.
 [Service]
 Type=simple
 User=preston
-ExecStart=/usr/bin/socat TCP4-LISTEN:8080,reuseaddr,fork SYSTEM:"/var/lib/preston/preston-web-service-with-remotes.sh"
+WorkingDirectory=/var/lib/preston/
+ExecStart=/usr/bin/socat TCP4-LISTEN:8080,reuseaddr,fork SYSTEM:"./preston-web-service-with-remotes.sh"
 Restart=always
 
 [Install]
