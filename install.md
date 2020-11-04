@@ -26,6 +26,7 @@ sudo ln -s /var/lib/preston/nginx/preston.guoda.bio /etc/nginx/sites-enabled/pre
 
 ```
 sudo ln -s /var/lib/preston/systemd/system/preston-web.service /lib/systemd/system/preston-web.service
+sudo ln -s /var/lib/preston/systemd/system/preston-registry.service /lib/systemd/system/preston-registry.service
 sudo ln -s /var/lib/preston/systemd/system/kafka.service /lib/systemd/system/kafka.service
 sudo ln -s /var/lib/preston/systemd/system/zookeeper.service /lib/systemd/system/zookeeper.service
 
@@ -33,6 +34,9 @@ sudo systemctl daemon-reload
 
 sudo systemctl start preston-web.service
 sudo systemctl enable preston-web.service
+
+sudo systemctl start preston-registry.service
+sudo systemctl enable preston-registry.service
 
 sudo systemctl start kafka.service
 sudo systemctl enable kafka.service
