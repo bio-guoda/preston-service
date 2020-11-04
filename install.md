@@ -18,51 +18,27 @@ sudo chown kafka:kafka /var/lib/kafka /var/cache/kafka
 ```
 
 
-zookeeper.service
-```
-[Unit]
-Requires=network.target remote-fs.target
-After=network.target remote-fs.target
-
-[Service]
-Type=simple
-User=kafka
-ExecStart=/var/lib/kafka/kafka-current/bin/zookeeper-server-start.sh /var/lib/kafka/config/zookeeper.properties
-ExecStop=/var/lib/kafka/kafka-current/bin/zookeeper-server-stop.sh
-Restart=on-abnormal
-
-[Install]
-WantedBy=multi-user.target
-```
-
+## systemd config
 
 ```
-sudo ln -s /var/lib/kafka/systemd/system/zookeeper.service /lib/systemd/system/zookeeper.service
+sudo ln -s /var/lib/preston/nginx/sites-available/default /etc/nginx/sites-enabled/default
+```
+
+```
+sudo ln -s /var/lib/preston/systemd/system/preston-web.service /lib/systemd/system/preston-web.service
+sudo ln -s /var/lib/preston/systemd/system/kafka.service /lib/systemd/system/kafka.service
+sudo ln -s /var/lib/preston/systemd/system/zookeeper.service /lib/systemd/system/zookeeper.service
+
 sudo systemctl daemon-reload
-sudo systemctl enable zookeeper.service
-```
 
-Kafka service
-```
-[Unit]
-Requires=zookeeper.service
-After=zookeeper.service
+sudo systemctl start preston-web.service
+sudo systemctl enable preston-web.service
 
-[Service]
-Type=simple
-User=kafka
-ExecStart=/bin/sh -c '/var/lib/kafka/kafka-current/bin/kafka-server-start.sh /var/lib/kafka/config/server.properties'
-ExecStop=/var/lib/kafka/kafka-current/bin/kafka-server-stop.sh
-Restart=on-abnormal
-
-[Install]
-WantedBy=multi-user.target
-```
-
-```
-sudo ln -s /var/lib/kafka/systemd/system/kafka.service /lib/systemd/system/kafka.service
-sudo systemctl daemon-reload
+sudo systemctl start kafka.service
 sudo systemctl enable kafka.service
+
+sudo systemctl start zookeeper.service
+sudo systemctl enable zookeeper.service
 ```
 
 ----
