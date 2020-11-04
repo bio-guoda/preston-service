@@ -16,4 +16,4 @@ kafkacat -e -b localhost:9092 -t ${PATTERN_NAME}\
  | grep "$IDENTIFIER_PATTERN"\
  | cut -f2\
  | uniq\
- | awk -v quote="'" '{ print quote "https://preston.guoda.bio/cat/zip:" $1 "!/eml.xml" quote }'
+ | awk '{ print "https://preston.guoda.bio/cat/zip:" $1 "!/eml.xml" }'
