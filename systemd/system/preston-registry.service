@@ -1,0 +1,12 @@
+[Unit]
+Description=Web interface for Preston.
+
+[Service]
+Type=simple
+User=preston
+WorkingDirectory=/var/lib/preston/
+ExecStart=/usr/bin/socat TCP4-LISTEN:8081,reuseaddr,fork SYSTEM:"./preston-registry-service.sh"
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
