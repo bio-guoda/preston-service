@@ -21,7 +21,7 @@ sudo chown kafka:kafka /var/lib/kafka /var/cache/kafka
 ## systemd config
 
 ```
-sudo ln -s /var/lib/preston/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo ln -s /var/lib/preston/nginx/sites-available/preston.guoda.bio /etc/nginx/sites-enabled/preston.guoda.bio
 ```
 
 ```
