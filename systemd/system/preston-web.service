@@ -1,0 +1,11 @@
+[Unit]
+Description=Web interface for Preston.
+
+[Service]
+Type=simple
+User=preston
+ExecStart=/usr/bin/socat TCP4-LISTEN:8080,reuseaddr,fork SYSTEM:"/home/mielliott/preston-web-service-with-remotes.sh"
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
