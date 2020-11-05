@@ -24,7 +24,7 @@ HEADER="Content-type: text/plain"
 
 case "$METHOD" in
     find)
-        HEADER="Content-type: text/plain"
+        HEADER="Content-type: text/plain\nAccess-Control-Allow-Origin: *\n"
         ;;
     *)
         STATUS="400 Bad Request"
@@ -32,10 +32,9 @@ case "$METHOD" in
         ;;
 esac
 
-
 # Send a response
 echo "HTTP/1.1 $STATUS"
-[ -n "$HEADER" ] && echo "$HEADER"
+[ -n "$HEADER" ] && echo -e "$HEADER"
 echo
 [ -z "$FAIL" ] && /bin/sh -c "./find-datasets-with-link-pattern.sh '$PATTERN_NAME' '$IDENTIFIER_PATTERN'"
 
