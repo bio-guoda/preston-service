@@ -5,9 +5,10 @@ After=zookeeper.service
 [Service]
 Type=simple
 User=kafka
+LimitNOFILE=60000
 ExecStart=/bin/sh -c '/var/lib/kafka/kafka-current/bin/kafka-server-start.sh /var/lib/preston/config/kafka-server.properties'
 ExecStop=/var/lib/kafka/kafka-current/bin/kafka-server-stop.sh
-Restart=on-abnormal
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
