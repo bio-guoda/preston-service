@@ -13,5 +13,9 @@
 
 PATTERN_NAME=${1:-email}
 date
-time ./consume-link-registry.sh ${PATTERN_NAME} | pv -l | sed 's+^+*3\r\n$3\r\nsadd\r\n$3\r\n+g' | sed 's+$+\r+g' | sed 's+\t+\r\n$5\r\n+g' | redis-cli --pipe 
+time ./consume-link-registry.sh ${PATTERN_NAME}\
+ | pv -l\
+ | sed 's+^+sadd\t+g'\
+ | awk -F '\t' '{ print "*3\r\n\$" length($1) "\r\n" $1 "\r\n\$" length($2) "\r\n" $2 "\r\n\$" length($3) "\r\n" $3 "\r\n" }'\
+ | redis-cli --pipe 
 date
