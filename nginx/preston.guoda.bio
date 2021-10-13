@@ -61,12 +61,8 @@ server {
         }
 
 	merge_slashes off;
-	
-        location ~ "/(line|cut|hash|zip|gz)(?:/(.*))?" {
-		proxy_pass http://127.0.0.1:8080/cat/$uri;
-        }
 
-        location ~ "/(get|cat|version)(?:/(.*))?" {
+	location ~ "/(get|cat|version)(?:/(.*))?" {
 		proxy_pass http://127.0.0.1:8080/$1/$2;
 	}
 
