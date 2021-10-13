@@ -61,7 +61,12 @@ server {
         }
 
 	merge_slashes off;
-	location ~ "/(get|cat|version)(?:/(.*))?" {
+	
+        location ~ "^/hash://sha256/([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{58})$" {
+		proxy_pass http://127.0.0.1:8080/cat/$uri;
+        }
+
+        location ~ "/(get|cat|version)(?:/(.*))?" {
 		proxy_pass http://127.0.0.1:8080/$1/$2;
 	}
 
