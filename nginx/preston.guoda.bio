@@ -62,7 +62,7 @@ server {
 
 	merge_slashes off;
 	
-        location ~ "^/hash://sha256/([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{58})$" {
+        location ~ "^/(line|cut|hash)(?:/(.*))?" {
 		proxy_pass http://127.0.0.1:8080/cat/$uri;
         }
 
