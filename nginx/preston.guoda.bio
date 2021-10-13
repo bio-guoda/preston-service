@@ -62,7 +62,7 @@ server {
 
 	merge_slashes off;
 	
-        location ~ "^/(line|cut|hash)(?:/(.*))?" {
+        location ~ "/(line|cut|hash|zip|gz)(?:/(.*))?" {
 		proxy_pass http://127.0.0.1:8080/cat/$uri;
         }
 
