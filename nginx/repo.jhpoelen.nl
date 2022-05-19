@@ -29,7 +29,7 @@ server {
 	index index.html;
 
 	location / {
-		try_files gbif-idigbio-biocase/$uri ala/$uri obis/$uri bhl/$uri dataone/$uri =404;
+		try_files gbif-idigbio-biocase/data/$uri ala/data/$uri obis/data/$uri bhl/data/$uri dataone/data/$uri =404;
 	}
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
