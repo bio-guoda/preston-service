@@ -137,10 +137,15 @@ sudo ln -s /var/lib/preston/systemd/system/preston.timer /lib/systemd/system/pre
 sudo systemctl daemon-reload
 
 sudo systemctl enable preston.timer
+sudo systemctl start preston.timer
 sudo systemctl enable preston-ala.timer
+sudo systemctl start preston-ala.timer
 sudo systemctl enable preston-bhl.timer
+sudo systemctl start preston-bhl.timer
 sudo systemctl enable preston-dataone.timer
+sudo systemctl start preston-dataone.timer
 sudo systemctl enable preston-obis.timer
+sudo systemctl start preston-obis.timer
 
 
 sudo ln -s /var/lib/preston/systemd/system/preston-web.service /lib/systemd/system/preston-web.service

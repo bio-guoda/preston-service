@@ -25,11 +25,11 @@ server {
 
 	server_name repo.jhpoelen.nl;
 
-	root /var/www/repo.jhpoelen.nl;
+	root /var/lib/preston/archives;
 	index index.html;
 
 	location / {
-		try_files $uri $uri/ =404;
+		try_files gbif-idigbio-biocase/$uri ala/$uri obis/$uri bhl/$uri dataone/$uri =404;
 	}
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
