@@ -1,0 +1,8 @@
+[Unit]
+Description=Preston tracks biodiversity datasets in DataONE
+
+[Service]
+Type=oneshot
+User=preston
+WorkingDirectory=/home/preston/preston-dataone
+ExecStart=/usr/local/bin/preston update -u https://dataone.org

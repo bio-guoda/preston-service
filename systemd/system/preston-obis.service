@@ -1,0 +1,8 @@
+[Unit]
+Description=Preston tracking Ocean Biogeographic Information System
+
+[Service]
+Type=oneshot
+User=preston
+WorkingDirectory=/var/www/html/preston-obis
+ExecStart=/usr/local/bin/preston track --seed https://obis.org

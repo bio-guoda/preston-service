@@ -1,0 +1,8 @@
+[Unit]
+Description=Preston tracking Atlas of Living Australia
+
+[Service]
+Type=oneshot
+User=preston
+WorkingDirectory=/var/www/html/preston-ala
+ExecStart=/usr/local/bin/preston track --seed https://ala.org.au
