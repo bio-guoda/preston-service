@@ -1,8 +1,139 @@
-Preston server configuration notes.
+Preston server configuration
+
+assuming ubuntu 20.04 LTS minimal
+
+updated some time around 2022-05-18
+
+# add users
+
+
+sudo adduser [username]
+
+sudo usermod -aG sudo [username]
+
+sudo -u [username] /bin/bash
+cd /home/[username]/
+mkdir .ssh
+curl https://github.com/[username].keys > .ssh/authorized_keys
+vi .ssh/authorized_keys
+chmod  700 .ssh/
+cd .ssh/
+chmod 600 authorized_keys 
+chown [username]:[username] -R /home/[username]/.ssh
+
+
+# disable remote logins with passwords
+
+Edit /etc/ssh/sshd_config:
+
+ChallengeResponseAuthentication no
+PasswordAuthentication no
+PermitRootLogin no
+
+# disable syslog
+
+prevents filling up your system with logs - instead, just stick with using systemd's journal :
+
+sudo systemctl disable syslog.socket
+
+To apply sudo systemctl reload ssh
+
+# create preston user
+
+sudo useradd -r -s /bin/false preston
+
+# install packages
+
+sudo apt install openjdk-8-jdk-headless
+
+sudo apt install nginx
+
+sudo apt-get install build-essential git zip
+
+# install certbot
+
+follow certbot.eff.org instructions
+
+
+# mount storage box
+
+$ sudo mkdir /etc/preston/
+$ sudo touch /etc/preston/storagebox-u302912-sub3-credentials.txt
+$ sudo chmod 0600 /etc/preston/storagebox-u302912-sub3-credentials.txt 
+$ ls -lha /etc/preston/
+total 8.0K
+drwxr-xr-x  2 root root 4.0K May 18 21:19 .
+drwxr-xr-x 80 root root 4.0K May 18 21:18 ..
+-rw-------  1 root root    0 May 18 21:19 storagebox-u302912-sub3-credentials.txt
+
+$ sudo nano /etc/preston/storagebox-u302912-sub3-credentials.txt
+username=[REPLACE ME]
+password=[REPLACE_ME]
+
+$ sudo mkdir /mnt/storagebox-u302912-sub3
 
 
 
-# add kafka user
+add to /etc/fstab
+
+
+# storage box u302912-sub3 (preston data)
+//u302912-sub3.your-storagebox.de/u302912-sub3 /mnt/storagebox-u302912-sub3 cifs iocharset=utf8,rw,credentials=/etc/preston/storagebox-u302912-sub3-credentials.txt,uid=preston,gid=preston,file_mode=0755,dir_mode=0755,vers=1.0 0 0
+
+# install cifs mount helper
+# https://docs.hetzner.com/robot/storage-box/access/access-samba-cifs/
+
+$ sudo apt install cifs-utils
+
+# apply changes
+
+sudo mount -a
+
+# install uncomplicated firewall (ufw)
+
+sudo apt install ufw
+
+# rsync examples from previous server
+
+sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@deeplinker.bio:/home/preston/preston-bhl .
+
+sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@deeplinker.bio:/home/preston/preston-obis .
+
+sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@deeplinker.bio:/var/www/html/preston-obis .
+
+sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@deeplinker.bio:/var/www/html/preston-ala .
+
+sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@deeplinker.bio:/home/preston/preston-dataone .
+
+
+## systemd config
+
+```
+sudo ln -s /var/lib/preston/nginx/preston.guoda.bio /etc/nginx/sites-enabled/preston.guoda.bio
+```
+
+```
+sudo ln -s /var/lib/preston/systemd/system/preston-web.service /lib/systemd/system/preston-web.service
+sudo ln -s /var/lib/preston/systemd/system/preston-registry.service /lib/systemd/system/preston-registry.service
+
+sudo systemctl daemon-reload
+
+sudo systemctl start preston-web.service
+sudo systemctl enable preston-web.service
+
+sudo systemctl start preston-registry.service
+sudo systemctl enable preston-registry.service
+
+```
+
+----
+
+
+
+
+# inactive config
+
+## add kafka user
 ```
 sudo useradd -r -s /bin/false kafka
 ```
@@ -17,35 +148,16 @@ sudo mkdir -p /var/lib/kafka /var/cache/kafka
 sudo chown kafka:kafka /var/lib/kafka /var/cache/kafka
 ```
 
-
-## systemd config
-
-```
-sudo ln -s /var/lib/preston/nginx/preston.guoda.bio /etc/nginx/sites-enabled/preston.guoda.bio
-```
-
-```
-sudo ln -s /var/lib/preston/systemd/system/preston-web.service /lib/systemd/system/preston-web.service
-sudo ln -s /var/lib/preston/systemd/system/preston-registry.service /lib/systemd/system/preston-registry.service
 sudo ln -s /var/lib/preston/systemd/system/kafka.service /lib/systemd/system/kafka.service
 sudo ln -s /var/lib/preston/systemd/system/zookeeper.service /lib/systemd/system/zookeeper.service
-
-sudo systemctl daemon-reload
-
-sudo systemctl start preston-web.service
-sudo systemctl enable preston-web.service
-
-sudo systemctl start preston-registry.service
-sudo systemctl enable preston-registry.service
 
 sudo systemctl start kafka.service
 sudo systemctl enable kafka.service
 
 sudo systemctl start zookeeper.service
 sudo systemctl enable zookeeper.service
-```
 
-----
+
 ## creating kafka topics
 ```
 sudo -u kafka /var/lib/kafka/kafka-current/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic location --config cleanup.policy=compact --config delete.retention.ms=100 --config segment.ms=100 --config min.cleanable.dirty.ratio=0.01
@@ -78,3 +190,4 @@ email	hash://sha256/f55bcfe2fecb108d11246b00ce3ba1a207db2b21a2f143f93e75be45299a
 $ echo -e "email\thash://sha256/f55bcfe2fecb108d11246b00ce3ba1a207db2b21a2f143f93e75be45299a66c1" | kafkacat -b localhost:9092 -t email
 % Auto-selecting Producer mode (use -P or -C to override)
 ```
+
