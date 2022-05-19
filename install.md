@@ -106,6 +106,12 @@ sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@
 sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@deeplinker.bio:/home/preston/preston-dataone .
 
 
+## Preston 
+
+use https://github.com/bio-guoda/preston instructions to install preston cli. 
+
+
+
 ## systemd config
 
 ```
@@ -113,6 +119,30 @@ sudo ln -s /var/lib/preston/nginx/preston.guoda.bio /etc/nginx/sites-enabled/pre
 ```
 
 ```
+sudo ln -s /var/lib/preston/systemd/system/preston-obis.service /lib/systemd/system/preston-obis.service
+sudo ln -s /var/lib/preston/systemd/system/preston-obis.timer /lib/systemd/system/preston-obis.timer
+
+sudo ln -s /var/lib/preston/systemd/system/preston-bhl.service /lib/systemd/system/preston-bhl.service
+sudo ln -s /var/lib/preston/systemd/system/preston-bhl.timer /lib/systemd/system/preston-bhl.timer
+
+sudo ln -s /var/lib/preston/systemd/system/preston-dataone.service /lib/systemd/system/preston-dataone.service
+sudo ln -s /var/lib/preston/systemd/system/preston-dataone.timer /lib/systemd/system/preston-dataone.timer
+
+sudo ln -s /var/lib/preston/systemd/system/preston-ala.service /lib/systemd/system/preston-ala.service
+sudo ln -s /var/lib/preston/systemd/system/preston-ala.timer /lib/systemd/system/preston-ala.timer
+
+sudo ln -s /var/lib/preston/systemd/system/preston.service /lib/systemd/system/preston.service
+sudo ln -s /var/lib/preston/systemd/system/preston.timer /lib/systemd/system/preston.timer
+
+sudo systemctl daemon-reload
+
+sudo systemctl enable preston.timer
+sudo systemctl enable preston-ala.timer
+sudo systemctl enable preston-bhl.timer
+sudo systemctl enable preston-dataone.timer
+sudo systemctl enable preston-obis.timer
+
+
 sudo ln -s /var/lib/preston/systemd/system/preston-web.service /lib/systemd/system/preston-web.service
 sudo ln -s /var/lib/preston/systemd/system/preston-registry.service /lib/systemd/system/preston-registry.service
 
