@@ -5,4 +5,4 @@ Description=Preston tracking Ocean Biogeographic Information System
 Type=oneshot
 User=preston
 WorkingDirectory=/var/lib/preston/archives/obis
-ExecStart=/usr/local/bin/preston track --seed https://obis.org
+ExecStart=/usr/local/bin/preston track --tmp-dir /tmp --seed https://obis.org

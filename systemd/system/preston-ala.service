@@ -5,4 +5,4 @@ Description=Preston tracking Atlas of Living Australia
 Type=oneshot
 User=preston
 WorkingDirectory=/var/lib/preston/archives/ala
-ExecStart=/usr/local/bin/preston track --seed https://ala.org.au
+ExecStart=/usr/local/bin/preston track --tmp-dir /tmp --seed https://ala.org.au

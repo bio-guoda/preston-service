@@ -5,4 +5,4 @@ Description=Preston tracks biodiversity datasets in DataONE
 Type=oneshot
 User=preston
 WorkingDirectory=/var/lib/preston/archives/dataone
-ExecStart=/usr/local/bin/preston update -u https://dataone.org
+ExecStart=/usr/local/bin/preston track --tmp-dir /tmp --seed https://dataone.org

@@ -5,4 +5,4 @@ Description=Preston tracks biodiversity datasets.
 Type=oneshot
 User=preston
 WorkingDirectory=/var/lib/preston/archives/bhl
-ExecStart=/usr/local/bin/preston update -u https://biodiversitylibrary.org
+ExecStart=/usr/local/bin/preston track --tmp-dir /tmp --seed https://biodiversitylibrary.org
