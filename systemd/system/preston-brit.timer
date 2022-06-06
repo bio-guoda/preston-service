@@ -1,5 +1,5 @@
 [Unit]
-Description=Run Preston DataONE
+Description=Trigger BRIT tracker
 
 [Timer]
 OnCalendar=monthly
