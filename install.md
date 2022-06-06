@@ -132,6 +132,9 @@ sudo ln -s /var/lib/preston/systemd/system/preston-dataone.timer /lib/systemd/sy
 sudo ln -s /var/lib/preston/systemd/system/preston-ala.service /lib/systemd/system/preston-ala.service
 sudo ln -s /var/lib/preston/systemd/system/preston-ala.timer /lib/systemd/system/preston-ala.timer
 
+sudo ln -s /var/lib/preston/systemd/system/preston-brit.service /lib/systemd/system/preston-brit.service
+sudo ln -s /var/lib/preston/systemd/system/preston-brit.timer /lib/systemd/system/preston-brit.timer
+
 sudo ln -s /var/lib/preston/systemd/system/preston.service /lib/systemd/system/preston.service
 sudo ln -s /var/lib/preston/systemd/system/preston.timer /lib/systemd/system/preston.timer
 
@@ -141,6 +144,8 @@ sudo systemctl enable preston.timer
 sudo systemctl start preston.timer
 sudo systemctl enable preston-ala.timer
 sudo systemctl start preston-ala.timer
+sudo systemctl enable preston-brit.timer
+sudo systemctl start preston-brit.timer
 sudo systemctl enable preston-bhl.timer
 sudo systemctl start preston-bhl.timer
 sudo systemctl enable preston-dataone.timer
