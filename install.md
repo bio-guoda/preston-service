@@ -78,7 +78,8 @@ add to /etc/fstab
 
 
 # storage box u302912-sub3 (preston data)
-//u302912-sub3.your-storagebox.de/u302912-sub3 /mnt/storagebox-u302912-sub3 cifs iocharset=utf8,rw,credentials=/etc/preston/storagebox-u302912-sub3-credentials.txt,uid=preston,gid=preston,file_mode=0755,dir_mode=0755,vers=1.0 0 0
+# see https://askubuntu.com/questions/1210867/remount-cifs-on-network-reconnect
+//u302912-sub3.your-storagebox.de/u302912-sub3 /mnt/storagebox-u302912-sub3 cifs iocharset=utf8,rw,credentials=/etc/preston/storagebox-u302912-sub3-credentials.txt,uid=preston,gid=preston,file_mode=0755,dir_mode=0755,vers=1.0,noauto,x-systemd.automount,x-systemd.idle-timeout=30 0 0
 
 # install cifs mount helper
 # https://docs.hetzner.com/robot/storage-box/access/access-samba-cifs/
