@@ -23,7 +23,7 @@
 #
 server {
 
-	server_name repo.jhpoelen.nl;
+	server_name repo.jhpoelen.nl deeplinker.bio linker.bio;
 
 	root /var/lib/preston/archives;
 	index index.html;
@@ -42,10 +42,13 @@ server {
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/repo.jhpoelen.nl/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/repo.jhpoelen.nl/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/deeplinker.bio/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/deeplinker.bio/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+
 
 }
 
