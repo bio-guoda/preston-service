@@ -42,11 +42,11 @@ server {
 
         merge_slashes off;
 
-        location ~ ".*hash://sha256/[0-9a-f]{64}.*" {
+        location ~ ".*(hash://sha256/[0-9a-f]{64}).*" {
                 proxy_pass http://localhost:8082/$uri;
         }
 
-        location ~ ".*hash://md5/[0-9a-f]{32}.*" {
+        location ~ ".*(hash://md5/[0-9a-f]{32}).*" {
                 proxy_pass http://localhost:8081/$uri;
         }
 
