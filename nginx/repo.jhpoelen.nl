@@ -40,6 +40,16 @@ server {
             	try_files /gbif-idigbio-biocase/data/$1/$2/$1$2$3 /ala/data/$1/$2/$1$2$3 /obis/data/$1/$2/$1$2$3 /bhl/data/$1/$2/$1$2$3 /dataone/data/$1/$2/$1$2$3 =404;
         }
 
+        merge_slashes off;
+
+        location ~ ".*hash://sha256/[0-9a-f]{64}.*" {
+                proxy_pass http://localhost:8082/$uri;
+        }
+
+        location ~ ".*hash://md5/[0-9a-f]{32}.*" {
+                proxy_pass http://localhost:8081/$uri;
+        }
+
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
     listen 443 ssl; # managed by Certbot
     ssl_certificate /etc/letsencrypt/live/deeplinker.bio/fullchain.pem; # managed by Certbot
