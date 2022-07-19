@@ -36,21 +36,21 @@ server {
 		return 302 https://www.w3.org/TR/rdf11-concepts/#section-skolemization;
 	}
 
-	location ~ ".*([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{60}).*" {
-            	#try_files /gbif-idigbio-biocase/data/$1/$2/$1$2$3 /ala/data/$1/$2/$1$2$3 /obis/data/$1/$2/$1$2$3 /bhl/data/$1/$2/$1$2$3 /dataone/data/$1/$2/$1$2$3 =404;
-            	try_files /gbif-idigbio-biocase/data/$1/$2/$1$2$3 /ala/data/$1/$2/$1$2$3 /obis/data/$1/$2/$1$2$3 /bhl/data/$1/$2/$1$2$3 /dataone/data/$1/$2/$1$2$3;
-        }
 
         merge_slashes off;
 
         # possibly a sha256 hash in hex notation
-        location ~ "/(.*[0-9a-f]{64}.*)" {
+        location ~ "/(.*hash://sha256/[0-9a-f]{64}.*)" {
                 proxy_pass http://localhost:8082/$1;
         }
 
         # possibly a md5 hash in hex notation
-        location ~ "/(.*[0-9a-f]{32}.*)" {
+        location ~ "/(.*hash://sha256/[0-9a-f]{32}.*)" {
                 proxy_pass http://localhost:8081/$1;
+        }
+	
+        location ~ ".*([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{60}).*" {
+            	try_files /gbif-idigbio-biocase/data/$1/$2/$1$2$3 /ala/data/$1/$2/$1$2$3 /obis/data/$1/$2/$1$2$3 /bhl/data/$1/$2/$1$2$3 /dataone/data/$1/$2/$1$2$3 =404;
         }
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
