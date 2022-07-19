@@ -42,12 +42,14 @@ server {
 
         merge_slashes off;
 
-        location ~ ".*(hash://sha256/[0-9a-f]{64}).*" {
-                proxy_pass http://localhost:8082/$uri;
+        # possibly a sha256 hash in hex notation
+        location ~ "/(.*[0-9a-f]{64}.*)" {
+                proxy_pass http://localhost:8082/$1;
         }
 
-        location ~ ".*(hash://md5/[0-9a-f]{32}).*" {
-                proxy_pass http://localhost:8081/$uri;
+        # possibly a md5 hash in hex notation
+        location ~ "/(.*[0-9a-f]{32}.*)" {
+                proxy_pass http://localhost:8081/$1;
         }
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
