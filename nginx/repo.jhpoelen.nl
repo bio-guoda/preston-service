@@ -40,12 +40,12 @@ server {
         merge_slashes off;
 
         # possibly a sha256 hash in hex notation
-        location ~ ".*hash://sha256/.*" {
+        location ~ ".*(hash://sha256/){0,1}([0-9a-f]{64})([^0-9a-f]).*" {
                 proxy_pass http://localhost:8082;
         }
 
         # possibly a md5 hash in hex notation
-        location ~ ".*hash://md5/.*" {
+        location ~ ".*(hash://md5/){0,1}([0-9a-f]{32})([^0-9a-f]).*" {
                 proxy_pass http://localhost:8081;
         }
 	
