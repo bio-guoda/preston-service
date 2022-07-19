@@ -1,0 +1,12 @@
+[Unit]
+Description=Preston Server MD5 Universe
+
+[Service]
+Type=simple
+User=preston
+Environment=PRESTON_DIR=/tmp/preston-md5
+ExecStart=/usr/local/bin/preston server --algo md5 --port 8081 --host localhost --remotes https://zenodo.org --no-cache --no-progress --data-dir=${PRESTON_DIR}/data --tmp-dir=${PRESTON_DIR}/tmp
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
