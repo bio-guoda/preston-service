@@ -28,6 +28,7 @@ server {
 	root /var/lib/preston/archives;
 	index index.html;
 
+        merge_slashes off;
 	#location / {
 	#	try_files /gbif-idigbio-biocase/data/$uri /ala/data/$uri /obis/data/$uri /bhl/data/$uri /dataone/data/$uri =404;
 	#}
@@ -38,13 +39,11 @@ server {
 
         # possibly a sha256 hash in hex notation
         location ~ "(hash://sha256/){0,1}[0-9a-f]{64}$" {
-                merge_slashes off;
                 proxy_pass http://localhost:8082;
         }
 
         # possibly a md5 hash in hex notation
         location ~ "(hash://md5/){0,1}[0-9a-f]{32}$" {
-                merge_slashes off;
                 proxy_pass http://localhost:8081;
         }
 	
