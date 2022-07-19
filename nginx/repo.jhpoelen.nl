@@ -37,7 +37,8 @@ server {
 	}
 
 	location ~ ".*([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{60}).*" {
-            	try_files /gbif-idigbio-biocase/data/$1/$2/$1$2$3 /ala/data/$1/$2/$1$2$3 /obis/data/$1/$2/$1$2$3 /bhl/data/$1/$2/$1$2$3 /dataone/data/$1/$2/$1$2$3 =404;
+            	#try_files /gbif-idigbio-biocase/data/$1/$2/$1$2$3 /ala/data/$1/$2/$1$2$3 /obis/data/$1/$2/$1$2$3 /bhl/data/$1/$2/$1$2$3 /dataone/data/$1/$2/$1$2$3 =404;
+            	try_files /gbif-idigbio-biocase/data/$1/$2/$1$2$3 /ala/data/$1/$2/$1$2$3 /obis/data/$1/$2/$1$2$3 /bhl/data/$1/$2/$1$2$3 /dataone/data/$1/$2/$1$2$3;
         }
 
         merge_slashes off;
