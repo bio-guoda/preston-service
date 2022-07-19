@@ -23,33 +23,26 @@
 #
 server {
 
-	server_name repo.jhpoelen.nl deeplinker.bio linker.bio;
+    server_name repo.jhpoelen.nl deeplinker.bio linker.bio;
 
-	root /var/lib/preston/archives;
-	index index.html;
+    root /var/lib/preston/archives;
+    index index.html;
 
-        merge_slashes off;
-	#location / {
-	#	try_files /gbif-idigbio-biocase/data/$uri /ala/data/$uri /obis/data/$uri /bhl/data/$uri /dataone/data/$uri =404;
-	#}
+    merge_slashes off;
 
-        location ~ "/\.well-known/genid/" {
-		return 302 https://www.w3.org/TR/rdf11-concepts/#section-skolemization;
-	}
+    location ~ "/\.well-known/genid/" {
+	return 302 https://www.w3.org/TR/rdf11-concepts/#section-skolemization;
+    }
 
-        # possibly a sha256 hash in hex notation
-        location ~ "(hash://sha256/){0,1}[0-9a-f]{64}$" {
-                proxy_pass http://localhost:8082;
-        }
+    # possibly a sha256 hash in hex notation
+    location ~ "(hash://sha256/){0,1}[0-9a-f]{64}$" {
+        proxy_pass http://localhost:8082;
+    }
 
-        # possibly a md5 hash in hex notation
-        location ~ "(hash://md5/){0,1}[0-9a-f]{32}$" {
-                proxy_pass http://localhost:8081;
-        }
-	
-        #location ~ ".*([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{60}).*" {
-        #    	try_files /gbif-idigbio-biocase/data/$1/$2/$1$2$3 /ala/data/$1/$2/$1$2$3 /obis/data/$1/$2/$1$2$3 /bhl/data/$1/$2/$1$2$3 /dataone/data/$1/$2/$1$2$3 =404;
-        #}
+    # possibly a md5 hash in hex notation
+    location ~ "(hash://md5/){0,1}[0-9a-f]{32}$" {
+        proxy_pass http://localhost:8081;
+    }
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
     listen 443 ssl; # managed by Certbot
@@ -57,9 +50,6 @@ server {
     ssl_certificate_key /etc/letsencrypt/live/deeplinker.bio/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-
-
-
 
 }
 
