@@ -28,9 +28,9 @@ server {
 	root /var/lib/preston/archives;
 	index index.html;
 
-	location / {
-		try_files /gbif-idigbio-biocase/data/$uri /ala/data/$uri /obis/data/$uri /bhl/data/$uri /dataone/data/$uri =404;
-	}
+	#location / {
+	#	try_files /gbif-idigbio-biocase/data/$uri /ala/data/$uri /obis/data/$uri /bhl/data/$uri /dataone/data/$uri =404;
+	#}
 
         location ~ "/\.well-known/genid/" {
 		return 302 https://www.w3.org/TR/rdf11-concepts/#section-skolemization;
@@ -49,9 +49,9 @@ server {
                 proxy_pass http://localhost:8081;
         }
 	
-        location ~ ".*([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{60}).*" {
-            	try_files /gbif-idigbio-biocase/data/$1/$2/$1$2$3 /ala/data/$1/$2/$1$2$3 /obis/data/$1/$2/$1$2$3 /bhl/data/$1/$2/$1$2$3 /dataone/data/$1/$2/$1$2$3 =404;
-        }
+        #location ~ ".*([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{60}).*" {
+        #    	try_files /gbif-idigbio-biocase/data/$1/$2/$1$2$3 /ala/data/$1/$2/$1$2$3 /obis/data/$1/$2/$1$2$3 /bhl/data/$1/$2/$1$2$3 /dataone/data/$1/$2/$1$2$3 =404;
+        #}
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
     listen 443 ssl; # managed by Certbot
