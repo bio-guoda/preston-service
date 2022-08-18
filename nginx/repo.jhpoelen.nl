@@ -22,7 +22,7 @@
 # to sites-enabled/ to enable it.
 #
 proxy_cache_path /var/cache/nginx/preston/ levels=1:2 keys_zone=preston_cache:10m
-                 max_size=200g inactive=1M use_temp_path=off;
+                 max_size=128g inactive=1M use_temp_path=off;
 
 
 server {
