@@ -21,6 +21,10 @@
 # You can move that to a different file under sites-available/ and symlink that
 # to sites-enabled/ to enable it.
 #
+proxy_cache_path /var/cache/nginx/preston/ levels=1:2 keys_zone=preston_cache:10m
+                 max_size=200g inactive=1M use_temp_path=off;
+
+
 server {
 
     server_name repo.jhpoelen.nl deeplinker.bio linker.bio;
@@ -36,11 +40,13 @@ server {
 
     # possibly a sha256 hash in hex notation
     location ~ "(hash://sha256/){0,1}[0-9a-f]{64}$" {
+        proxy_cache preston_cache;
         proxy_pass http://localhost:8082;
     }
 
     # possibly a md5 hash in hex notation
     location ~ "(hash://md5/){0,1}[0-9a-f]{32}$" {
+        proxy_cache preston_cache;
         proxy_pass http://localhost:8081;
     }
 
