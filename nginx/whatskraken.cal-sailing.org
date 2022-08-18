@@ -19,7 +19,7 @@
 # You can move that to a different file under sites-available/ and symlink that
 # to sites-enabled/ to enable it.
 #
-proxy_cache_path /var/cache/nginx keys_zone=krakencache:10m max_size=500m;
+proxy_cache_path /var/cache/whatskraken/ keys_zone=krakencache:10m max_size=500m;
 
 server {
 

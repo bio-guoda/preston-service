@@ -21,7 +21,7 @@
 # You can move that to a different file under sites-available/ and symlink that
 # to sites-enabled/ to enable it.
 #
-proxy_cache_path /var/cache/nginx/ levels=1:2 keys_zone=preston_cache:10m
+proxy_cache_path /var/cache/preston/ levels=1:2 keys_zone=preston_cache:10m
                  max_size=128g inactive=1M use_temp_path=off;
 
 
