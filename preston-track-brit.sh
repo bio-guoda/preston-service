@@ -8,8 +8,9 @@ preston track https://sernecportal.org/portal/content/dwca/VDB_DwC-A.zip\
  https://portal.torcherbaria.org/portal/content/dwca/BRIT_DwC-A.zip\
  | preston dwc-stream\
  | grep URI\
- | jq --raw-output '.["http://rs.tdwg.org/ac/terms/accessURI" | "http://rs.tdwg.org/ac/terms/thumbnailAccessURI" | "http://rs.tdwg.org/ac/terms/goodQualityAccessURI"]'\
- > image-urls.tsv
+ | jq --raw-output '.["http://rs.tdwg.org/ac/terms/accessURI"], .["http://rs.tdwg.org/ac/terms/thumbnailAccessURI"], .["http://rs.tdwg.org/ac/terms/goodQualityAccessURI"]'\
+ | grep -v null\ 
+  > image-urls.tsv
 
 # tracks image urls
 
