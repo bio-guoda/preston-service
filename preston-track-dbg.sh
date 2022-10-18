@@ -15,6 +15,6 @@ preston track "https://intermountainbiota.org/portal/content/dwca/DBG-KHD_DwC-A.
  > image-urls.tsv
 
 # tracks related image urls
-#cat image-urls.tsv | xargs -L25 preston track 
+cat image-urls.tsv | xargs -L25 preston track 
  # randomly sample 1000 expected image urls
  #shuf -n 1000 image-urls.tsv | xargs -L25 preston track 
