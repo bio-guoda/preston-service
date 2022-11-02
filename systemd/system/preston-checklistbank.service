@@ -5,4 +5,4 @@ Description=Preston tracks biodiversity datasets in Checklist Bank
 Type=oneshot
 User=preston
 WorkingDirectory=/var/lib/preston/archives/checklistbank
-ExecStart=/usr/local/bin/preston track --tmp-dir /tmp --seed https://checklistbank.org
+ExecStart=/usr/local/bin/preston-0.4.6 track --tmp-dir /tmp --seed https://checklistbank.org
