@@ -6,7 +6,7 @@ updated some time around 2022-05-18
 
 # add users
 
-
+```
 sudo adduser [username]
 
 sudo usermod -aG sudo [username]
@@ -20,7 +20,7 @@ chmod  700 .ssh/
 cd .ssh/
 chmod 600 authorized_keys 
 chown [username]:[username] -R /home/[username]/.ssh
-
+```
 
 # disable remote logins with passwords
 
