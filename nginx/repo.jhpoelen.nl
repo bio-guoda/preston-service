@@ -39,15 +39,15 @@ server {
     }
 
     # possibly a sha256 hash in hex notation
-    location ~ "(hash://sha256/){0,1}[0-9a-f]{64}$" {
+    location ~ "(hash://sha256/)({0,1}[0-9a-f]{64})([.][a-zA-Z]+)$" {
         proxy_cache preston_cache;
-        proxy_pass http://localhost:8082;
+        proxy_pass http://localhost:8082/$2;
     }
 
     # possibly a md5 hash in hex notation
-    location ~ "(hash://md5/){0,1}[0-9a-f]{32}$" {
+    location ~ "(hash://md5/){0,1}([0-9a-f]{32})([.](a-zA-Z]+)$" {
         proxy_cache preston_cache;
-        proxy_pass http://localhost:8081;
+        proxy_pass http://localhost:8081/$2;
     }
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
