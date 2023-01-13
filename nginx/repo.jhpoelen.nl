@@ -40,6 +40,13 @@ server {
 
     # possibly a sha256 hash in hex notation
     location ~ "(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z]+){0,1}$" {
+        if ($request_method = 'GET') {
+          add_header 'Access-Control-Allow-Origin' '*' always;
+          add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+          add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+          add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+        }
+
         proxy_cache preston_cache;
         rewrite "(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z]+){0,1}$" /$2 break; 
         proxy_pass http://localhost:8082;
@@ -47,6 +54,13 @@ server {
 
     # possibly a md5 hash in hex notation
     location ~ "(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z]+){0,1}$" {
+        if ($request_method = 'GET') {
+          add_header 'Access-Control-Allow-Origin' '*' always;
+          add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+          add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+          add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+        }
+
         proxy_cache preston_cache;
         rewrite "(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z]+){0,1}$" /$2 break; 
         proxy_pass http://localhost:8081;
