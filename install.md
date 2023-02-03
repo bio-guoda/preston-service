@@ -94,6 +94,19 @@ sudo mount -a
 
 sudo apt install ufw
 
+## configure certbot to allow http for auto-renew
+
+sudo mkdir -p /etc/letsencrypt
+sudo cp etc/letsencrypt/cli.ini /etc/letsencrypt/cli.ini
+
+where cli.ini contains something like:
+
+```
+# Manage Firewall
+pre-hook = ufw allow http
+post-hook = ufw deny http
+```
+
 # rsync examples from previous server
 
 sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@deeplinker.bio:/home/preston/preston-bhl .
