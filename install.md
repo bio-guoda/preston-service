@@ -153,6 +153,9 @@ sudo ln -s /var/lib/preston/systemd/system/preston-dbg.service /lib/systemd/syst
 sudo ln -s /var/lib/preston/systemd/system/preston-brit.service /lib/systemd/system/preston-brit.service
 sudo ln -s /var/lib/preston/systemd/system/preston-brit.timer /lib/systemd/system/preston-brit.timer
 
+sudo ln -s /var/lib/preston/systemd/system/preston-wikidata.service /lib/systemd/system/preston-wikidata.service
+sudo ln -s /var/lib/preston/systemd/system/preston-wikidata.timer /lib/systemd/system/preston-wikidata.timer
+
 sudo ln -s /var/lib/preston/systemd/system/preston.service /lib/systemd/system/preston.service
 sudo ln -s /var/lib/preston/systemd/system/preston.timer /lib/systemd/system/preston.timer
 

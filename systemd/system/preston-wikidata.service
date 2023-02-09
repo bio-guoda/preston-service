@@ -1,0 +1,8 @@
+[Unit]
+Description=Tracking Wikidata dumps
+
+[Service]
+Type=oneshot
+User=preston
+WorkingDirectory=/var/lib/preston/archives/wikidata
+ExecStart=/usr/local/bin/preston track --tmp-dir /tmp https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.json.bz2 
