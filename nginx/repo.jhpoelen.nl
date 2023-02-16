@@ -48,12 +48,12 @@ server {
         }
 
         proxy_cache preston_cache;
-        rewrite "(.*)(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z]+){0,1}(.*)$" /$1$2$3$5 break; 
+        rewrite "([a-z0-9]+[:])*(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z]+){0,1}(.*)$" /$1$2$3$5 break; 
         proxy_pass http://localhost:8082;
     }
 
     # possibly a md5 hash in hex notation
-    location ~ "(.*)(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z]+){0,1}(.*)$" {
+    location ~ "([a-z0-9]+[:])*(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z]+){0,1}(.*)$" {
         if ($request_method = 'GET') {
           add_header 'Access-Control-Allow-Origin' '*' always;
           add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
