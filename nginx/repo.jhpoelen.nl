@@ -39,7 +39,7 @@ server {
     }
 
     # possibly a sha256 hash in hex notation
-    location ~ "(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z]+){0,1}$" {
+    location ~ "(hash://sha256/){0,1}([0-9a-f]{64})" {
         if ($request_method = 'GET') {
           add_header 'Access-Control-Allow-Origin' '*' always;
           add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
@@ -53,7 +53,7 @@ server {
     }
 
     # possibly a md5 hash in hex notation
-    location ~ "([a-z0-9]+[:])*(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z]+){0,1}(.*)$" {
+    location ~ "([a-z0-9]+[:])*(hash://md5/){0,1}([0-9a-f]{32})" {
         if ($request_method = 'GET') {
           add_header 'Access-Control-Allow-Origin' '*' always;
           add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
