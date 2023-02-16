@@ -48,7 +48,7 @@ server {
         }
 
         proxy_cache preston_cache;
-        rewrite "(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z]+){0,1}$" /$2 break; 
+        #rewrite "(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z]+){0,1}$" /$2 break; 
         proxy_pass http://localhost:8082;
     }
 
@@ -62,7 +62,7 @@ server {
         }
 
         proxy_cache preston_cache;
-        rewrite "(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z]+){0,1}$" /$2 break; 
+        #rewrite "(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z]+){0,1}$" /$2 break; 
         proxy_pass http://localhost:8081;
     }
 
