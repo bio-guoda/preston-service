@@ -34,6 +34,8 @@ server {
 
     merge_slashes off;
 
+    proxy_buffering off;
+
     location ~ "/\.well-known/genid/" {
 	return 302 https://www.w3.org/TR/rdf11-concepts/#section-skolemization;
     }
@@ -47,7 +49,6 @@ server {
           add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
         }
 
-        proxy_cache preston_cache;
         rewrite "([a-z0-9]+[:])*(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z]+){0,1}(.*)$" /$1$2$3$5 break; 
         proxy_pass http://localhost:8082;
     }
@@ -61,7 +62,6 @@ server {
           add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
         }
 
-        proxy_cache preston_cache;
         rewrite "(.*)(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z]+){0,1}(.*)$" /$1$2$3$5 break; 
         proxy_pass http://localhost:8081;
     }
