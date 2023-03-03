@@ -5,4 +5,4 @@ Description=Preston tracks biodiversity datasets.
 Type=oneshot
 User=preston
 WorkingDirectory=/var/lib/preston/archives/gbif-idigbio-biocase
-ExecStart=/usr/local/bin/preston track --seed https://idigbio.org,https://gbif.org,http://biocase.org --tmp-dir /tmp
+ExecStart=/usr/local/bin/preston track --seed https://idigbio.org --seed https://gbif.org --seed http://biocase.org --tmp-dir /tmp
