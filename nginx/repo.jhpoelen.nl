@@ -49,7 +49,7 @@ server {
           add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
         }
 
-        rewrite "([a-z0-9]+[:])*(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z]+){0,1}(.*)$" /$1$2$3$5 break; 
+        rewrite "([a-z0-9]+[:])*(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z]+){0,1}(.*)$" $1$2$3$5 break; 
         proxy_pass http://localhost:8082;
     }
 
