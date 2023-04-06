@@ -1,0 +1,8 @@
+[Unit]
+Description=Tracking Bionomia
+
+[Service]
+Type=oneshot
+User=preston
+WorkingDirectory=/var/lib/preston/archives/bionomia
+ExecStart=/usr/local/bin/preston track --tmp-dir /tmp https://bionomia.net/data/bionomia-public-claims.csv.gz https://bionomia.net/data/bionomia-public-profiles.csv 
