@@ -22,7 +22,7 @@
 # to sites-enabled/ to enable it.
 #
 
-proxy_cache_path /var/cache/preston levels=1:2 keys_zone=STATIC:10m inactive=24h  max_size=1g;
+proxy_cache_path /var/cache/preston levels=1:2 keys_zone=STATIC:10m inactive=24h  max_size=1g use_temp_path=off;
 
 server {
 
@@ -33,7 +33,7 @@ server {
 
     merge_slashes off;
 
-    proxy_buffering off;
+    proxy_buffering on;
 
     location ~ "/\.well-known/genid/" {
 	return 302 https://www.w3.org/TR/rdf11-concepts/#section-skolemization;
