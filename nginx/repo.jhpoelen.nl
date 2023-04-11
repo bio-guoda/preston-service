@@ -21,9 +21,8 @@
 # You can move that to a different file under sites-available/ and symlink that
 # to sites-enabled/ to enable it.
 #
-proxy_cache_path /var/cache/preston/ levels=1:2 keys_zone=preston_cache:10m
-                 max_size=128g inactive=1M use_temp_path=off;
 
+proxy_cache_path /var/cache/preston levels=1:2 keys_zone=STATIC:10m inactive=24h  max_size=1g;
 
 server {
 
@@ -51,6 +50,7 @@ server {
 
         rewrite "(.*)(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z]+){0,1}(.*)$" $1$2$3$5 break; 
         proxy_pass http://localhost:8082;
+        proxy_cache STATIC;
     }
 
     # possibly a md5 hash in hex notation
@@ -64,6 +64,7 @@ server {
 
         rewrite "(.*)(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z]+){0,1}(.*)$" $1$2$3$5 break; 
         proxy_pass http://localhost:8081;
+        proxy_cache STATIC;
     }
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
