@@ -35,7 +35,7 @@ server {
 
     proxy_buffering on;
     # see https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_max_temp_file_size
-    proxy_max_temp_file_size 256g;
+    proxy_max_temp_file_size 128g;
 
     location ~ "/\.well-known/genid/" {
 	return 302 https://www.w3.org/TR/rdf11-concepts/#section-skolemization;
