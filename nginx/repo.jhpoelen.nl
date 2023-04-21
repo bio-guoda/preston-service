@@ -28,11 +28,6 @@ server {
 
     server_name repo.jhpoelen.nl deeplinker.bio linker.bio;
 
-    add_header Allow "GET, HEAD" always;
-    if ( $request_method !~ ^(GET|HEAD)$ ) {
-	return 405;
-    }
-
     root /var/lib/preston/archives;
     index index.html;
 
@@ -43,17 +38,22 @@ server {
     proxy_max_temp_file_size 0;
 
     location ~ "/\.well-known/genid/" {
+        limit_except GET {
+          deny all;
+        }
 	return 302 https://www.w3.org/TR/rdf11-concepts/#section-skolemization;
     }
 
     # possibly a sha256 hash in hex notation
     location ~ "(hash://sha256/){0,1}([0-9a-f]{64})" {
-        if ($request_method = 'GET') {
-          add_header 'Access-Control-Allow-Origin' '*' always;
-          add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
-          add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
-          add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
-        }
+        limit_except GET {
+           deny all;
+         }
+
+        add_header 'Access-Control-Allow-Origin' '*' always;
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
         rewrite "(.*)(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z0-9]+){0,1}(.*)$" $1$2$3$5 break; 
         proxy_pass http://localhost:8082;
@@ -64,12 +64,14 @@ server {
 
     # possibly a md5 hash in hex notation
     location ~ "(hash://md5/){0,1}([0-9a-f]{32})" {
-        if ($request_method = 'GET') {
-          add_header 'Access-Control-Allow-Origin' '*' always;
-          add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
-          add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
-          add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+        limit_except GET {
+           deny all;
         }
+
+        add_header 'Access-Control-Allow-Origin' '*' always;
+        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
         rewrite "(.*)(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z0-9]+){0,1}(.*)$" $1$2$3$5 break; 
         proxy_pass http://localhost:8081;
