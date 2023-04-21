@@ -28,6 +28,11 @@ server {
 
     server_name repo.jhpoelen.nl deeplinker.bio linker.bio;
 
+    add_header Allow "GET, HEAD" always;
+    if ( $request_method !~ ^(GET|HEAD)$ ) {
+	return 405;
+    }
+
     root /var/lib/preston/archives;
     index index.html;
 
