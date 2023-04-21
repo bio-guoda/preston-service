@@ -50,7 +50,7 @@ server {
           add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
         }
 
-        rewrite "(.*)(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z]+){0,1}(.*)$" $1$2$3$5 break; 
+        rewrite "(.*)(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z0-9]+){0,1}(.*)$" $1$2$3$5 break; 
         proxy_pass http://localhost:8082;
         proxy_cache STATIC;
 	proxy_cache_valid 200 24h;
@@ -66,7 +66,7 @@ server {
           add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
         }
 
-        rewrite "(.*)(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z]+){0,1}(.*)$" $1$2$3$5 break; 
+        rewrite "(.*)(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z0-9]+){0,1}(.*)$" $1$2$3$5 break; 
         proxy_pass http://localhost:8081;
         proxy_cache STATIC;
         proxy_cache_valid 200 5y;
