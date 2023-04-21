@@ -46,12 +46,12 @@ server {
 
     # possibly a sha256 hash in hex notation
     location ~ "(hash://sha256/){0,1}([0-9a-f]{64})" {
-        limit_except GET {
+        limit_except GET OPTIONS {
            deny all;
          }
 
         add_header 'Access-Control-Allow-Origin' '*' always;
-        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+        add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS' always;
         add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
         add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
@@ -64,12 +64,12 @@ server {
 
     # possibly a md5 hash in hex notation
     location ~ "(hash://md5/){0,1}([0-9a-f]{32})" {
-        limit_except GET {
+        limit_except GET OPTIONS {
            deny all;
         }
 
         add_header 'Access-Control-Allow-Origin' '*' always;
-        add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
+        add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS' always;
         add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
         add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
