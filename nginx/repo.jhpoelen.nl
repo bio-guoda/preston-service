@@ -58,13 +58,12 @@ server {
     }
 
     # possibly a md5 hash in hex notation
-    location ~ "([a-z0-9]+[:])*(hash://md5/){0,1}([0-9a-f]{32})" {
+    location ~ "(hash://md5/){0,1}([0-9a-f]{32})" {
         if ($request_method = 'GET') {
           add_header 'Access-Control-Allow-Origin' '*' always;
           add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
           add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
           add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
-          add_header 'X-Proxy-Cache' $upstream_cache_status;
         }
 
         rewrite "(.*)(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z]+){0,1}(.*)$" $1$2$3$5 break; 
