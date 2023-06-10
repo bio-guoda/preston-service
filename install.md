@@ -26,29 +26,36 @@ chown [username]:[username] -R /home/[username]/.ssh
 
 Edit /etc/ssh/sshd_config:
 
+```
 ChallengeResponseAuthentication no
 PasswordAuthentication no
 PermitRootLogin no
-
+```
 # disable syslog
 
 prevents filling up your system with logs - instead, just stick with using systemd's journal :
 
+```
 sudo systemctl disable syslog.socket
+```
 
 To apply sudo systemctl reload ssh
 
 # create preston user
 
+```
 sudo useradd -r -s /bin/false preston
+```
 
 # install packages
 
+```
 sudo apt install openjdk-8-jdk-headless
 
 sudo apt install nginx
 
 sudo apt-get install build-essential git zip
+```
 
 # install certbot
 
@@ -57,6 +64,7 @@ follow certbot.eff.org instructions
 
 # mount storage box
 
+```
 $ sudo mkdir /etc/preston/
 $ sudo touch /etc/preston/storagebox-u302912-sub3-credentials.txt
 $ sudo chmod 0600 /etc/preston/storagebox-u302912-sub3-credentials.txt 
@@ -71,12 +79,12 @@ username=[REPLACE ME]
 password=[REPLACE_ME]
 
 $ sudo mkdir /mnt/storagebox-u302912-sub3
-
+```
 
 
 add to /etc/fstab
 
-
+```
 # storage box u302912-sub3 (preston data)
 # see https://askubuntu.com/questions/1210867/remount-cifs-on-network-reconnect
 //u302912-sub3.your-storagebox.de/u302912-sub3 /mnt/storagebox-u302912-sub3 cifs iocharset=utf8,rw,credentials=/etc/preston/storagebox-u302912-sub3-credentials.txt,uid=preston,gid=preston,file_mode=0755,dir_mode=0755,vers=1.0,noauto,x-systemd.automount,x-systemd.idle-timeout=30 0 0
@@ -85,19 +93,27 @@ add to /etc/fstab
 # https://docs.hetzner.com/robot/storage-box/access/access-samba-cifs/
 
 $ sudo apt install cifs-utils
+```
 
 # apply changes
 
+```
 sudo mount -a
+```
 
 # install uncomplicated firewall (ufw)
 
+```
 sudo apt install ufw
+```
+
 
 ## configure certbot to allow http for auto-renew
 
+```
 sudo mkdir -p /etc/letsencrypt
 sudo cp etc/letsencrypt/cli.ini /etc/letsencrypt/cli.ini
+```
 
 where cli.ini contains something like:
 
@@ -109,6 +125,7 @@ post-hook = ufw deny http
 
 # rsync examples from previous server
 
+```
 sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@deeplinker.bio:/home/preston/preston-bhl .
 
 sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@deeplinker.bio:/home/preston/preston-obis .
@@ -118,7 +135,7 @@ sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@
 sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@deeplinker.bio:/var/www/html/preston-ala .
 
 sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@deeplinker.bio:/home/preston/preston-dataone .
-
+```
 
 ## Preston 
 
