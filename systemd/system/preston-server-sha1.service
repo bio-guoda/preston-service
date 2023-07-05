@@ -5,7 +5,7 @@ Description=Preston Server SHA1 Universe
 Type=simple
 User=preston
 Environment=PRESTON_DIR=/tmp/preston-sha1
-ExecStart=/usr/local/bin/preston server --algo sha1 --port 8083 --host localhost --remotes https://dataone.org --no-cache --no-progress --data-dir=${PRESTON_DIR}/data --tmp-dir=${PRESTON_DIR}/tmp
+ExecStart=/usr/local/bin/preston server --algo sha1 --port 8083 --host localhost --remotes https://wikimedia.org,https://dataone.org --no-cache --no-progress --data-dir=${PRESTON_DIR}/data --tmp-dir=${PRESTON_DIR}/tmp
 Restart=always
 
 [Install]
