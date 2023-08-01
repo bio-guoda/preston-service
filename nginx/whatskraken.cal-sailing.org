@@ -23,10 +23,7 @@
 server {
 
     server_name whatskraken.cal-sailing.org;
-
-    location ~ {
-      return 301 https://cal-sailing.org/index.php?option=com_cscupload&view=webcams&tmpl=component;
-    }
+    return 301 https://cal-sailing.org/index.php?option=com_cscupload&view=webcams&tmpl=component;
 
     listen [::]:443 ssl; # managed by Certbot
     listen 443 ssl; # managed by Certbot
