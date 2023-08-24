@@ -37,6 +37,8 @@ server {
     # see https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_max_temp_file_size
     proxy_max_temp_file_size 0;
 
+    proxy_read_timeout 1h;
+
     location ~ "/\.well-known/genid/" {
         limit_except GET {
           deny all;
