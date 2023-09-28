@@ -29,7 +29,9 @@ In the content-verse, you'd say:
 
 Through digital fingerprints, content that is hosted by Zenodo, DataOne, Software Heritage Library, or WikiMedia Commons today, may be found in their new location(s) 50 years from now using that same exact fingerprint.
 
-https://linker.bio/ helps to locate requested content, wherever they may be, using a notation like:
+## How to Request Content
+
+https://linker.bio/ helps to request content, wherever they may be, using a notation like:
 
 ```
 https://linker.bio/[fingerprint][.extension]
@@ -37,15 +39,17 @@ https://linker.bio/[fingerprint][.extension]
 
 The extension is optional. 
 
-For instance, to get a copy of a scientific paper, you can ask for:
+## Examples
+
+For instance, to get a copy of a **scientific paper**, you can ask for:
 
 [https://linker.bio/hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d.pdf](https://linker.bio/hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d).
 
-or, to get a historical CO2 Record from the Vostok Ice Core, you can ask for:
+or, to get a copy of a **scientific dataset**, like a historical CO2 Record from the Vostok Ice Core, you can ask for:
 
 [https://linker.bio/hash://md5/e27c99a7f701dab97b7d09c467acf468](https://linker.bio/hash://md5/e27c99a7f701dab97b7d09c467acf468)
 
-or, perhaps even better, you can also ask for a picture of a Oryctolagus cuniculus, a rabbit by JM Ligero Loarte -
+or, perhaps even better, you can also ask for a **picture** of a Oryctolagus cuniculus, of a 🐇 by JM Ligero Loarte -
 
 [https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2.jpg](https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2).
 
