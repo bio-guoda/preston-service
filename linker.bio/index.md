@@ -27,7 +27,7 @@ In the content-verse, you'd say:
 
 , and *verify* that the retrieved content is *exactly* what you asked for.
 
-Through digital fingerprints, content that is hosted by Zenodo, DataOne, Software Heritage Library, or WikiMedia Commons today, may be found in their new location(s) 50 years from now using that same exact fingerprint.
+Through digital fingerprints, content that is hosted by Zenodo, DataOne, Software Heritage Library, or WikiMedia Commons today, may be found 50 years now using that same exact fingerprint, regardless where it may be located, or how the content is stored, or transmitted ^[In other words, digital fingerprints are agnostic of location, technology, and ... time.].
 
 ## How to Request Content
 
