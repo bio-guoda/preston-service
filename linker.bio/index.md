@@ -11,7 +11,7 @@ date: 2023-09-28
 
 The internet is a powerful tool to exchange digital information. And, content available through the internet changes constantly: websites come and go, and webpages change.  
 
-https://linker.bio builds a bridge from the exciting, dynamic internet to their reliable, yet a bit boring, cousin: the **content-verse**. In this content-verse, **digital fingerprints are used as links** instead of resource locators (or URLs). Contrary to URLs, these digital fingerprints **do *not* break, nor expire** ^[Digital finger prints are cryptographic objects mathematically linked to the content they reference. They can be generated with most digital devices. And, by embedding fingerprints into other digital content, you can pretty much reference anything and everything digital using a digital fingerprint that fits on a t-shirt.].
+https://linker.bio builds a bridge from the exciting, dynamic internet to their reliable, yet a bit boring, cousin: the **content-verse**. In this content-verse, **digital fingerprints are used as links** instead of resource locators (or URLs). Contrary to URLs, these digital fingerprints **do *not* break, nor expire** ^[Digital finger prints are cryptographic objects mathematically linked to the content they reference. They can be generated with most digital devices. And, by embedding fingerprints into other digital content, you can pretty much reference anything and everything digital using a digital fingerprint that fits on a T-shirt.].
 
 Where the internet excels in spreading new information, the content-verse excels at referencing *known* information. 
 
