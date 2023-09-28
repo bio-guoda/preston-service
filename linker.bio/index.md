@@ -49,7 +49,7 @@ or, to get a copy of a **scientific dataset**, like a historical CO2 Record from
 
 [https://linker.bio/hash://md5/e27c99a7f701dab97b7d09c467acf468](https://linker.bio/hash://md5/e27c99a7f701dab97b7d09c467acf468)
 
-or, perhaps even better, you can also ask for a **picture** of a Oryctolagus cuniculus, of a 🐇 by JM Ligero Loarte -
+or, perhaps even better, you can also ask for a **picture of a 🐇** (*Oryctolagus cuniculus*) by JM Ligero Loarte -
 
 [https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2.jpg](https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2).
 
