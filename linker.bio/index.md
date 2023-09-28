@@ -53,7 +53,7 @@ or, perhaps even better, you can also ask for a **picture of a 🐇** (*Oryctola
 
 [https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2.jpg](https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2).
 
-or, if you are ambitious, you can retrieve a digital corpus containing billions of biodiversity records ^[To compile this corpus from their referenced parts, you may benefit from using a tool like [Preston](https://github.com/bio-guoda/preston).] collected in period 2018/2023 via:
+or, if you are ambitious, you can retrieve a digital corpus containing billions of biodiversity records ^[To compile this corpus from their referenced parts, you may benefit from using a tool like [Preston](https://github.com/bio-guoda/preston).] via:
 
 [https://linker.bio/hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419](https://linker.bio/hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419). 
 
