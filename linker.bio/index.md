@@ -15,13 +15,13 @@ https://linker.bio builds a bridge from the exciting, dynamic internet to their 
 
 Where the internet excels in spreading new information, the content-verse excels at referencing *known* information. 
 
-On the internet you you'd say, 
+On the internet, you'd say:
 
-> "I'd like to get the latest content at this web location."
+> "I'd like to get the latest content from this web location."
 
 , and *trust* that the retrieved content is what you asked for.
 
-In the content-verse you'd say, 
+In the content-verse, you'd say: 
 
 > "I'd like to get the content associated with this fingerprint."
 
