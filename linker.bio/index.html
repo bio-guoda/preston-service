@@ -188,20 +188,31 @@ suggestions</a></p>
 content available through the internet changes constantly: websites come
 and go, and webpages change.</p>
 <p>https://linker.bio builds a bridge from the exciting, dynamic
-internet to their reliable, yet a bit boring, cousin: the content-verse.
-In this content-verse, digital fingerprints (aka content ids or
-crytographic hashes) are used as links instead of so-called universal
-resource locators (or URLs). Contrary to URLs, these digital
-fingerprints do <em>not</em> break as they are cryptographically linked
-to the content they reference, and can be generated with most digital
-devices. And, by embedding fingerprints into other content, you can
-pretty much reference anything and everything digital.</p>
-<p>So, in the internet you you’d say, “I’d like to get the content at
-this web location.”, and <em>trust</em> that the content is what you
-asked for.</p>
-<p>In the content-verse you’d say, “I’d like to get the content
-associated with this fingerprint.”, and <em>verify</em> that the content
-is exactly what you asked for.</p>
+internet to their reliable, yet a bit boring, cousin: the
+<strong>content-verse</strong>. In this content-verse, <strong>digital
+fingerprints are used as links</strong> instead of resource locators (or
+URLs). Contrary to URLs, these digital fingerprints <strong>do
+<em>not</em> break, nor expire</strong> <a href="#fn1"
+class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Where the internet excels in spreading new information, the
+content-verse excels at referencing <em>known</em> information.</p>
+<p>On the internet you you’d say,</p>
+<blockquote>
+<p>“I’d like to get the latest content at this web location.”</p>
+</blockquote>
+<p>, and <em>trust</em> that the retrieved content is what you asked
+for.</p>
+<p>In the content-verse you’d say,</p>
+<blockquote>
+<p>“I’d like to get the content associated with this fingerprint.”</p>
+</blockquote>
+<p>, and <em>verify</em> that the retrieved content is <em>exactly</em>
+what you asked for.</p>
+<p>Through digital fingerprints, content that is hosted by Zenodo,
+DataOne, Software Heritage Library, or WikiMedia Commons today, may be
+found in their new location(s) 50 years from now using that same exact
+fingerprint.</p>
 <p>https://linker.bio/ helps to locate requested content, wherever they
 may be, using a notation like:</p>
 <pre><code>https://linker.bio/[fingerprint][.extension]</code></pre>
@@ -219,18 +230,33 @@ Oryctolagus cuniculus, a rabbit by JM Ligero Loarte -</p>
 <p><a
 href="https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2">https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2.jpg</a>.</p>
 <p>or, if you are ambitious, you can retrieve a digital corpus of
-billions of biodiversity records collected in period 2018/2023 via:</p>
+billions of biodiversity records <a href="#fn2" class="footnote-ref"
+id="fnref2" role="doc-noteref"><sup>2</sup></a> collected in period
+2018/2023 via:</p>
 <p><a
 href="https://linker.bio/hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419">https://linker.bio/hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419</a>.</p>
-<p>For the last one, you may benefit from a tool like <a
-href="https://github.com/bio-guoda/preston">Preston</a> to compile the
-corpus from their referenced parts.</p>
 <p>For more information and background, see:</p>
 <p>Elliott, M.J., Poelen, J.H. &amp; Fortes, J.A.B. Signing data
 citations enables data verification and citation persistence. <em>Sci
 Data</em> 10, 419 (2023). <a
 href="https://doi.org/10.1038/s41597-023-02230-y">https://doi.org/10.1038/s41597-023-02230-y</a>
 <a
-href="https://linker.bio/hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d.pdf">hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d</a>.</p>
+href="https://linker.bio/hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d.pdf">hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d</a></p>
+<aside id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Digital finger prints are cryptographic objects
+mathematically linked to the content they reference. They can be
+generated with most digital devices. And, by embedding fingerprints into
+other digital content, you can pretty much reference anything and
+everything digital using a digital fingerprint that fits on a t-shirt.<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>To compile this corpus from their referenced parts, you
+may benefit from using a tool like <a
+href="https://github.com/bio-guoda/preston">Preston</a>.<a
+href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</aside>
 </body>
 </html>
