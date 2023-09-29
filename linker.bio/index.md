@@ -55,7 +55,7 @@ or, perhaps even better, you can also ask for a **picture of a 🐇** (*Oryctola
 
 [https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2.jpg](https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2).
 
-or, an initial draft of **the Hash URI Specification by Ben Trask** - 
+or, to review an initial draft of **the Hash URI Specification by Ben Trask** - 
 
 [https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1](https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1)
 
