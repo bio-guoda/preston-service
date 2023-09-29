@@ -27,7 +27,9 @@ In the content-verse, you'd say:
 
 , and *verify* that the retrieved content is *exactly* what you asked for.
 
-Through digital fingerprints, content that is hosted by Zenodo, DataOne, Software Heritage Library, or WikiMedia Commons today, may be found 50 years now using that same exact fingerprint, regardless where it may be located, or how the content is stored, or transmitted ^[In other words, digital fingerprints are agnostic of location, technology, and ... time.].
+Today, through digital fingerprints, linker.bio provides a bridge to access billions of openly available biodiversity data records ^[Biodiversity records include snapshot version of digital collections registered with [iDigBio](https://idigbio.org), [GBIF](https://gbif.org), [BioCase](https://biocase.org), [Biodiversity Heritage Library](https://biodiversitylibrary.org), [OBIS](https://obis.org) and [CheckListbank](https://checklistbank.org)], millions of Open Science publications through [Zenodo](https://zenodo.org), over 800k datasets via [DataOne](https://dataone.org), billions of open source files [Software Heritage Library](https://softwareheritage.org), and over 97M freely usable media file from [WikiMedia Commons](https://commons.wikimedia.org/). 
+
+And, 50 years from now, you may use that same fingerprint to find that content, regardless where it may be located, or how the content may be stored, or transmitted ^[In other words, digital fingerprints are agnostic of location, technology, and ... time.].
 
 ## How to Request Content
 
