@@ -7,11 +7,11 @@ date: 2023-09-28
 
 [edit this page](https://github.com/bio-guoda/preston-service/linker.bio/edit/main/linker.bio/index.md) / [share suggestions](https://github.com/bio-guoda/preston/issues/new)
 
-# Welcome to linker.bio.
+# Welcome to linker.bio
 
 The internet is a powerful tool to exchange digital information. And, content available through the internet changes constantly: websites come and go, and webpages change.  
 
-https://linker.bio builds a bridge from the exciting, dynamic internet to their reliable, yet a bit boring, cousin: the **content-verse**. In this content-verse, **digital fingerprints are used as links** instead of resource locators (or URLs). Contrary to URLs, these digital fingerprints **do *not* break, nor expire** ^[Digital finger prints are cryptographic objects that are mathematically linked to the content they reference. They can be generated with most digital devices. And, by embedding fingerprints into other digital content, you can pretty much reference anything and everything digital using a digital fingerprint that fits on a T-shirt.].
+https://linker.bio builds a bridge ^[linker.bio is not the only bridge to the content-verse. In fact, linker.bio re-uses existing bridges provided by [Zenodo](https://github.com/bio-guoda/preston/issues/149), [DataOne](https://github.com/bio-guoda/preston/issues/181), [WikiMedia Commons](https://github.com/bio-guoda/preston/issues/239), and [Software Heritage Library](https://github.com/bio-guoda/preston/issues/70) to the massive amount of content they keep. Note also that [Carl Boettiger](https://www.carlboettiger.info/) maintains a bridge from R to the content-verse via the R package [contentid](https://github.com/cboettig/contentid).].  from the exciting, dynamic internet to their reliable, yet a bit boring, cousin: the **content-verse**. In this content-verse, **digital fingerprints are used as links** instead of resource locators (or URLs). Contrary to URLs, these digital fingerprints **do *not* break, nor expire** ^[Digital finger prints are cryptographic objects that are mathematically linked to the content they reference. They can be generated with most digital devices. And, by embedding fingerprints into other digital content, you can pretty much reference anything and everything digital using a digital fingerprint that fits on a T-shirt.].
 
 Where the internet excels in spreading new information, the content-verse excels at referencing *known* information. 
 
