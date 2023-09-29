@@ -41,6 +41,8 @@ https://linker.bio/[fingerprint][.extension]
 
 The extension is optional. 
 
+💡 Note that 
+
 ## Examples
 
 For instance, to get a copy of a **scientific paper**, you can ask for:
@@ -54,6 +56,10 @@ or, to get a copy of a **scientific dataset**, like a historical CO2 Record from
 or, perhaps even better, you can also ask for a **picture of a 🐇** (*Oryctolagus cuniculus*) by JM Ligero Loarte -
 
 [https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2.jpg](https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2).
+
+or, an initial draft of **the Hash URI Specification by Ben Trask** - 
+
+[https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1](https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1)
 
 or, if you are ambitious, you can retrieve a digital corpus containing billions of biodiversity records ^[To compile this corpus from their referenced parts, you may benefit from using a tool like [Preston](https://github.com/bio-guoda/preston).] via:
 
