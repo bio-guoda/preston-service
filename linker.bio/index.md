@@ -41,8 +41,6 @@ https://linker.bio/[fingerprint][.extension]
 
 The extension is optional. 
 
-💡 Note that 
-
 ## Examples
 
 For instance, to get a copy of a **scientific paper**, you can ask for:
