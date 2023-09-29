@@ -5,7 +5,7 @@ authors: made possible by thriving Open Science and Open Source communities
 date: 2023-09-28
 ---
 
-[edit this page](https://github.com/bio-guoda/preston-service/linker.bio/edit/main/linker.bio/index.md) / [share suggestions](https://github.com/bio-guoda/preston/issues/new)
+[edit this page](https://github.com/bio-guoda/preston-service/edit/main/linker.bio/index.md) / [share suggestions](https://github.com/bio-guoda/preston/issues/new)
 
 # Welcome to linker.bio
 
