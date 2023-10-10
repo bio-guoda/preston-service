@@ -69,4 +69,4 @@ Elliott, M.J., Poelen, J.H. & Fortes, J.A.B. Signing data citations enables data
 
 # Acknowledgments
 
-Michael Elliott, Jose Fortes and [Cypress Hansen](https://www.cypresswritesscience.com/) provided comments to help improve a description of todays internet and the benefits of the content-verse.
+Michael Elliott, José Fortes and [Cypress Hansen](https://www.cypresswritesscience.com/) provided comments to help improve a description of todays internet and the benefits of the content-verse.
