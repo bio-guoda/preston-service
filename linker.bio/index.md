@@ -9,7 +9,7 @@ date: 2023-09-28
 
 # Welcome to linker.bio
 
-The internet is a powerful tool to exchange digital information. And, content available through the internet changes constantly: websites come and go, and webpages change.  
+The internet is a powerful tool to exchange digital information. But content available through the internet changes constantly: websites are launched and taken down, webpages change, and content gets archived or lost.  
 
 https://linker.bio builds a bridge ^[linker.bio is not the only bridge to the content-verse. In fact, linker.bio re-uses existing bridges provided by [Zenodo](https://github.com/bio-guoda/preston/issues/149), [DataOne](https://github.com/bio-guoda/preston/issues/181), [WikiMedia Commons](https://github.com/bio-guoda/preston/issues/239), and [Software Heritage Library](https://github.com/bio-guoda/preston/issues/70) to the massive amount of content they keep. Note also that [Carl Boettiger](https://www.carlboettiger.info/) maintains a bridge from R to the content-verse via the R package [contentid](https://github.com/cboettig/contentid).].  from the exciting, dynamic internet to their reliable, yet a bit boring, cousin: the **content-verse**. In this content-verse, **digital fingerprints are used as links** instead of resource locators (or URLs). Contrary to URLs, these digital fingerprints **do *not* break, nor expire** ^[Digital finger prints are cryptographic objects that are mathematically linked to the content they reference. They can be generated with most digital devices. And, by embedding fingerprints into other digital content, you can pretty much reference anything and everything digital using a digital fingerprint that fits on a T-shirt.].
 
@@ -27,13 +27,13 @@ In the content-verse, you'd say:
 
 , and *verify* that the retrieved content is *exactly* what you asked for.
 
-Today, through digital fingerprints, linker.bio provides a bridge to access billions of openly available biodiversity data records ^[Biodiversity records include snapshot version of digital collections registered with [iDigBio](https://idigbio.org), [GBIF](https://gbif.org), [BioCase](https://biocase.org), [Biodiversity Heritage Library](https://biodiversitylibrary.org), [OBIS](https://obis.org) and [CheckListbank](https://checklistbank.org)], millions of Open Science publications through [Zenodo](https://zenodo.org), over 800k datasets via [DataOne](https://dataone.org), billions of open source files [Software Heritage Library](https://softwareheritage.org), and over 97M freely usable media file from [WikiMedia Commons](https://commons.wikimedia.org/). 
+Through digital fingerprints, linker.bio provides a bridge to access billions of openly available biodiversity data records ^[Biodiversity records include snapshot version of digital collections registered with [iDigBio](https://idigbio.org), [GBIF](https://gbif.org), [BioCase](https://biocase.org), [Biodiversity Heritage Library](https://biodiversitylibrary.org), [OBIS](https://obis.org) and [CheckListbank](https://checklistbank.org)], millions of Open Science publications through [Zenodo](https://zenodo.org), over eight hundred thousand datasets via [DataOne](https://dataone.org), billions of open source files [Software Heritage Library](https://softwareheritage.org), and more than ninety seven million freely usable media files from [WikiMedia Commons](https://commons.wikimedia.org/). 
 
-And, 50 years from now, you may use that same fingerprint to find that content, regardless where it may be located, or how the content may be stored, or transmitted ^[In other words, digital fingerprints are agnostic of location, technology, and ... time.].
+The beauty of digital fingerprints is that in fifty years from now, you may use that same fingerprint to find that information, regardless where it may be located, or how it is stored, or transmitted ^[In other words, digital fingerprints are agnostic of location, technology, and ... time.].
 
 ## How to Request Content
 
-https://linker.bio/ helps to request content, wherever they may be, using a notation like:
+https://linker.bio/ helps to request information, wherever it may be, using a notation like:
 
 ```
 https://linker.bio/[fingerprint][.extension]
