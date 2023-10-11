@@ -44,7 +44,7 @@ However, for retrieving specific content, like a newspaper article or research p
 
 In using digital fingerprints to refer to content, the location, or even the storage medium, of the content becomes secondary. In other words, *digital fingerprints help preserve reference to digital to a future beyond the internet*.
 
-I call the collection of all possible digital fingerprints and their associated content the content-verse. By definition, this content-verse contains all content (or knowledge) ever to be created.
+This is where I'd like to introduce **the content-verse** as the collection of all possible digital content and their associated digital fingerprints. By definition, the content-verse contains all content (or knowledge) ever to be created.
 
 ## Using Digital Fingerprints
 
