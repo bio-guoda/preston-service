@@ -1,7 +1,7 @@
 ---
 title: Unleasing Digital Knowledge into the Future
 author: Jorrit H. Poelen
-date: 2023-09-28
+date: 2023-10-11
 ---
 
 [edit this page](https://github.com/bio-guoda/preston-service/edit/main/linker.bio/index.md) / [share suggestions](https://github.com/bio-guoda/preston/issues/new)
@@ -10,9 +10,9 @@ date: 2023-09-28
 
 The internet is a powerful tool to exchange digital information. But content available through the internet changes constantly: websites are launched and taken down, webpages change, and content gets archived or lost. 
 
-By design, a web address, or *U*niform *R*esource *L*ocator (URL), points to a specific *location* at which a resource, like webpage, can be retrieved. However, a URL does *not* provide a way to verify that a retrieved webpage was the one we asked for. ^[A similar argument can made for a *D*igital *O*bject *I*dentifier (DOI, https://en.wikipedia.org/wiki/Digital_object_identifier).]
+By design, a web address, or *U*niform *R*esource *L*ocator (URL), points to a specific internet *location* at which a resource, like webpage, can be retrieved. However, a URL does *not* provide a way to verify that a retrieved webpage was the one we asked for. ^[A similar argument can made for a *D*igital *O*bject *I*dentifier (DOI, https://en.wikipedia.org/wiki/Digital_object_identifier).]
 
-Imagine using a URL-like reference to find a book at a library: instead of locating a book by what it is (e.g., title, author), you refer to a book by their location (e.g., third shelf on the second row next to the window). The may work for a while. But, if moved, a book becomes unfindable. And, if you do manage to find a book at the referenced location, how would you know found the book you are looking for? 
+Imagine using a URL-like reference to find a book at a library: instead of locating a book by what it is (e.g., title, author), you refer to a book by their location (e.g., third shelf on the second row next to the window). With this, a book becomes unfindable if moved to another shelf. And, if you do manage to find a book at the referenced location, how would you know found the book you are looking for? 
 
 Instead of pointing to where a book is located, librarians point to a book using a bibliographic reference. For practical reason, only a few identifying clues are included in such a reference (e.g., author, year of publication, title, and publisher). So, librarians *refer to content by what it is*, and knowing where it may be located is secondary. 
 
@@ -22,7 +22,7 @@ Instead of pointing to where a book is located, librarians point to a book using
 > Darwin, C. 1859. On the Origin of Species. John Murray.
 >
 
-Thanks to recent advances in mathematics ^[Sobti, R. & Geetha, G. Cryptographic Hash Functions: A Review. 2012. International Journal of Computer Science Issues (IJCSI) 9, 461–479 [https://www.ijcsi.org/papers/IJCSI-9-2-2-461-479.pdf](https://www.ijcsi.org/papers/IJCSI-9-2-2-461-479.pdf) accessed at 2023-10-11 with hash://md5/eb8e2fb3e16bd5839443cd40a9a8c3c1], we can augment these bibliographic citations *referring to digital content* by adding a digital fingerprint. A digital fingerprint is of fixed size and uniquely describes any digital content (e.g., a webpage, an digital image) by performing a calculation ^[Such calculations are referred to as cryptographic hash functions like MD5, or SHA-256] on the content itself. Citations that include a digital fingerprint are also referred to as signed citations ^[Elliott, M.J., Poelen, J.H. & Fortes, J.A.B. Signing data citations enables data verification and citation persistence. <em>Sci Data</em> 10, 419 (2023). [https://doi.org/10.1038/s41597-023-02230-y](https://doi.org/10.1038/s41597-023-02230-y) [hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d](https://linker.bio/hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d.pdf)].
+Thanks to recent advances in mathematics ^[Sobti, R. & Geetha, G. Cryptographic Hash Functions: A Review. 2012. International Journal of Computer Science Issues (IJCSI) 9, 461–479 [https://www.ijcsi.org/papers/IJCSI-9-2-2-461-479.pdf](https://www.ijcsi.org/papers/IJCSI-9-2-2-461-479.pdf) accessed at 2023-10-11 with hash://md5/eb8e2fb3e16bd5839443cd40a9a8c3c1], we can add digital fingerprints to  bibliographic citations *referring to digital content*. A digital fingerprint is of fixed size and uniquely describes any digital content (e.g., a webpage, an digital image) by performing a calculation ^[Such calculations are referred to as cryptographic hash functions like MD5, or SHA-256] on the content itself. Citations that include a digital fingerprint are also referred to as signed citations ^[Elliott, M.J., Poelen, J.H. & Fortes, J.A.B. Signing data citations enables data verification and citation persistence. <em>Sci Data</em> 10, 419 (2023). [https://doi.org/10.1038/s41597-023-02230-y](https://doi.org/10.1038/s41597-023-02230-y) [hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d](https://linker.bio/hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d.pdf)].
 
 These digital fingerprints open up a way to *automatically* verify, with astronomical certainty, that you got the digital content that you asked for. 
 
