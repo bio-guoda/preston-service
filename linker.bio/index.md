@@ -8,9 +8,47 @@ date: 2023-09-28
 
 ## Welcome to linker.bio
 
-The internet is a powerful tool to exchange digital information. But content available through the internet changes constantly: websites are launched and taken down, webpages change, and content gets archived or lost.  
+The internet is a powerful tool to exchange digital information. But content available through the internet changes constantly: websites are launched and taken down, webpages change, and content gets archived or lost. 
 
-https://linker.bio builds a bridge ^[linker.bio is not the only bridge to the content-verse. In fact, linker.bio re-uses existing bridges provided by [Zenodo](https://github.com/bio-guoda/preston/issues/149), [DataOne](https://github.com/bio-guoda/preston/issues/181), [WikiMedia Commons](https://github.com/bio-guoda/preston/issues/239), and [Software Heritage Library](https://github.com/bio-guoda/preston/issues/70) to the massive amount of content they keep. Note also that [Carl Boettiger](https://www.carlboettiger.info/) maintains a bridge from R to the content-verse via the R package [contentid](https://github.com/cboettig/contentid).].  from the exciting, dynamic internet to its reliable, boring, cousin — the **content-verse**. In this content-verse, **digital fingerprints are used as links** instead of resource locators (or URLs). Contrary to URLs, these digital fingerprints **do *not* break, nor expire** ^[Digital finger prints are cryptographic objects that are mathematically linked to the content they reference. They can be generated with most digital devices. And, by embedding fingerprints into other digital content, you can pretty much reference anything and everything digital using a digital fingerprint that fits on a T-shirt.].
+By design, a web address, or *U*niform *R*esource *L*ocator (URL), points to a specific *location* at which a resource, like webpage, can be retrieved. However, a URL does *not* provide a way to verify that a retrieved webpage was the one we asked for. ^[A similar argument can made for a *D*igital *O*bject *I*dentifier (DOI, https://en.wikipedia.org/wiki/Digital_object_identifier).]
+
+Imagine using a URL-like reference to find a book at a library: instead of locating a book by what it is (e.g., title, author), you refer to a book by their location (e.g., third shelf on the second row next to the window). The may work for a while. But, if moved, a book becomes unfindable. And, if you do manage to find a book at the referenced location, how would you know found the book you are looking for? 
+
+Instead of pointing to where a book is located, librarians point to a book using a bibliographic reference. For practical reason, only a few identifying clues are included in such a reference (e.g., author, year of publication, title, and publisher). So, librarians *refer to content by what it is*, and knowing where it may be located is secondary. 
+
+>
+> A bibliographic citation:
+>
+> Darwin, C. 1859. On the Origin of Species. John Murray.
+>
+
+Thanks to recent advances in mathematics ^[Sobti, R. & Geetha, G. Cryptographic Hash Functions: A Review. 2012. International Journal of Computer Science Issues (IJCSI) 9, 461–479 [https://www.ijcsi.org/papers/IJCSI-9-2-2-461-479.pdf](https://www.ijcsi.org/papers/IJCSI-9-2-2-461-479.pdf) accessed at 2023-10-11 with hash://md5/eb8e2fb3e16bd5839443cd40a9a8c3c1], we can augment these bibliographic citations *referring to digital content* by adding a digital fingerprint. A digital fingerprint is of fixed size and uniquely describes any digital content (e.g., a webpage, an digital image) by performing a calculation ^[Such calculations are referred to as cryptographic hash functions like MD5, or SHA-256] on the content itself. Citations that include a digital fingerprint are also referred to as signed citations ^[Elliott, M.J., Poelen, J.H. & Fortes, J.A.B. Signing data citations enables data verification and citation persistence. <em>Sci Data</em> 10, 419 (2023). [https://doi.org/10.1038/s41597-023-02230-y](https://doi.org/10.1038/s41597-023-02230-y) [hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d](https://linker.bio/hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d.pdf)].
+
+These digital fingerprints open up a way to *automatically* verify, with astronomical certainty, that you got the digital content that you asked for. 
+
+## Asking for What You Want
+
+On the internet, we've learned to say:
+
+> "I'd like to get the latest content from this web address."
+
+, and *trust* that the retrieved content is what you asked for.
+
+This may work well for a current news website or an internet search engine.
+
+However, for retrieving specific content, like a newspaper article or research paper, we'd like to have a way of saying: 
+
+> "I'd like to get the content with *this digital fingerprint*."
+
+, and *verify* that the retrieved content is *exactly* what you asked for.
+
+In using digital fingerprints to refer to content, the location, or even the storage medium, of the content becomes secondary. In other words, *digital fingerprints help preserve reference to digital to a future beyond the internet*.
+
+I call the collection of all possible digital fingerprints and their associated content the content-verse. By definition, this content-verse contains all content (or knowledge) ever to be created.
+
+## Using Digital Fingerprints
+
+https://linker.bio builds a bridge ^[linker.bio is not the only bridge to the content-verse. In fact, linker.bio re-uses existing bridges provided by [Zenodo](https://github.com/bio-guoda/preston/issues/149), [DataOne](https://github.com/bio-guoda/preston/issues/181), [WikiMedia Commons](https://github.com/bio-guoda/preston/issues/239), and [Software Heritage Library](https://github.com/bio-guoda/preston/issues/70) to the massive amount of content they keep. Note also that [Carl Boettiger](https://www.carlboettiger.info/) maintains a bridge from R to the content-verse via the R package [contentid](https://github.com/cboettig/contentid).] from the exciting, dynamic internet to its reliable, boring, cousin — the **content-verse**. In this content-verse, **digital fingerprints are used as links** instead of resource locators (or URLs). Contrary to URLs, these digital fingerprints **do *not* break, nor expire** ^[Digital finger prints are cryptographic objects that are mathematically linked to the content they reference. They can be generated with most digital devices. And, by embedding fingerprints into other digital content, you can pretty much reference anything and everything digital using a digital fingerprint that fits on a T-shirt.].
 
 Where the internet excels in spreading new information, the content-verse excels at referencing *known* information. 
 
