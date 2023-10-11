@@ -1,5 +1,6 @@
 ---
 title: Unleasing Digital Knowledge into the Future
+subtitle: (a working document)
 author: Jorrit H. Poelen
 date: 2023-10-11
 ---
@@ -44,6 +45,8 @@ However, for retrieving specific content, like a newspaper article or research p
 
 In using digital fingerprints to refer to content, the location, or even the storage medium, of the content becomes secondary. In other words, *digital fingerprints help preserve reference to digital to a future beyond the internet*.
 
+## The Content-Verse ^[Probably need a better term for this, because of existing uses elsewhere.]
+
 This is where I'd like to introduce **the content-verse** as the collection of all possible digital content and their associated digital fingerprints. By definition, the content-verse contains all content (or knowledge) ever to be created.
 
 ## Using Digital Fingerprints
@@ -51,18 +54,6 @@ This is where I'd like to introduce **the content-verse** as the collection of a
 https://linker.bio builds a bridge ^[linker.bio is not the only bridge to the content-verse. In fact, linker.bio re-uses existing bridges provided by [Zenodo](https://github.com/bio-guoda/preston/issues/149), [DataOne](https://github.com/bio-guoda/preston/issues/181), [WikiMedia Commons](https://github.com/bio-guoda/preston/issues/239), and [Software Heritage Library](https://github.com/bio-guoda/preston/issues/70) to the massive amount of content they keep. Note also that [Carl Boettiger](https://www.carlboettiger.info/) maintains a bridge from R to the content-verse via the R package [contentid](https://github.com/cboettig/contentid).] from the exciting, dynamic internet to its reliable, boring, cousin — the **content-verse**. In this content-verse, **digital fingerprints are used as links** instead of resource locators (or URLs). Contrary to URLs, these digital fingerprints **do *not* break, nor expire** ^[Digital finger prints are cryptographic objects that are mathematically linked to the content they reference. They can be generated with most digital devices. And, by embedding fingerprints into other digital content, you can pretty much reference anything and everything digital using a digital fingerprint that fits on a T-shirt.].
 
 Where the internet excels in spreading new information, the content-verse excels at referencing *known* information. 
-
-On the internet, you'd say:
-
-> "I'd like to get the latest content from this web address."
-
-, and *trust* that the retrieved content is what you asked for.
-
-In the content-verse, you'd say: 
-
-> "I'd like to get the content associated with this fingerprint."
-
-, and *verify* that the retrieved content is *exactly* what you asked for.
 
 Through digital fingerprints, linker.bio provides a bridge to access billions of openly available biodiversity data records ^[Biodiversity records include snapshot version of digital collections registered with [iDigBio](https://idigbio.org), [GBIF](https://gbif.org), [BioCase](https://biocase.org), [Biodiversity Heritage Library](https://biodiversitylibrary.org), [OBIS](https://obis.org) and [CheckListbank](https://checklistbank.org)], millions of Open Science publications through [Zenodo](https://zenodo.org), over eight hundred thousand datasets via [DataOne](https://dataone.org), billions of open source files [Software Heritage Library](https://softwareheritage.org), and more than ninety seven million freely usable media files from [WikiMedia Commons](https://commons.wikimedia.org/). 
 
