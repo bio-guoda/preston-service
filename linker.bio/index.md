@@ -1,13 +1,12 @@
 ---
-title: linker.bio
-subtitle: Unleashing Digital Knowledge
+title: Unleasing Digital Knowledge into the Future
 author: Jorrit H. Poelen
 date: 2023-09-28
 ---
 
 [edit this page](https://github.com/bio-guoda/preston-service/edit/main/linker.bio/index.md) / [share suggestions](https://github.com/bio-guoda/preston/issues/new)
 
-# Welcome to linker.bio
+## Welcome to linker.bio
 
 The internet is a powerful tool to exchange digital information. But content available through the internet changes constantly: websites are launched and taken down, webpages change, and content gets archived or lost.  
 
@@ -17,7 +16,7 @@ Where the internet excels in spreading new information, the content-verse excels
 
 On the internet, you'd say:
 
-> "I'd like to get the latest content from this web location."
+> "I'd like to get the latest content from this web address."
 
 , and *trust* that the retrieved content is what you asked for.
 
@@ -67,6 +66,6 @@ For more information and background, see:
 
 Elliott, M.J., Poelen, J.H. & Fortes, J.A.B. Signing data citations enables data verification and citation persistence. <em>Sci Data</em> 10, 419 (2023). [https://doi.org/10.1038/s41597-023-02230-y](https://doi.org/10.1038/s41597-023-02230-y) [hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d](https://linker.bio/hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d.pdf)
 
-# Acknowledgments
+## Acknowledgments
 
 Michael Elliott, José Fortes and [Cypress Hansen](https://www.cypresswritesscience.com/) provided comments to help improve a description of todays internet and the benefits of the content-verse.
