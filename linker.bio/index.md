@@ -43,7 +43,7 @@ However, for retrieving specific content, like a newspaper article or research p
 
 , and *verify* that the retrieved content is *exactly* what you asked for.
 
-In using digital fingerprints to refer to content, the location, or even the storage medium, of the content becomes secondary. In other words, *digital fingerprints help preserve reference to digital to a future beyond the internet*.
+In using digital fingerprints to refer to content, the location, or even the storage medium, of the content becomes secondary. In other words, *digital fingerprints help preserve references to digital content to a future beyond the internet*.
 
 ## The Content-Verse ^[Probably need a better term for this, because of existing uses elsewhere.]
 
