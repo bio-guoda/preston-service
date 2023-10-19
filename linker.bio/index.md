@@ -59,7 +59,7 @@ Through digital fingerprints, linker.bio provides a bridge to access billions of
 
 The beauty of digital fingerprints is that in fifty years from now, you may use that same fingerprint to find that information, regardless where it may be located, or how it is stored, or transmitted ^[In other words, digital fingerprints are agnostic of location, technology, and ... time.].
 
-## How to Request Content
+## Requesting Content
 
 https://linker.bio/ helps to request information, wherever it may be, using a notation like:
 
@@ -69,7 +69,7 @@ https://linker.bio/[fingerprint][.extension]
 
 The extension is optional. 
 
-## Examples
+## Exploring Examples
 
 For instance, to get a copy of a **scientific paper**, you can ask for:
 
@@ -85,11 +85,64 @@ or, perhaps even better, you can also ask for a **picture of a 🐇** (*Oryctola
 
 or, to review an initial draft of **the Hash URI Specification by Ben Trask** - 
 
-[https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1](https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1)
+[https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1](https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1).
 
-or, if you are ambitious, you can retrieve a digital corpus containing billions of biodiversity records ^[To compile this corpus from their referenced parts, you may benefit from using a tool like [Preston](https://github.com/bio-guoda/preston).] via:
+## A Use Case: Studying Pine Pests Caused by Weevils (Curculionoidea)
 
-[https://linker.bio/hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419](https://linker.bio/hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419). 
+Imagine studying a pine pest caused by weevils, plant eating beetles of super order Curculionoidea. In preparation for answering a research question, you may want to understand what is known about them, and some of their hosts pine trees. By combining large versioned corpora compiled using digital fingerprints, you can answer complex questions across disciplines. The examples below show how some related questions span digital collections made available through natural history collections, taxonomic literature, genetic records of plants, and biodiversity literature. 
+
+By using nimble, yet powerful, data processing tools like Preston and Nomer to make your laptop (or some powerful computer you have access to) to answer complex and specific _interdiscplinary_ research questions. 
+
+  corpus | last updated | size (approx) | version
+  --- | --- | --- | ---
+  GIB (**G**BIF, **i**DigBio and **B**ioCASe)  | 2023-09-01 | ~2.7TB | [hash://sha256/a755a6...](https://linker.bio/hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419)
+  ChecklistBank  | 2023-09-01 | ~30GB | [hash://sha256/8cb357...](https://linker.bio/hash://sha256/8cb3570748849866dc59f72aa6711e9a10111049063948fd0742f0ea2aeb6290)
+  Biodiversity Heritage Library | 2023-09-01 | ~300GB | [hash://sha256/9cc132...](https://linker.bio/hash://sha256/9cc1327e220df2c215b716a8ab07fcd9e3bffc1f6a808dbb6957f40e3df8c94c) 
+  GenBank PLN Division | 2023-06-28 | ~250GB | [hash://sha256/efa589...](https://linker.bio/hash://sha256/efa589e9927c8c10ac81867220982a3eb732c322ddebca6db2a9147578218ff5)
+  Nomer Corpus of Taxonomic Resources | 2023-09-08 | 10GB | [hash://sha256/12051b...](https://linker.bio/hash://sha256/12051b8aa59930d6561a3ed46b7cf3f67a31a98445a457d78894f6b8a8e81641)
+
+To prepare for addressing more complex research question, the following basic question may need answering:
+
+Q1. How many specimen of Weevils (plant eating beetles of super order Curculionoidea) have been recorded globally?
+
+The following steps can help towards answering Q1.
+
+~~~ 
+step 1. list GIB corpus content at version a755...
+step 2. print all related biodiversity records
+step 3. for each record, select origin and scientific name
+step 4. align names with Catalogue of Life as included in Nomer Corpus version 1205...
+step 5. count only aligned records that mention "Curculionoidea"
+~~~
+
+And these steps may be implemented in linux bash using Preston, jq, mlr, Nomer, and grep:
+
+~~~ { .numberLines }
+preston cat\
+ --no-cache\
+ --remote https://linker.bio\
+ hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419\
+ | preston dwc-stream\
+ --no-cache\
+ --remote https://linker.bio\
+ | jq -c '{ "src": .["http://www.w3.org/ns/prov#wasDerivedFrom"], "name": .["http://rs.tdwg.org/dwc/terms/scientificName"] }'\
+ | mlr --ijsonl --otsv cat\
+ | nomer append col\
+ | grep -v NONE\
+ | grep Curculionoidea\
+ | pv -l
+~~~
+
+where lines 1-4 implement step 1., lines 5-7 implement step 2., line 8 implements step 3., line 9 implements step 4., and line 10-13 implement step 5.
+
+The implementation above shows a brute force way to answer Q1. Resources permitting, optimized workflows can be generated to allow for more responsive and specialized services. So, you can answer your question based on versioned digital corpora, and optimize when needed / possible. One such optimization can be to clone the needed versioned datasets on a fast solid state drive to reduce network delays. Another could be to configure a search engine to help answer a selective kind of user queries quickly. And, with the versioned corpus, these uses of the datasets of known origin can be built independently of the corpus itself, allowing for teams work independently to improve the use of a well-defined knowledge corpus. 
+
+Other possible questions include:
+
+Q2. How many distinct species of Weevils, or plant eating beetles of the superfamily Curculionoidea have been described in taxonomic literature and checklists? 
+
+Q3. How time do species names of Weevils (plant eating beetles of the superfamily Curculionoidea) occur in the a copy of transcribed texts made available through the Biodiversity Heritage Library?
+Q4. How many genetic sequences are available for Pinus taeda (loblolly pine) are available through GenBank?
 
 For more information and background, see: 
 
