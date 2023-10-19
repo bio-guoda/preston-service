@@ -133,7 +133,7 @@ preston cat\
  | pv -l
 ~~~
 
-where lines 1-4 implement step 1., lines 5-7 implement step 2., lines 8-9 implements step 3., line 10 implements step 4., and line 11-13 implement step 5.
+where lines 1-4 implement step 1., lines 5-7 implement step 2., lines 8-9 implement step 3., line 10 implements step 4., and lines 11-13 implement step 5.
 
 The implementation above shows a brute force way to answer Q1. Resources permitting, optimized workflows can be generated to allow for more responsive and specialized services. So, you can answer your question based on versioned digital corpora, and optimize when needed / possible. One such optimization can be to clone the needed versioned datasets on a fast solid state drive to reduce network delays. Another could be to configure a search engine to help answer a selective kind of user queries quickly. And, with the versioned corpus, these uses of the datasets of known origin can be built independently of the corpus itself, allowing for teams work independently to improve the use of a well-defined knowledge corpus. 
 
