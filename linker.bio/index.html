@@ -368,6 +368,67 @@ href="https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2">h
 by Ben Trask</strong> -</p>
 <p><a
 href="https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1">https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1</a>.</p>
+<h2 id="building-your-own-bridge">Building Your Own Bridge</h2>
+<p>So far, https://linker.bio appears to be a <a
+href="https://en.wikipedia.org/wiki/Black_box">“black box”</a>: you ask
+for some content by their fingerprint, and linker.bio attempts to
+retrieve that content.</p>
+<p>But, what happens inside the box?</p>
+<p><code>linker.bio</code> is powered by <a
+href="https://github.com/bio-guoda/preston">Preston</a>. Preston builds
+a bridge from the content-verse (e.g., a digital fingerprint) to the
+content stored in physical locations. Preston is the little machine that
+responds when you ask the picture of the bunny using the URL
+<code>https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2</code>.
+And, if you know how to run a server program on your computer, you can
+run your own server that looks up that exact same picture. In other
+words, you can build your own bridge.</p>
+<p>For the tech savvy, you can run Preston in server mode on linux/mac
+<a href="#fn10" class="footnote-ref" id="fnref10"
+role="doc-noteref"><sup>10</sup></a> by executing the following in the
+terminal:</p>
+<pre><code>preston server --remote https://wikimedia.org</code></pre>
+<p>or,</p>
+<pre><code>preston s --remote https://wikimedia.org</code></pre>
+<p>for short.</p>
+<p>On starting the server, you’ll see some cryptic messages that end
+with</p>
+<pre><code>[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@76a4d6c{HTTP/1.1, (http/1.1)}{localhost:8080}
+[main] INFO org.eclipse.jetty.server.Server - Started @561ms</code></pre>
+<p>This means that the Preston server is waiting for requests.</p>
+<p>Now, you can visit
+<code>http://localhost:8080/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2</code>
+to retrieve the bunny picture. On receiving your question, Preston will
+try and ask https://wikimedia.org whether is has any content in their
+https://commons.wikimedia.org/ library with that digital fingerprint. If
+so, Preston will ask Wikimedia to send that content, and then, pass it
+to you. The next time you ask for the bunny picture, you’ll receive the
+picture pretty fast, because Preston remembers the content associated to
+the digital fingerprint and doesn’t have to ask https://wikimedia.org
+anymore.</p>
+<p>In addition to Wikimedia Commons, Preston knows how to talk to
+https://zenodo.org, https://softwareheritage.org, https://dataone.org
+and … other Preston servers!</p>
+<p>So, in the previous example, Preston talked directly to wikimedia.org
+. In the example below, your Preston server would talk to
+https://linker.bio instead, and https://linker.bio would relay the
+request:</p>
+<pre><code>preston s --remote https://linker.bio</code></pre>
+<p>You can even provide a list of “remotes”. If a list is provided,
+Preston asks the provided location in order of appearance. With the
+example below, Preston would first ask linker.bio, then if linker.bio
+doesn’t have it, it’ll ask wikimedia.org.</p>
+<pre><code>preston s --remote https://linker.bio,https://wikimedia.org</code></pre>
+<p>So, with this you can create elaborate combinations of ways to ask
+for content. One example of such elaborate setup is a <a
+href="https://en.wikipedia.org/wiki/Content_delivery_network">content
+delivery network</a> to facilitate reliable access to well-known
+content.</p>
+<p>If you’d like to learn more about how to run a Preston server, but
+don’t know where to start, please send an email to <a
+href="mailto:jhpoelen+preston@jhpoelen.nl">Jorrit</a> or open a <a
+href="https://github.com/bio-guoda/preston/issues/new">GitHub
+issue</a>.</p>
 <h2
 id="a-use-case-studying-pine-pests-caused-by-weevils-curculionoidea">A
 Use Case: Studying Pine Pests Caused by Weevils (Curculionoidea)</h2>
@@ -450,20 +511,20 @@ step 4. align names with Catalogue of Life as included in Nomer Corpus version 1
 step 5. count only aligned records that mention &quot;Curculionoidea&quot;</code></pre>
 <p>And these steps may be implemented in linux bash using Preston, jq,
 mlr, Nomer, and grep:</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>preston cat\</span>
-<span id="cb3-2"><a href="#cb3-2"></a> --no-cache\</span>
-<span id="cb3-3"><a href="#cb3-3"></a> --remote https://linker.bio\</span>
-<span id="cb3-4"><a href="#cb3-4"></a> hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419\</span>
-<span id="cb3-5"><a href="#cb3-5"></a> | preston dwc-stream\</span>
-<span id="cb3-6"><a href="#cb3-6"></a> --no-cache\</span>
-<span id="cb3-7"><a href="#cb3-7"></a> --remote https://linker.bio\</span>
-<span id="cb3-8"><a href="#cb3-8"></a> | jq -c &#39;{ &quot;src&quot;: .[&quot;http://www.w3.org/ns/prov#wasDerivedFrom&quot;], &quot;name&quot;: .[&quot;http://rs.tdwg.org/dwc/terms/scientificName&quot;] }&#39;\</span>
-<span id="cb3-9"><a href="#cb3-9"></a> | mlr --ijsonl --otsv cat\</span>
-<span id="cb3-10"><a href="#cb3-10"></a> | nomer append col\</span>
-<span id="cb3-11"><a href="#cb3-11"></a> | grep -v NONE\</span>
-<span id="cb3-12"><a href="#cb3-12"></a> | grep Curculionoidea\</span>
-<span id="cb3-13"><a href="#cb3-13"></a> | pv -l</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="cb8-1"><a href="#cb8-1"></a>preston cat\</span>
+<span id="cb8-2"><a href="#cb8-2"></a> --no-cache\</span>
+<span id="cb8-3"><a href="#cb8-3"></a> --remote https://linker.bio\</span>
+<span id="cb8-4"><a href="#cb8-4"></a> hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419\</span>
+<span id="cb8-5"><a href="#cb8-5"></a> | preston dwc-stream\</span>
+<span id="cb8-6"><a href="#cb8-6"></a> --no-cache\</span>
+<span id="cb8-7"><a href="#cb8-7"></a> --remote https://linker.bio\</span>
+<span id="cb8-8"><a href="#cb8-8"></a> | jq -c &#39;{ &quot;src&quot;: .[&quot;http://www.w3.org/ns/prov#wasDerivedFrom&quot;], &quot;name&quot;: .[&quot;http://rs.tdwg.org/dwc/terms/scientificName&quot;] }&#39;\</span>
+<span id="cb8-9"><a href="#cb8-9"></a> | mlr --ijsonl --otsv cat\</span>
+<span id="cb8-10"><a href="#cb8-10"></a> | nomer append col\</span>
+<span id="cb8-11"><a href="#cb8-11"></a> | grep -v NONE\</span>
+<span id="cb8-12"><a href="#cb8-12"></a> | grep Curculionoidea\</span>
+<span id="cb8-13"><a href="#cb8-13"></a> | pv -l</span></code></pre></div>
 <p>where lines 1-4 implement step 1., lines 5-7 implement step 2., lines
 8-9 implement step 3., line 10 implements step 4., and lines 11-13
 implement step 5.</p>
@@ -556,6 +617,9 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn9"><p>In other words, digital fingerprints are agnostic of
 location, technology, and … time.<a href="#fnref9" class="footnote-back"
 role="doc-backlink">↩︎</a></p></li>
+<li id="fn10"><p>Windows is supported too, but you’ll have to run
+Preston a little differently. See documentation for examples.<a
+href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </aside>
 </body>

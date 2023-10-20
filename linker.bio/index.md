@@ -87,6 +87,57 @@ or, to review an initial draft of **the Hash URI Specification by Ben Trask** -
 
 [https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1](https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1).
 
+## Building Your Own Bridge 
+
+So far, https://linker.bio appears to be a ["black box"](https://en.wikipedia.org/wiki/Black_box): you ask for some content by their fingerprint, and linker.bio attempts to retrieve that content. 
+
+But, what happens inside the box? 
+
+`linker.bio` is powered by [Preston](https://github.com/bio-guoda/preston). Preston builds a bridge from the content-verse (e.g., a digital fingerprint) to the content stored in physical locations. Preston is the little machine that responds when you ask the picture of the bunny using the URL `https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2`. And, if you know how to run a server program on your computer, you can run your own server that looks up that exact same picture. In other words, you can build your own bridge.
+
+For the tech savvy, you can run Preston in server mode on linux/mac ^[Windows is supported too, but you'll have to run Preston a little differently. See documentation for examples.] by executing the following in the terminal:
+
+~~~
+preston server --remote https://wikimedia.org
+~~~
+
+or, 
+
+~~~
+preston s --remote https://wikimedia.org
+~~~
+
+for short.
+
+On starting the server, you'll see some cryptic messages that end with 
+
+~~~
+[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@76a4d6c{HTTP/1.1, (http/1.1)}{localhost:8080}
+[main] INFO org.eclipse.jetty.server.Server - Started @561ms
+~~~
+
+This means that the Preston server is waiting for requests. 
+
+Now, you can visit `http://localhost:8080/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2` to retrieve the bunny picture. On receiving your question, Preston will try and ask https://wikimedia.org whether is has any content in their https://commons.wikimedia.org/ library with that digital fingerprint. If so, Preston will ask Wikimedia to send that content, and then, pass it to you. The next time you ask for the bunny picture, you'll receive the picture pretty fast, because Preston remembers the content associated to the digital fingerprint and doesn't have to ask https://wikimedia.org anymore.  
+
+In addition to Wikimedia Commons, Preston knows how to talk to https://zenodo.org, https://softwareheritage.org, https://dataone.org and ... other Preston servers!
+
+So, in the previous example, Preston talked directly to wikimedia.org . In the example below, your Preston server would talk to https://linker.bio instead, and https://linker.bio would relay the request:
+
+~~~
+preston s --remote https://linker.bio
+~~~
+
+You can even provide a list of "remotes". If a list is provided, Preston asks the provided location in order of appearance. With the example below, Preston would first ask linker.bio, then if linker.bio doesn't have it, it'll ask wikimedia.org.
+
+~~~
+preston s --remote https://linker.bio,https://wikimedia.org
+~~~
+
+So, with this you can create elaborate combinations of ways to ask for content. One example of such elaborate setup is a [content delivery network](https://en.wikipedia.org/wiki/Content_delivery_network) to facilitate reliable access to well-known content.
+
+If you'd like to learn more about how to run a Preston server, but don't know where to start, please send an email to [Jorrit](mailto:jhpoelen+preston@jhpoelen.nl) or open a [GitHub issue](https://github.com/bio-guoda/preston/issues/new). 
+
 ## A Use Case: Studying Pine Pests Caused by Weevils (Curculionoidea)
 
 Imagine studying a pine pest caused by weevils, plant eating beetles of super order Curculionoidea. In preparation for answering a research question, you may want to understand what is known about them, and some of their hosts pine trees. By combining large versioned corpora compiled using digital fingerprints, you can answer complex questions across disciplines. The examples below show how some related questions span digital collections made available through natural history collections, taxonomic literature, genetic records of plants, and biodiversity literature. 
