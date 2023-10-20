@@ -93,7 +93,7 @@ So far, https://linker.bio appears to be a ["black box"](https://en.wikipedia.or
 
 But, what happens inside the box? 
 
-`linker.bio` is powered by [Preston](https://github.com/bio-guoda/preston). Preston builds a bridge from the content-verse (e.g., a digital fingerprint) to the content stored in physical locations. Preston is the little machine that responds when you ask the picture of the bunny using the URL `https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2`. And, if you know how to run a server program on your computer, you can run your own server that looks up that exact same picture. In other words, you can build your own bridge.
+`linker.bio` is powered by [Preston](https://github.com/bio-guoda/preston). Preston builds a bridge from the content-verse (e.g., a digital fingerprint) to the content stored in physical locations. Preston is the little machine that responds when you ask for the picture of the bunny using the URL `https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2`. And, if you know how to run a program on your computer, you can run your own machine (or server) that looks up that bunny picture. In other words, with a little effort, you can build your own bridge without have to ask for permission or paying some kind of license fee^[Preston is open source software.].
 
 For the tech savvy, you can run Preston in server mode on linux/mac ^[Windows is supported too, but you'll have to run Preston a little differently. See documentation for examples.] by executing the following in the terminal:
 
