@@ -1,0 +1,9 @@
+[Unit]
+Description=Run Preston OpenAlex Tracker
+
+[Timer]
+OnCalendar=monthly
+RandomizedDelaySec=86400
+
+[Install]
+WantedBy= multi-user.target

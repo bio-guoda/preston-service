@@ -1,0 +1,8 @@
+[Unit]
+Description=Tracking OpenAlex Snapshots
+
+[Service]
+Type=oneshot
+User=preston
+WorkingDirectory=/var/lib/preston/archives/openalex
+ExecStart=/var/lib/preston/track-openalex.sh 
