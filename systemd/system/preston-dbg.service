@@ -1,8 +1,0 @@
-[Unit]
-Description=Tracking Denver Botanical Garden Image Corpus
-
-[Service]
-Type=oneshot
-User=preston
-WorkingDirectory=/var/lib/preston/archives/dbg
-ExecStart=/var/lib/preston/preston-track-dbg.sh 
