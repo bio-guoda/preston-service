@@ -151,6 +151,7 @@ By using nimble, yet powerful, data processing tools like Preston and Nomer to m
   Biodiversity Heritage Library | 2023-09-01 | ~300GB | [hash://sha256/9cc132...](https://linker.bio/hash://sha256/9cc1327e220df2c215b716a8ab07fcd9e3bffc1f6a808dbb6957f40e3df8c94c) 
   GenBank PLN Division | 2023-06-28 | ~250GB | [hash://sha256/efa589...](https://linker.bio/hash://sha256/efa589e9927c8c10ac81867220982a3eb732c322ddebca6db2a9147578218ff5)
   Nomer Corpus of Taxonomic Resources | 2023-09-08 | 10GB | [hash://sha256/12051b...](https://linker.bio/hash://sha256/12051b8aa59930d6561a3ed46b7cf3f67a31a98445a457d78894f6b8a8e81641)
+  [OpenAlex](https://openalex.org)^[[OpenAlex](https://openalex.org) is an open access index of scientific works, similar to Web of Science and Google Scholar but then without paywalls or walled gardens.] | 2023-11-01 | ~300GB | [hash://sha256/f19011...](https://linker.bio/hash://sha256/f19011fe72234cb22f4326fcc95752647a11628cdaa0d24f7d55033b06cb5653)^[See [https://gist.github.com/jhpoelen/8b263027ff13c7b788fa24866ce73bfb](https://gist.github.com/jhpoelen/8b263027ff13c7b788fa24866ce73bfb) for example usage of a versioned copy of the OpenAlex index.] 
 
 To prepare for addressing more complex research question, the following basic question may need answering:
 
