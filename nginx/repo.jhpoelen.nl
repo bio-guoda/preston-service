@@ -22,7 +22,7 @@
 # to sites-enabled/ to enable it.
 #
 
-proxy_cache_path /var/cache/preston levels=1:2 keys_zone=STATIC:10m max_size=256g use_temp_path=off;
+proxy_cache_path /var/cache/preston levels=1:2 keys_zone=STATIC:10m max_size=64g inactive=13w use_temp_path=off;
 
 server {
 
