@@ -1,0 +1,13 @@
+SELECT ?archiveUrl ?seenAt ?contentId  
+WHERE {
+  graph ?g1 {
+   <urn:uuid:4fa7b334-ce0d-4e88-aaae-2e0c138d049e> <http://www.w3.org/ns/prov#hadMember> ?archiveUrl . 
+   ?archiveUrl <http://purl.org/dc/elements/1.1/format> "application/dwca" .
+  }
+  graph ?activity {
+    ?activity <http://www.w3.org/ns/prov#used> ?archiveUrl .
+    ?activity <http://www.w3.org/ns/prov#generatedAtTime> ?seenAt .
+    ?contentId <http://www.w3.org/ns/prov#qualifiedGeneration> ?activity .  
+    }
+} limit 10
+

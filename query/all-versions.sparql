@@ -1,0 +1,8 @@
+
+SELECT ?s ?p ?o
+WHERE {
+  GRAPH ?g { 
+    ?s <http://purl.org/pav/hasVersion> ?o .
+  }
+}
+
