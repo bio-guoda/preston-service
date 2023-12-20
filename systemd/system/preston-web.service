@@ -5,7 +5,7 @@ Description=Web interface for Preston.
 Type=simple
 User=preston
 WorkingDirectory=/var/lib/preston/
-ExecStart=/usr/bin/socat TCP4-LISTEN:8080,reuseaddr,fork SYSTEM:"./preston-web-service-with-remotes.sh"
+ExecStart=./bin/oxigraph serve-read-only --location /var/cache/oxigraph/gib
 Restart=always
 
 [Install]

@@ -46,6 +46,14 @@ server {
 	return 302 https://www.w3.org/TR/rdf11-concepts/#section-skolemization;
     }
 
+   location ~ "/10\.[0-9]+\/.*" {
+        limit_except GET {
+          deny all;
+        }
+        proxy_pass http://localhost:7878;
+    }
+
+
     # possibly a sha256 hash in hex notation
     location ~ "(hash://sha256/){0,1}([0-9a-f]{64})" {
         limit_except GET OPTIONS {
