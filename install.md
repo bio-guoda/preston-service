@@ -203,6 +203,8 @@ sudo ln -s /var/lib/preston/systemd/system/preston-server-md5.service /lib/syste
 sudo ln -s /var/lib/preston/systemd/system/preston-server-sha256.service /lib/systemd/system/preston-server-sha256.service
 sudo ln -s /var/lib/preston/systemd/system/preston-server-sha1.service /lib/systemd/system/preston-server-sha1.service
 
+sudo ln -s /var/lib/preston/systemd/system/preston-web.service /lib/systemd/system/preston-web.service
+
 sudo systemctl daemon-reload
 
 sudo systemctl start preston-server-md5.service
@@ -214,6 +216,8 @@ sudo systemctl enable preston-server-sha256.service
 sudo systemctl start preston-server-sha1.service
 sudo systemctl enable preston-server-sha1.service
 
+sudo systemctl start preston-web.service
+sudo systemctl enable preston-web.service
 ```
 
 ----
