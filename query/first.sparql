@@ -1,0 +1,5 @@
+#+ endpoint: https://lod.globalbioticinteractions.org/globi
+
+SELECT ?subj ?pred ?obj WHERE {
+  ?subj ?pred ?obj .
+} LIMIT 1
