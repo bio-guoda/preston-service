@@ -46,7 +46,7 @@ server {
 	return 302 https://www.w3.org/TR/rdf11-concepts/#section-skolemization;
     }
 
-   location ~ "/10\.[0-9]+\/.*" {
+   location ~ "/doi" {
         limit_except GET {
           deny all;
         }
