@@ -3,7 +3,7 @@
 #+   - doi: https://doi.org/10.15468/aomfnb
 
 SELECT DISTINCT
-  ?_doi_iri
+  ?doi
   ?uuid 
   ?contentId
   ?archiveUrl 
@@ -11,7 +11,7 @@ SELECT DISTINCT
 WHERE  
 { 
 {
-    SELECT ?contentId ?seenAt ?archiveUrl ?uuid ?_doi_iri
+    SELECT ?contentId ?seenAt ?archiveUrl ?uuid ?doi
 WHERE {
   graph ?g1 {
    ?uuid <http://www.w3.org/ns/prov#hadMember> ?archiveUrl .
@@ -28,7 +28,7 @@ WHERE {
 } 
 UNION
 {
-    SELECT ?contentId ?seenAt ?archiveUrl ?uuid ?_doi_iri
+    SELECT ?contentId ?seenAt ?archiveUrl ?uuid ?doi
 WHERE {
    ?uuid <http://www.w3.org/ns/prov#hadMember> ?archiveUrl . 
    ?uuid <http://www.w3.org/1999/02/22-rdf-syntax-ns#seeAlso> ?_doi_iri .
