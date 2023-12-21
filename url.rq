@@ -8,9 +8,12 @@ SELECT DISTINCT
   ?contentId
   ?archiveUrl 
   ?seenAt
+  ?provenanceId
 WHERE  
 {
     BIND(?_url_iri as ?archiveUrl) 
+    BIND(<hash://sha256/5b7fa37bf8b64e7c935c4ff3389e36f8dd162f0705410dd719fd089e1ea253cd> as ?provenanceId)
+
 {
     SELECT ?contentId ?seenAt ?uuid ?doi
 WHERE {
