@@ -58,7 +58,19 @@ server {
 
    # redirect possible http[s] url requests
    location ~ "^/http[s]{0,1}://[^ ]+" {
-        return 302 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
+        limit_except GET OPTIONS {
+           deny all;
+        }
+
+        add_header 'Access-Control-Allow-Origin' '*' always;
+        add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS' always;
+        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+
+        proxy_pass http://localhost:8082;
+        proxy_cache STATIC;
+        proxy_cache_valid 200 5y;
+        add_header 'X-Proxy-Cache' $upstream_cache_status;
    } 
 
     # possibly a sha256 hash in hex notation
