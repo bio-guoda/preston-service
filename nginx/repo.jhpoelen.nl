@@ -48,17 +48,17 @@ server {
 
    # redirect possible doi requests
    location ~ "^/(10[.])([^/]+)/(.*)$" {
-        return 300 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
+        return 302 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
     }
 
    # redirect possible uuid requests
    location ~ "^/urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" {
-        return 300 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
+        return 302 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
    }
 
    # redirect possible http[s] url requests
    location ~ "^/http[s]{0,1}://[^ ]+" {
-        return 300 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
+        return 302 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
    } 
 
     # possibly a sha256 hash in hex notation
