@@ -47,9 +47,6 @@ server {
     }
 
    location ~ "/doi" {
-        limit_except GET {
-          deny all;
-        }
         proxy_pass http://localhost:7878;
     }
 
