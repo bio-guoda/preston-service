@@ -4,16 +4,14 @@
 
 SELECT DISTINCT
   ?_doi_iri
-  ?query
   ?uuid 
   ?contentId
   ?archiveUrl 
   ?seenAt
 WHERE  
 { 
-   BIND(<https://doi.org/10.15468/trkfbu> as ?query)
 {
-    SELECT ?contentId ?seenAt ?archiveUrl ?uuid
+    SELECT ?contentId ?seenAt ?archiveUrl ?uuid ?_doi_iri
 WHERE {
   graph ?g1 {
    ?uuid <http://www.w3.org/ns/prov#hadMember> ?archiveUrl .
@@ -30,7 +28,7 @@ WHERE {
 } 
 UNION
 {
-    SELECT ?contentId ?seenAt ?archiveUrl ?uuid
+    SELECT ?contentId ?seenAt ?archiveUrl ?uuid ?_doi_iri
 WHERE {
    ?uuid <http://www.w3.org/ns/prov#hadMember> ?archiveUrl . 
    ?uuid <http://www.w3.org/1999/02/22-rdf-syntax-ns#seeAlso> ?_doi_iri .
