@@ -9,9 +9,10 @@ SELECT DISTINCT
   ?archiveUrl 
   ?seenAt
 WHERE  
-{ 
 {
-    SELECT ?contentId ?seenAt ?archiveUrl ?uuid ?doi
+    BIND(?_doi_iri as ?doi) 
+{
+    SELECT ?contentId ?seenAt ?archiveUrl ?uuid
 WHERE {
   graph ?g1 {
    ?uuid <http://www.w3.org/ns/prov#hadMember> ?archiveUrl .
@@ -28,7 +29,7 @@ WHERE {
 } 
 UNION
 {
-    SELECT ?contentId ?seenAt ?archiveUrl ?uuid ?doi
+    SELECT ?contentId ?seenAt ?archiveUrl ?uuid
 WHERE {
    ?uuid <http://www.w3.org/ns/prov#hadMember> ?archiveUrl . 
    ?uuid <http://www.w3.org/1999/02/22-rdf-syntax-ns#seeAlso> ?_doi_iri .
