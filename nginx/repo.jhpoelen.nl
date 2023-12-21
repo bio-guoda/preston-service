@@ -52,7 +52,7 @@ server {
     }
 
    # redirect possible uuid requests
-   location ~ "^urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" {
+   location ~ "^/urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" {
         return 300 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
    }
 
