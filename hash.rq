@@ -14,16 +14,16 @@ WHERE
 {
     SELECT ?doi ?seenAt ?archiveUrl ?uuid
 WHERE {
+  graph ?activity {
+    ?_hash_iri <http://www.w3.org/ns/prov#qualifiedGeneration> ?activity .  
+    ?activity <http://www.w3.org/ns/prov#used> ?archiveUrl .
+    ?activity <http://www.w3.org/ns/prov#generatedAtTime> ?seenAt .
+  }
   graph ?g1 {
    ?uuid <http://www.w3.org/ns/prov#hadMember> ?archiveUrl .
    ?uuid <http://www.w3.org/1999/02/22-rdf-syntax-ns#seeAlso> ?doi .
    ?archiveUrl <http://purl.org/dc/elements/1.1/format> "application/dwca" .
   }
-  graph ?activity {
-    ?activity <http://www.w3.org/ns/prov#used> ?archiveUrl .
-    ?activity <http://www.w3.org/ns/prov#generatedAtTime> ?seenAt .
-    ?_hash_iri <http://www.w3.org/ns/prov#qualifiedGeneration> ?activity .  
-    }
 
 }
 } 
@@ -31,12 +31,12 @@ UNION
 {
     SELECT ?doi ?seenAt ?archiveUrl ?uuid
 WHERE {
+   ?_hash_iri <http://www.w3.org/ns/prov#qualifiedGeneration> ?activity . 
+   ?activity <http://www.w3.org/ns/prov#used> ?archiveUrl .
+   ?activity <http://www.w3.org/ns/prov#generatedAtTime> ?seenAt .
    ?uuid <http://www.w3.org/ns/prov#hadMember> ?archiveUrl . 
    ?uuid <http://www.w3.org/1999/02/22-rdf-syntax-ns#seeAlso> ?doi .
    ?archiveUrl <http://purl.org/dc/elements/1.1/format> "application/dwca" .
-    ?activity <http://www.w3.org/ns/prov#used> ?archiveUrl .
-    ?activity <http://www.w3.org/ns/prov#generatedAtTime> ?seenAt .
-    ?_hash_iri <http://www.w3.org/ns/prov#qualifiedGeneration> ?activity . 
 }
 } 
 } ORDER BY DESC(?seenAt)
