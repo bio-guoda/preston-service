@@ -5,7 +5,7 @@ Description=Web interface for Preston.
 Type=simple
 User=preston
 WorkingDirectory=/var/lib/preston/
-ExecStart=./bin/oxigraph serve-read-only --location /var/cache/oxigraph/gib
+ExecStart=/var/lib/preston/bin/oxigraph serve-read-only --location /var/cache/oxigraph/gib
 Restart=always
 
 [Install]
