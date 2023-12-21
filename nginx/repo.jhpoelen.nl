@@ -46,10 +46,20 @@ server {
 	return 302 https://www.w3.org/TR/rdf11-concepts/#section-skolemization;
     }
 
-   location ~ "/query/.*" {
-        proxy_pass http://localhost:7878;
+   # redirect possible doi requests
+   location ~ "(10[.])([^/]+)(.*)" {
+        return 300 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
     }
 
+   # redirect possible uuid requests
+   location ~ "urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}" {
+        return 300 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
+   }
+
+   # redirect possible http[s] url requests
+   location ~ "http[s]{0,1}://.*" {
+        return 300 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
+   } 
 
     # possibly a sha256 hash in hex notation
     location ~ "(hash://sha256/){0,1}([0-9a-f]{64})" {
