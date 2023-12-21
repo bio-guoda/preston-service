@@ -47,7 +47,7 @@ server {
     }
 
    # redirect possible doi requests
-   location ~ "(10[.])([^/]+)(.*)" {
+   location ~ "^/(10[.])([^ /]+)/([^ ]+)^" {
         return 300 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
     }
 
@@ -57,7 +57,7 @@ server {
    }
 
    # redirect possible http[s] url requests
-   location ~ "http[s]{0,1}://.*" {
+   location ~ "^/http[s]{0,1}://[^ ]+" {
         return 300 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
    } 
 
