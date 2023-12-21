@@ -1,6 +1,6 @@
 #+ endpoint: https://lod.globalbioticinteractions.org/query
 #+ defaults:
-#+   - uuid: 4fa7b334-ce0d-4e88-aaae-2e0c138d049e
+#+   - uuid: urn:uuid:4fa7b334-ce0d-4e88-aaae-2e0c138d049e
 
 SELECT DISTINCT
   ?doi
