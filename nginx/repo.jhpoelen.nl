@@ -47,7 +47,6 @@ server {
     }
 
    location ~ "/query/.*" {
-        rewrite "(/query/)(.*)$" $2 break;
         proxy_pass http://localhost:7878;
     }
 
