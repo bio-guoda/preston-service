@@ -46,7 +46,8 @@ server {
 	return 302 https://www.w3.org/TR/rdf11-concepts/#section-skolemization;
     }
 
-   location ~ "/doi" {
+   location ~ "/query/.*" {
+        rewrite "(/query/)(.*)$" $2 break;
         proxy_pass http://localhost:7878;
     }
 
