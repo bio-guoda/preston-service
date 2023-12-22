@@ -48,12 +48,34 @@ server {
 
    # redirect possible doi requests
    location ~ "^/(10[.])([^/]+)/(.*)$" {
-        return 302 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
+        limit_except GET OPTIONS {
+           deny all;
+        }
+        add_header 'Access-Control-Allow-Origin' '*' always;
+        add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS' always;
+        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+
+        proxy_pass http://localhost:8084;
+        proxy_cache STATIC;
+        proxy_cache_valid 200 5y;
+        add_header 'X-Proxy-Cache' $upstream_cache_status;
     }
 
    # redirect possible uuid requests
    location ~ "^/urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" {
-        return 302 https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/300;
+        limit_except GET OPTIONS {
+           deny all;
+        }
+        add_header 'Access-Control-Allow-Origin' '*' always;
+        add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS' always;
+        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+
+        proxy_pass http://localhost:8084;
+        proxy_cache STATIC;
+        proxy_cache_valid 200 5y;
+        add_header 'X-Proxy-Cache' $upstream_cache_status;
    }
 
    # redirect possible http[s] url requests
@@ -67,7 +89,7 @@ server {
         add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
         add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
-        proxy_pass http://localhost:8082;
+        proxy_pass http://localhost:8084;
         proxy_cache STATIC;
         proxy_cache_valid 200 5y;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
