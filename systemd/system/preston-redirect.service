@@ -1,0 +1,12 @@
+[Unit]
+Description=Preston Redirection Server
+
+[Service]
+Type=simple
+User=preston
+Environment=PRESTON_DIR=/tmp/preston-redirect
+ExecStart=/usr/local/bin/preston redirect --port 7878 --host localhost --registry http://localhost:7878/query --repository https://linker.bio 
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
