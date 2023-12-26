@@ -47,7 +47,7 @@ server {
     }
 
    # redirect possible doi requests
-   location ~ "^/(10[.])([^/]+)/(.*)$" {
+   location ~ "^/(badge/){0,1}(10[.])([^/]+)/(.*)$" {
         limit_except GET OPTIONS {
            deny all;
         }
@@ -63,7 +63,7 @@ server {
     }
 
    # redirect possible uuid requests
-   location ~ "^/urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" {
+   location ~ "^/(badge/){0,1}urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" {
         limit_except GET OPTIONS {
            deny all;
         }
@@ -79,7 +79,7 @@ server {
    }
 
    # redirect possible http[s] url requests
-   location ~ "^/http[s]{0,1}://[^ ]+" {
+   location ~ "^/(badge/){0,1}http[s]{0,1}://[^ ]+" {
         limit_except GET OPTIONS {
            deny all;
         }
