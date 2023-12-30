@@ -74,7 +74,7 @@ server {
         add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
         proxy_pass http://localhost:8084;
-        proxy_cache CONTENT;
+        proxy_cache INDEX;
         proxy_cache_valid 200 5y;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
    }
@@ -91,7 +91,7 @@ server {
         add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
         proxy_pass http://localhost:8084;
-        proxy_cache CONTENT;
+        proxy_cache INDEX;
         proxy_cache_valid 200 5y;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
    } 
