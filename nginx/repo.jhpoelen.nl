@@ -59,7 +59,7 @@ server {
 
         proxy_pass http://localhost:8084;
         proxy_cache INDEX;
-        proxy_cache_valid 200 5y;
+        proxy_cache_valid 200 302 2w;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
     }
 
@@ -75,7 +75,7 @@ server {
 
         proxy_pass http://localhost:8084;
         proxy_cache INDEX;
-        proxy_cache_valid 200 5y;
+        proxy_cache_valid 200 302 2w;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
    }
 
@@ -92,7 +92,7 @@ server {
 
         proxy_pass http://localhost:8084;
         proxy_cache INDEX;
-        proxy_cache_valid 200 5y;
+        proxy_cache_valid 200 302 2w;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
    } 
 
