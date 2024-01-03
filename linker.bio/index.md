@@ -2,7 +2,7 @@
 title: Unleashing Digital Knowledge into the Future
 subtitle: (a working document)
 author: Jorrit H. Poelen
-date: 2023-10-11
+date: 2023-10-11/2024-01-03
 ---
 
 [edit this page](https://github.com/bio-guoda/preston-service/edit/main/linker.bio/index.md) / [share suggestions](https://github.com/bio-guoda/preston/issues/new)
@@ -216,15 +216,15 @@ Q4. How many genetic sequences are available for Pinus taeda (loblolly pine) are
 
 As a way to promote the mobility and usability of digital data, the FAIR principles have gained traction in the science community - in order for data to be FAIR - they have to be "Findable", "Accessible", "Interoperable", and "Reusable." But what *exactly* does it mean to be FAIR? Who determines whether data is FAIR? 
 
-Thousands of Darwin Core Archives are published by Natural History Collections (e.g., the Field Museum, the Museum of Southwestern Biology), Community Science Intiatives (e.g., iNaturalist, eBird), and Taxonomic Authorities (e.g., Integrated Taxonomic Information System (ITIS), World Register for Marine Species (WoRMS)). To increase their reach, many of these archives are registered with registries such as Global Biodiversity Information Facility (https://gbif.org), Integrated Digitized Biocollections (iDigBio) or Ocean Biodiversity Information System (OBIS).
+Thousands of Darwin Core Archives are published by Natural History Collections (e.g., the Field Museum, the Museum of Southwestern Biology), Community Science Intiatives (e.g., iNaturalist, eBird), and Taxonomic Authorities (e.g., Integrated Taxonomic Information System (ITIS), World Register for Marine Species (WoRMS)). To increase their reach, many of these archives are registered with the Global Biodiversity Information Facility (https://gbif.org), Integrated Digitized Biocollections (iDigBio) or Ocean Biodiversity Information System (OBIS).
 
-Since 2018/2019, Preston processes have been tracking registered datasets in GBIF, iDigBio, and OBIS. Now, many years later, a wealth of data is available on which archives were registered with networks including, but not limited to, GBIF, iDigBio and OBIS. By sampling monthly, a detailed temporal record is kept on the provenance and content of these archives. So, if an archive has left a trace in these registry records, the origanization that published the archive can say that their data is FAIR. They were fair because, the Preston tracking process was able to *F*ind the archive in a registry, *A*ccess their associated content, show their *I*nterability through their adoption on a recognized standards for biodiversity data (TDWG's Darwin Core Archive), and was able to *R*euse the archive by keepinging versioned copies as proof of registration. 
+Since 2018/2019^[Poelen, J. H. (2023). A biodiversity dataset graph: GBIF, iDigBio, BioCASe hash://sha256/450deb8ed9092ac9b2f0f31d3dcf4e2b9be003c460df63dd6463d252bff37b55 hash://md5/898a9c02bedccaea5434ee4c6d64b7a2 (0.0.4) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7651831], Preston processes have been tracking registered datasets in GBIF, iDigBio, and OBIS. Now, many years later, a wealth of data is available on which archives were registered with networks including, but not limited to, GBIF, iDigBio and OBIS. By sampling monthly, a detailed temporal record is kept on the origin and content of these archives. So, if an archive has left a trace in these registry records, the origanization that published the archive can say that their data is FAIR. They are FAIR because, the Preston tracking process was able to *F*ind the archive in a registry, *A*ccess their associated content, show their *I*nterability through their adoption on a recognized standards for biodiversity data (TDWG's Darwin Core Archive ^["Darwin Core is a standard [...] intended to facilitate the sharing of information about biological diversity [...]" - https://dwc.tdwg.org/ accessed at 2024-01-03] ), and was able to *R*euse the archive by keepinging versioned copies as proof of registration. 
 
 To make it easy to see whether an archive is FAIR according to the methods describe above, you can get your FAIR assessment badge using:
 
 https://linker.bio/badge/[your archive DOI/UUID/URL]
 
-For instance, the University of Santa Barbara's Invertebrate Zoology Collection has registered the location of their archive (i.e., `https://ecdysis.org/content/dwca/UCSB-IZC_DwC-A.zip`) with iDigBio *and* GBIF. iDigBio assigned the UCSB-IZC the recordset uuid `urn:uuid:65007e62-740c-4302-ba20-260fe68da291`, GBIF assigned both a DOI (i.e., '10.15468/w6hvhv') and UUID (i.e., `urn:uuid:d6097f75-f99e-4c2a-b8a5-b0fc213ecbd0`).
+For instance, the University of Santa Barbara's Invertebrate Zoology Collection (UCSB-IZC) has registered the location of their archive (i.e., `https://ecdysis.org/content/dwca/UCSB-IZC_DwC-A.zip`) with iDigBio *and* GBIF. iDigBio assigned the UCSB-IZC the recordset uuid `urn:uuid:65007e62-740c-4302-ba20-260fe68da291`, GBIF assigned both a DOI (i.e., '10.15468/w6hvhv') and UUID (i.e., `urn:uuid:d6097f75-f99e-4c2a-b8a5-b0fc213ecbd0`).
 
 Now, the FAIRness of the UCSB-IZC archives can be visualized by visiting one of the following location a web browser: 
 
@@ -236,7 +236,10 @@ Now, the FAIRness of the UCSB-IZC archives can be visualized by visiting one of 
 
 4. https://linker.bio/badge/urn:uuid:d6097f75-f99e-4c2a-b8a5-b0fc213ecbd0 (by GBIF Dataset UUID)
 
+
 If an archive reference (by location, uuid, doi) is associated with a tracked darwin core archive, a download badge is generated for a recently tracked versioned copy of the FAIR archive. If an archive reference could not be resolved in the corpus of tracked biodiversity archives, a 404 unknown archive badge is generated. With this, an independent FAIR assessment badge service is available: the service is independent of the publisher (UCSB-IZC) or registries (iDigBio, GBIF). These badges may be used to institutions to show off their commitment to FAIRness, or by registries to show that they contribute to the findability to existing data archives. 
+
+![An example of a FAIR badge for UCSB-IZC rendered by https://linker.bio/badge/10.15468/w6hvhv](https://linker.bio/badge/10.15468/w6hvhv)
 
 Note that the tracked corpus itself can be cloned, copied, and verified. This means that others can implement FAIR assessment services (or any other kind of service using the biodiversity data archives) on the verifiably *exact* same tracked corpus as the one that https://linker.bio uses.
 
