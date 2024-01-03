@@ -59,7 +59,19 @@ Through digital fingerprints, linker.bio provides a bridge to access billions of
 
 The beauty of digital fingerprints is that in fifty years from now, you may use that same fingerprint to find that information, regardless where it may be located, or how it is stored, or transmitted ^[In other words, digital fingerprints are agnostic of location, technology, and ... time.].
 
-## Requesting Content
+## Unleashing Digital Knowledge Into The Future
+
+[Cassette tapes](https://en.wikipedia.org/wiki/Cassette_tape) are still around since their introduction in the 1960s, but their use has dwindled over time. Similarly, the Internet is expected to give way for some other way to exchange content. 
+
+Digital fingerprints are independent of content communication protocols or digital storage media popular today. This is why these fingerprints can refer to digital knowledge inside *and beyond* the Internet and into the future. So, by adopting fingerprints as digital content identifiers, we can help carry our digital knowledge into the future.
+
+## Acknowledgments
+
+Michael Elliott, José Fortes and [Cypress Hansen](https://www.cypresswritesscience.com/) provided comments to help improve a description of todays internet and the benefits of the content-verse.
+
+# Appendix 
+
+## Use Case 1: Requesting Content by Their Fingerprint
 
 https://linker.bio/ helps to request information, wherever it may be, using a notation like:
 
@@ -69,7 +81,7 @@ https://linker.bio/[fingerprint][.extension]
 
 The extension is optional. 
 
-## Exploring Examples
+### Exploring Content Request Examples
 
 For instance, to get a copy of a **scientific paper**, you can ask for:
 
@@ -87,11 +99,11 @@ or, to review an initial draft of **the Hash URI Specification by Ben Trask** -
 
 [https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1](https://linker.bio/hash://sha256/3fee21854fb6d81573b166c833db2771b21f0c77daa3095aab542764d89c94c1).
 
-## Building Your Own Bridge 
+## Use Case 2: Retrieving a Bunny Picture Using Your Own "linker.bio"
 
-So far, https://linker.bio appears to be a ["black box"](https://en.wikipedia.org/wiki/Black_box): you ask for some content by their fingerprint, and linker.bio attempts to retrieve that content. 
+So far, https://linker.bio may appears to be a ["black box"](https://en.wikipedia.org/wiki/Black_box): you ask for some content by their fingerprint, and linker.bio attempts to retrieve that content. 
 
-But, what happens inside the box? 
+Now, you may wonder: how does "linker.bio" work? And, how could I build my own "linker.bio"? 
 
 `linker.bio` is powered by [Preston](https://github.com/bio-guoda/preston). Preston builds a bridge from the content-verse (e.g., a digital fingerprint) to the content stored in physical locations. Preston is the little machine that responds when you ask for the picture of the bunny using the URL `https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2`. And, if you know how to run a program on your computer, you can run your own machine (or server) that looks up that bunny picture. In other words, with a little effort, you can build your own bridge without have to ask for permission or paying some kind of license fee^[Preston is open source software.].
 
@@ -142,13 +154,7 @@ For more information and background, see:
 
 Elliott, M.J., Poelen, J.H. & Fortes, J.A.B. Signing data citations enables data verification and citation persistence. <em>Sci Data</em> 10, 419 (2023). [https://doi.org/10.1038/s41597-023-02230-y](https://doi.org/10.1038/s41597-023-02230-y) [hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d](https://linker.bio/hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d.pdf)
 
-## Acknowledgments
-
-Michael Elliott, José Fortes and [Cypress Hansen](https://www.cypresswritesscience.com/) provided comments to help improve a description of todays internet and the benefits of the content-verse.
-
-# Appendix 
-
-## Use Case 1: Studying Pine Pests Caused by Weevils (Curculionoidea)
+## Use Case 3: Studying Pine Pests Caused by Weevils (Curculionoidea)
 
 Imagine studying a pine pest caused by weevils, plant eating beetles of super order Curculionoidea. In preparation for answering a research question, you may want to understand what is known about them, and some of their hosts pine trees. By combining large versioned corpora compiled using digital fingerprints, you can answer complex questions across disciplines. The examples below show how some related questions span digital collections made available through natural history collections, taxonomic literature, genetic records of plants, and biodiversity literature. 
 
