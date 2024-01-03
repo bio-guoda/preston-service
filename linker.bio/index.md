@@ -214,7 +214,7 @@ Q4. How many genetic sequences are available for Pinus taeda (loblolly pine) are
 
 ## Use Case 4: Assessing FAIRness of Biodiversity Data
 
-As a way to promote the mobility and usability of digital data, the FAIR principles have gained traction in the science community - in order for data to be FAIR - they have to be "Findable", "Accessible", "Interoperable", and "Reusable." But what *exactly* does it mean to be FAIR? Who determines whether data is FAIR? 
+As a way to promote the mobility and usability of digital data, the FAIR principles ^[Wilkinson, Mark D., Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, et al. 2016. “The FAIR Guiding Principles for Scientific Data Management and Stewardship.” Scientific Data 3 (1). https://doi.org/10.1038/sdata.2016.18.] have gained traction in the science community - in order for data to be FAIR - they have to be "Findable", "Accessible", "Interoperable", and "Reusable." But what *exactly* does it mean to be FAIR? Who determines whether data is FAIR? 
 
 Thousands of Darwin Core Archives are published by Natural History Collections (e.g., the Field Museum, the Museum of Southwestern Biology), Community Science Intiatives (e.g., iNaturalist, eBird), and Taxonomic Authorities (e.g., Integrated Taxonomic Information System (ITIS), World Register for Marine Species (WoRMS)). To increase their reach, many of these archives are registered with the Global Biodiversity Information Facility (https://gbif.org), Integrated Digitized Biocollections (iDigBio) or Ocean Biodiversity Information System (OBIS).
 
@@ -242,5 +242,9 @@ If an archive reference (by location, uuid, doi) is associated with a tracked da
 ![An example of a FAIR badge for UCSB-IZC rendered by https://linker.bio/badge/10.15468/w6hvhv](https://linker.bio/badge/10.15468/w6hvhv)
 
 Note that the tracked corpus itself can be cloned, copied, and verified. This means that others can implement FAIR assessment services (or any other kind of service using the biodiversity data archives) on the verifiably *exact* same tracked corpus as the one that https://linker.bio uses.
+
+If you'd like to learn more about how this service works, please read through [the history of the feature](https://github.com/bio-guoda/preston/issues/199) or contact the author of this document. 
+
+Please note that this FAIR assessment feature was heavily influenced by the WorldFAIR project report by Trekels et al. 2023 ^[Trekels, Maarten, Debora Pignatari Drucker, José Augusto Salim, Jeff Ollerton, Jorrit Poelen, Filipi Miranda Soares, Max Rünzel, Muo Kasina, Quentin Groom, and Mariano Devoto. 2023. “WorldFAIR Project (D10.1) Agriculture-related pollinator data standards use cases report.” Zenodo. https://doi.org/10.5281/zenodo.8176978.].
 
 
