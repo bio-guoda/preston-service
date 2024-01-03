@@ -33,7 +33,7 @@ On the internet, we've learned to say:
 
 > "I'd like to get the latest content from this web address."
 
-, and we *trust* that the retrieved content is what we asked for.
+, and *trust* that the retrieved content is what we asked for.
 
 This may work well for a current news website or an internet search engine.
 
@@ -43,7 +43,7 @@ However, for retrieving specific content, like a newspaper article or research p
 
 , and *verify* that the retrieved content is *exactly* what we asked for.
 
-In using digital fingerprints to refer to content, the location, and storage medium, of the content becomes secondary. In other words, *digital fingerprints help preserve references to digital content to a future beyond the internet*.
+In asking for content using their unique digital fingerprint, the current Internet location of the content becomes secondary. More importantly, we can use digital fingerprints to refer to content regardless of the digital communication medium that happens to be in fashion now. In other words, *digital fingerprints help preserve references to digital content to a future (or past!) beyond the internet*.
 
 ## The Content-Verse ^[Probably need a better term for this, because of existing uses elsewhere.]
 
@@ -138,7 +138,17 @@ So, with this you can create elaborate combinations of ways to ask for content. 
 
 If you'd like to learn more about how to run a Preston server, but don't know where to start, please send an email to [Jorrit](mailto:jhpoelen+preston@jhpoelen.nl) or open a [GitHub issue](https://github.com/bio-guoda/preston/issues/new). 
 
-## A Use Case: Studying Pine Pests Caused by Weevils (Curculionoidea)
+For more information and background, see: 
+
+Elliott, M.J., Poelen, J.H. & Fortes, J.A.B. Signing data citations enables data verification and citation persistence. <em>Sci Data</em> 10, 419 (2023). [https://doi.org/10.1038/s41597-023-02230-y](https://doi.org/10.1038/s41597-023-02230-y) [hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d](https://linker.bio/hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d.pdf)
+
+## Acknowledgments
+
+Michael Elliott, José Fortes and [Cypress Hansen](https://www.cypresswritesscience.com/) provided comments to help improve a description of todays internet and the benefits of the content-verse.
+
+# Appendix 
+
+## Use Case 1: Studying Pine Pests Caused by Weevils (Curculionoidea)
 
 Imagine studying a pine pest caused by weevils, plant eating beetles of super order Curculionoidea. In preparation for answering a research question, you may want to understand what is known about them, and some of their hosts pine trees. By combining large versioned corpora compiled using digital fingerprints, you can answer complex questions across disciplines. The examples below show how some related questions span digital collections made available through natural history collections, taxonomic literature, genetic records of plants, and biodiversity literature. 
 
@@ -160,10 +170,10 @@ Q1. How many specimen of Weevils (plant eating beetles of super order Curculiono
 The following steps can help towards answering Q1.
 
 ~~~ 
-step 1. list GIB corpus content at version a755...
+step 1. list GIB corpus content at version hash://sha256/a755...
 step 2. print all related biodiversity records
 step 3. for each record, select origin and scientific name
-step 4. align names with Catalogue of Life as included in Nomer Corpus version 1205...
+step 4. align names with Catalogue of Life as included in Nomer Corpus version hash://sha256/1205...
 step 5. count only aligned records that mention "Curculionoidea"
 ~~~
 
@@ -195,11 +205,3 @@ Q2. How many distinct species of Weevils, or plant eating beetles of the superfa
 
 Q3. How time do species names of Weevils (plant eating beetles of the superfamily Curculionoidea) occur in the a copy of transcribed texts made available through the Biodiversity Heritage Library?
 Q4. How many genetic sequences are available for Pinus taeda (loblolly pine) are available through GenBank?
-
-For more information and background, see: 
-
-Elliott, M.J., Poelen, J.H. & Fortes, J.A.B. Signing data citations enables data verification and citation persistence. <em>Sci Data</em> 10, 419 (2023). [https://doi.org/10.1038/s41597-023-02230-y](https://doi.org/10.1038/s41597-023-02230-y) [hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d](https://linker.bio/hash://sha256/f849c870565f608899f183ca261365dce9c9f1c5441b1c779e0db49df9c2a19d.pdf)
-
-## Acknowledgments
-
-Michael Elliott, José Fortes and [Cypress Hansen](https://www.cypresswritesscience.com/) provided comments to help improve a description of todays internet and the benefits of the content-verse.
