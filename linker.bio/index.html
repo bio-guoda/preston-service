@@ -653,6 +653,12 @@ visiting one of the following location a web browser:</p>
 <li><p>https://linker.bio/badge/hash://sha256/f5d8f67c1eca34cbba1abac12f353585c78bb053bc8ce7ee7e7a78846e1bfc4a
 (by content id)</p></li>
 </ol>
+<p>To make the links direct to the underlying content instead of showing
+a badge, you can drop the <code>badge/</code> part . For example, the
+tracked content associated with FAIR badge:</p>
+<p><code>https://linker.bio/badge/hash://sha256/f5d8f67c1eca34cbba1abac12f353585c78bb053bc8ce7ee7e7a78846e1bfc4a</code></p>
+<p>can be accessed via:</p>
+<p><code>https://linker.bio/hash://sha256/f5d8f67c1eca34cbba1abac12f353585c78bb053bc8ce7ee7e7a78846e1bfc4a</code></p>
 <p>If an archive reference (by location, uuid, doi, or content id) is
 associated with a tracked DwC-A, a download badge is generated for a
 recently tracked versioned copy of the FAIR archive. If an archive
@@ -663,12 +669,10 @@ independent of the publisher (UCSB-IZC) or registries (iDigBio, GBIF).
 These badges may be used to institutions to show off their commitment to
 FAIRness, or by registries to show that they contribute to the
 findability to existing data archives.</p>
-<figure>
-<img src="https://linker.bio/badge/10.15468/w6hvhv"
-alt="An example of a FAIR badge for UCSB-IZC rendered by https://linker.bio/badge/10.15468/w6hvhv" />
-<figcaption aria-hidden="true">An example of a FAIR badge for UCSB-IZC
-rendered by https://linker.bio/badge/10.15468/w6hvhv</figcaption>
-</figure>
+<p>An example of a FAIR badge for UCSB-IZC rendered by
+https://linker.bio/badge/10.15468/w6hvhv is <a
+href="https://linker.bio/10.15468/w6hvhv"><img
+src="https://linker.bio/badge/10.15468/w6hvhv" /></a>.</p>
 <p>Note that the tracked corpus itself can be cloned, copied, and
 verified. This means that others can implement FAIR assessment services
 (or any other kind of service using the biodiversity data archives) on

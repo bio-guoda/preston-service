@@ -238,9 +238,17 @@ Now, the FAIRness of the UCSB-IZC archives can be visualized by visiting one of 
 
 5. https://linker.bio/badge/hash://sha256/f5d8f67c1eca34cbba1abac12f353585c78bb053bc8ce7ee7e7a78846e1bfc4a (by content id)
 
+To make the links direct to the underlying content instead of showing a badge, you can drop the `badge/` part . For example, the tracked content associated with FAIR badge:
+
+`https://linker.bio/badge/hash://sha256/f5d8f67c1eca34cbba1abac12f353585c78bb053bc8ce7ee7e7a78846e1bfc4a` 
+
+can be accessed via:
+
+`https://linker.bio/hash://sha256/f5d8f67c1eca34cbba1abac12f353585c78bb053bc8ce7ee7e7a78846e1bfc4a`
+
 If an archive reference (by location, uuid, doi, or content id) is associated with a tracked DwC-A, a download badge is generated for a recently tracked versioned copy of the FAIR archive. If an archive reference could not be resolved in the corpus of tracked biodiversity archives, a 404 unknown archive badge is generated. With this, an independent FAIR assessment badge service is available: the service is independent of the publisher (UCSB-IZC) or registries (iDigBio, GBIF). These badges may be used to institutions to show off their commitment to FAIRness, or by registries to show that they contribute to the findability to existing data archives. 
 
-![An example of a FAIR badge for UCSB-IZC rendered by https://linker.bio/badge/10.15468/w6hvhv](https://linker.bio/badge/10.15468/w6hvhv)
+An example of a FAIR badge for UCSB-IZC rendered by https://linker.bio/badge/10.15468/w6hvhv is [![](https://linker.bio/badge/10.15468/w6hvhv)](https://linker.bio/10.15468/w6hvhv).
 
 Note that the tracked corpus itself can be cloned, copied, and verified. This means that others can implement FAIR assessment services (or any other kind of service using the biodiversity data archives) on the verifiably *exact* same tracked corpus as the one that https://linker.bio uses.
 
