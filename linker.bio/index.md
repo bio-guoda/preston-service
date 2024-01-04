@@ -250,7 +250,20 @@ If an archive reference (by location, uuid, doi, or content id) is associated wi
 
 An example of a FAIR badge for UCSB-IZC rendered by https://linker.bio/badge/10.15468/w6hvhv is [![](https://linker.bio/badge/10.15468/w6hvhv)](https://linker.bio/10.15468/w6hvhv).
 
-Note that the tracked corpus itself can be cloned, copied, and verified. This means that others can implement FAIR assessment services (or any other kind of service using the biodiversity data archives) on the verifiably *exact* same tracked corpus as the one that https://linker.bio uses.
+You can embed this particular badge in a [markdown](https://en.wikipedia.org/wiki/Markdown) document using a notation like:
+
+```
+[![](https://linker.bio/badge/10.15468/w6hvhv)](https://linker.bio/10.15468/w6hvhv)
+```
+or, by including the following HTML fragment in your web page:
+
+```{ .html } 
+<a href="https://linker.bio/10.15468/w6hvhv" target="_blank">
+ <img src="https://linker.bio/badge/10.15468/w6hvhv"/>
+</a>
+```
+
+Note that the corpus of tracked biodiversity datasets used to determine this FAIRness assessment can be cloned, copied, and verified. This means that others can implement FAIR assessment services (or any other kind of service using the biodiversity data archives) on the verifiably *exact* same tracked corpus as the one that https://linker.bio uses.
 
 If you'd like to learn more about how this service works, please read through [the history of the feature](https://github.com/bio-guoda/preston/issues/199) or contact the author of this document. 
 

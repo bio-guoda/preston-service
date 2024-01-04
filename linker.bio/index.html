@@ -673,10 +673,20 @@ findability to existing data archives.</p>
 https://linker.bio/badge/10.15468/w6hvhv is <a
 href="https://linker.bio/10.15468/w6hvhv"><img
 src="https://linker.bio/badge/10.15468/w6hvhv" /></a>.</p>
-<p>Note that the tracked corpus itself can be cloned, copied, and
-verified. This means that others can implement FAIR assessment services
-(or any other kind of service using the biodiversity data archives) on
-the verifiably <em>exact</em> same tracked corpus as the one that
+<p>You can embed this particular badge in a <a
+href="https://en.wikipedia.org/wiki/Markdown">markdown</a> document
+using a notation like:</p>
+<pre><code>[![](https://linker.bio/badge/10.15468/w6hvhv)](https://linker.bio/10.15468/w6hvhv)</code></pre>
+<p>or, by including the following HTML fragment in your web page:</p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://linker.bio/10.15468/w6hvhv&quot;</span> <span class="er">target</span><span class="ot">=</span><span class="st">&quot;_blank&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">&lt;</span><span class="kw">img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://linker.bio/badge/10.15468/w6hvhv&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code></pre></div>
+<p>Note that the corpus of tracked biodiversity datasets used to
+determine this FAIRness assessment can be cloned, copied, and verified.
+This means that others can implement FAIR assessment services (or any
+other kind of service using the biodiversity data archives) on the
+verifiably <em>exact</em> same tracked corpus as the one that
 https://linker.bio uses.</p>
 <p>If you’d like to learn more about how this service works, please read
 through <a href="https://github.com/bio-guoda/preston/issues/199">the
