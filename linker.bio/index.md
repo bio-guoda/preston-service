@@ -236,6 +236,8 @@ Now, the FAIRness of the UCSB-IZC archives can be visualized by visiting one of 
 
 4. https://linker.bio/badge/urn:uuid:d6097f75-f99e-4c2a-b8a5-b0fc213ecbd0 (by GBIF Dataset UUID)
 
+5. https://linker.bio/badge/hash://sha256/f5d8f67c1eca34cbba1abac12f353585c78bb053bc8ce7ee7e7a78846e1bfc4a (by content id)
+
 If an archive reference (by location, uuid, doi) is associated with a tracked DwC-A, a download badge is generated for a recently tracked versioned copy of the FAIR archive. If an archive reference could not be resolved in the corpus of tracked biodiversity archives, a 404 unknown archive badge is generated. With this, an independent FAIR assessment badge service is available: the service is independent of the publisher (UCSB-IZC) or registries (iDigBio, GBIF). These badges may be used to institutions to show off their commitment to FAIRness, or by registries to show that they contribute to the findability to existing data archives. 
 
 ![An example of a FAIR badge for UCSB-IZC rendered by https://linker.bio/badge/10.15468/w6hvhv](https://linker.bio/badge/10.15468/w6hvhv)
