@@ -95,6 +95,23 @@ server {
         proxy_cache_valid 200 302 2w;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
    } 
+   
+   # redirect possible content id requests
+   location ~ "^/(badge/)(hash://sha256/){0,1}([0-9a-f]{64})" {
+        limit_except GET OPTIONS {
+           deny all;
+        }
+
+        add_header 'Access-Control-Allow-Origin' '*' always;
+        add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS' always;
+        add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
+        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+
+        proxy_pass http://localhost:8084;
+        proxy_cache INDEX;
+        proxy_cache_valid 200 302 2w;
+        add_header 'X-Proxy-Cache' $upstream_cache_status;
+   } 
 
     # possibly a sha256 hash in hex notation
     location ~ "(hash://sha256/){0,1}([0-9a-f]{64})" {
