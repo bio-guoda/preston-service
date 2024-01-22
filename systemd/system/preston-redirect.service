@@ -5,7 +5,7 @@ Description=Preston Redirection Server
 Type=simple
 User=preston
 Environment=PRESTON_DIR=/tmp/preston-redirect
-ExecStart=/usr/local/bin/preston redirect --port 8084 --host localhost --registry http://localhost:7878/query --repository https://linker.bio 
+ExecStart=/usr/local/bin/preston redirect --port 8084 --host localhost --registry http://localhost:7878/query --repository https://linker.bio --anchor hash://sha256/1372e88315a5deb364206956b2dcc08df71cc0754fbd520ba2fbe66a34910d28
 Restart=always
 
 [Install]
