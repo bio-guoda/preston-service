@@ -103,6 +103,8 @@ $ sudo apt install cifs-utils
 sudo mount -a
 ```
 
+may need to reboot to apply changes.
+
 # install uncomplicated firewall (ufw)
 
 ```
@@ -143,7 +145,13 @@ sudo -u preston rsync -avL -e "ssh -p 9934 -i /etc/preston/.ssh/id_rsa" preston@
 
 use https://github.com/bio-guoda/preston instructions to install preston cli. 
 
+## preston server configuration
 
+```
+sudo mkdir -p /var/lib/preston /etc/preston
+sudo chown -R preston:preston /var/lib/preston /etc/preston
+sudo -u globi git clone https://github.com/bio-guoda/preston-service /var/lib/preston
+```
 
 ## systemd config
 
