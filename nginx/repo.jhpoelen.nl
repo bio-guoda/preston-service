@@ -26,8 +26,7 @@ proxy_cache_path /var/cache/prov/content levels=1:2 keys_zone=CONTENT:10m max_si
 proxy_cache_path /var/cache/prov/index levels=1:2 keys_zone=INDEX:10m max_size=64g inactive=13w use_temp_path=off;
 
 server {
-    set $registry 'localhost';
-    set $repository 'localhost';
+
     server_name repo.jhpoelen.nl deeplinker.bio linker.bio;
 
     root /var/lib/preston/archives;
@@ -58,8 +57,7 @@ server {
         add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
         add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
-        #proxy_pass http://localhost:8084;
-        proxy_pass http://$registry:8084;
+        proxy_pass http://localhost:8084;
         proxy_cache INDEX;
         proxy_cache_valid 200 302 2w;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
@@ -75,7 +73,7 @@ server {
         add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
         add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
-        proxy_pass http://$registry:8084;
+        proxy_pass http://localhost:8084;
         proxy_cache INDEX;
         proxy_cache_valid 200 302 2w;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
@@ -92,7 +90,7 @@ server {
         add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
         add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
-        proxy_pass http://$registy:8084;
+        proxy_pass http://localhost:8084;
         proxy_cache INDEX;
         proxy_cache_valid 200 302 2w;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
@@ -109,7 +107,7 @@ server {
         add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
         add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
-        proxy_pass http://$registry:8084;
+        proxy_pass http://localhost:8084;
         proxy_cache INDEX;
         proxy_cache_valid 200 302 2w;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
@@ -127,7 +125,7 @@ server {
         add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
         rewrite "(.*)(hash://sha256/){0,1}([0-9a-f]{64})([.][a-zA-Z0-9]+){0,1}(.*)$" $1$2$3$5 break; 
-        proxy_pass http://$repository:8082;
+        proxy_pass http://localhost:8082;
         proxy_cache CONTENT;
 	proxy_cache_valid 200 5y;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
@@ -145,7 +143,7 @@ server {
         add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
         rewrite "(.*)(hash://sha1/){0,1}([0-9a-f]{40})([.][a-zA-Z0-9]+){0,1}(.*)$" $1$2$3$5 break; 
-        proxy_pass http://$repository:8083;
+        proxy_pass http://localhost:8083;
         proxy_cache CONTENT;
         proxy_cache_valid 200 5y;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
@@ -163,7 +161,7 @@ server {
         add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
         rewrite "(.*)(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z0-9]+){0,1}(.*)$" $1$2$3$5 break; 
-        proxy_pass http://$repository:8081;
+        proxy_pass http://localhost:8081;
         proxy_cache CONTENT;
         proxy_cache_valid 200 5y;
         add_header 'X-Proxy-Cache' $upstream_cache_status;
