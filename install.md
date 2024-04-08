@@ -150,7 +150,7 @@ use https://github.com/bio-guoda/preston instructions to install preston cli.
 ```
 sudo mkdir -p /var/lib/preston /etc/preston
 sudo chown -R preston:preston /var/lib/preston /etc/preston
-sudo -u globi git clone https://github.com/bio-guoda/preston-service /var/lib/preston
+sudo -u preston git clone https://github.com/bio-guoda/preston-service /var/lib/preston
 ```
 
 ## systemd config
