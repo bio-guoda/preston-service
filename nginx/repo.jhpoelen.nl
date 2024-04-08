@@ -26,8 +26,8 @@ proxy_cache_path /var/cache/prov/content levels=1:2 keys_zone=CONTENT:10m max_si
 proxy_cache_path /var/cache/prov/index levels=1:2 keys_zone=INDEX:10m max_size=64g inactive=13w use_temp_path=off;
 
 server {
-    set $registry localhost
-    set $repository localhost
+    set $registry localhost;
+    set $repository localhost;
     server_name repo.jhpoelen.nl deeplinker.bio linker.bio;
 
     root /var/lib/preston/archives;
