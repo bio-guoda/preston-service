@@ -166,7 +166,7 @@ server {
         add_header 'Access-Control-Allow-Origin' '*' always;
         add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS' always;
         add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
-        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
+        add_header 'Access-Control-Expose-Headers' 'Content-Lewngth,Content-Range' always;
 
         rewrite "(.*)(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z0-9]+){0,1}(.*)$" $1$2$3$5 break; 
 
@@ -179,10 +179,13 @@ server {
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/deeplinker.bio/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/deeplinker.bio/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/repo.jhpoelen.nl/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/repo.jhpoelen.nl/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+
 
 }
 
