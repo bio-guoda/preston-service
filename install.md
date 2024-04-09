@@ -157,6 +157,7 @@ sudo -u preston git clone https://github.com/bio-guoda/preston-service /var/lib/
 
 ```
 sudo ln -s /var/lib/preston/nginx/preston.guoda.bio /etc/nginx/sites-enabled/preston.guoda.bio
+sudo ln -s /var/lib/preston/nginx/linker.bio /etc/nginx/sites-enabled/linker.bio
 ```
 
 ```
