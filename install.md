@@ -153,6 +153,15 @@ sudo chown -R preston:preston /var/lib/preston /etc/preston
 sudo -u preston git clone https://github.com/bio-guoda/preston-service /var/lib/preston
 ```
 
+## /etc/hosts config
+
+in /etc/hosts, add entries: 
+
+```
+127.0.0.1 registry
+127.0.0.1 repository
+```
+
 ## systemd config
 
 ```
