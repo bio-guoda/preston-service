@@ -185,11 +185,6 @@ sudo ln -s /var/lib/preston/systemd/system/preston-checklistbank.timer /lib/syst
 sudo ln -s /var/lib/preston/systemd/system/preston-ala.service /lib/systemd/system/preston-ala.service
 sudo ln -s /var/lib/preston/systemd/system/preston-ala.timer /lib/systemd/system/preston-ala.timer
 
-sudo ln -s /var/lib/preston/systemd/system/preston-dbg.service /lib/systemd/system/preston-dbg.service
-
-sudo ln -s /var/lib/preston/systemd/system/preston-brit.service /lib/systemd/system/preston-brit.service
-sudo ln -s /var/lib/preston/systemd/system/preston-brit.timer /lib/systemd/system/preston-brit.timer
-
 sudo ln -s /var/lib/preston/systemd/system/preston-bionomia.service /lib/systemd/system/preston-bionomia.service
 sudo ln -s /var/lib/preston/systemd/system/preston-bionomia.timer /lib/systemd/system/preston-bionomia.timer
 
@@ -201,22 +196,29 @@ sudo ln -s /var/lib/preston/systemd/system/preston.timer /lib/systemd/system/pre
 
 sudo systemctl daemon-reload
 
-sudo systemctl enable preston.timer
-sudo systemctl start preston.timer
-sudo systemctl enable preston-ala.timer
-sudo systemctl start preston-ala.timer
-sudo systemctl enable preston-brit.timer
-sudo systemctl start preston-brit.timer
-sudo systemctl enable preston-bionomia.timer
-sudo systemctl start preston-bionomia.timer
-sudo systemctl enable preston-bhl.timer
-sudo systemctl start preston-bhl.timer
-sudo systemctl enable preston-dataone.timer
-sudo systemctl start preston-dataone.timer
-sudo systemctl enable preston-checklistbank.timer
-sudo systemctl start preston-checklistbank.timer
 sudo systemctl enable preston-obis.timer
 sudo systemctl start preston-obis.timer
+
+sudo systemctl enable preston-bhl.timer
+sudo systemctl start preston-bhl.timer
+
+sudo systemctl enable preston-dataone.timer
+sudo systemctl start preston-dataone.timer
+
+sudo systemctl enable preston-checklistbank.timer
+sudo systemctl start preston-checklistbank.timer
+
+sudo systemctl enable preston-ala.timer
+sudo systemctl start preston-ala.timer
+
+sudo systemctl enable preston-bionomia.timer
+sudo systemctl start preston-bionomia.timer
+
+sudo systemctl enable preston-wikidata.timer
+sudo systemctl start preston-wikidata.timer
+
+sudo systemctl enable preston.timer
+sudo systemctl start preston.timer
 
 
 sudo ln -s /var/lib/preston/systemd/system/preston-server-md5.service /lib/systemd/system/preston-server-md5.service
