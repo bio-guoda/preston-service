@@ -2,7 +2,7 @@
 title: Unleashing Digital Knowledge into the Future
 subtitle: (a working document)
 author: Jorrit H. Poelen
-date: 2023-10-11/2024-01-03
+date: 2023-10-11/2024-04-17
 ---
 
 [edit this page](https://github.com/bio-guoda/preston-service/edit/main/linker.bio/index.md) / [share suggestions](https://github.com/bio-guoda/preston/issues/new)
@@ -162,11 +162,11 @@ By using nimble, yet powerful, data processing tools like Preston and Nomer to m
 
   corpus | last updated | size (approx) | version
   --- | --- | --- | ---
-  GIB (**G**BIF, **i**DigBio and **B**ioCASe)  | 2023-09-01 | ~2.7TB | [hash://sha256/a755a6...](https://linker.bio/hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419)
-  ChecklistBank  | 2023-09-01 | ~30GB | [hash://sha256/8cb357...](https://linker.bio/hash://sha256/8cb3570748849866dc59f72aa6711e9a10111049063948fd0742f0ea2aeb6290)
-  Biodiversity Heritage Library | 2023-09-01 | ~300GB | [hash://sha256/9cc132...](https://linker.bio/hash://sha256/9cc1327e220df2c215b716a8ab07fcd9e3bffc1f6a808dbb6957f40e3df8c94c) 
+  GIB (**G**BIF, **i**DigBio and **B**ioCASe)  | 2024-04-01 | ~3TB | [hash://sha256/37bdd8...](https://linker.bio/hash://sha256/37bdd8ddb12df4ee02978ca59b695afd651f94398c0fe2e1f8b182849a876bb2)
+  ChecklistBank  | 2024-04-01 | ~30GB | [hash://sha256/00989c...](https://linker.bio/hash://sha256/00989c740fb47e52c12c09bbd69bec4dee63aa057ac4a58b55a1042e9f7576df)
+  Biodiversity Heritage Library | 2024-04-01 | ~300GB | [hash://sha256/9afaca...](https://linker.bio/hash://sha256/9afacaefe9732946005066b7cf5310020e3ab4f89a3c9e80b169e0982b5cb798) 
   GenBank PLN Division | 2023-06-28 | ~250GB | [hash://sha256/efa589...](https://linker.bio/hash://sha256/efa589e9927c8c10ac81867220982a3eb732c322ddebca6db2a9147578218ff5)
-  Nomer Corpus of Taxonomic Resources | 2023-09-08 | 10GB | [hash://sha256/12051b...](https://linker.bio/hash://sha256/12051b8aa59930d6561a3ed46b7cf3f67a31a98445a457d78894f6b8a8e81641)
+  Nomer Corpus of Taxonomic Resources | 2024-03-12 | 10GB | [hash://md5/706450...](https://linker.bio/hash://md5/70645090fdecba640b50577e2a6f2342)
   [OpenAlex](https://openalex.org)^[[OpenAlex](https://openalex.org) is an open access index of scientific works, similar to Web of Science and Google Scholar but then without paywalls or walled gardens.] | 2023-11-01 | ~300GB | [hash://sha256/f19011...](https://linker.bio/hash://sha256/f19011fe72234cb22f4326fcc95752647a11628cdaa0d24f7d55033b06cb5653)^[See [https://gist.github.com/jhpoelen/8b263027ff13c7b788fa24866ce73bfb](https://gist.github.com/jhpoelen/8b263027ff13c7b788fa24866ce73bfb) for example usage of a versioned copy of the OpenAlex index.] 
 
 To prepare for addressing more complex research question, the following basic question may need answering:
