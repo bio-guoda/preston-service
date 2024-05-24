@@ -9,7 +9,7 @@ date: 2023-10-11/2024-04-17
 
 ## The Permanent Now
 
-The internet is a powerful tool for exchanging digital information. But the Internet's contents changes constantly: websites are launched and taken down, webpages change, and content gets archived or lost. In other words, we are subjected to the **permanent now** in which knowledge is fleeting on the Internet. 
+The internet is a powerful tool for exchanging digital information. But the Internet's contents changes constantly: websites are launched and taken down, webpages change, and content gets archived offline or is lost forever. In other words, we are subjected to **the permanent now** in which knowledge is fleeting on the Internet. 
 
 By design, a web address, or *U*niform *R*esource *L*ocator (URL), points to a specific internet *location* from which a resource, like a webpage, can be retrieved. However, a URL does *not* provide a way to verify that a retrieved webpage was the one we asked for. ^[A similar argument can made for a *D*igital *O*bject *I*dentifier (DOI, https://en.wikipedia.org/wiki/Digital_object_identifier).]
 
