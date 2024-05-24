@@ -7,8 +7,6 @@ date: 2023-10-11/2024-04-17
 
 [edit this page](https://github.com/bio-guoda/preston-service/edit/main/linker.bio/index.md) / [share suggestions](https://github.com/bio-guoda/preston/issues/new)
 
-## Welcome to linker.bio
-
 The internet is a powerful tool for exchanging digital information. But the Internet's contents changes constantly: websites are launched and taken down, webpages change, and content gets archived or lost. 
 
 By design, a web address, or *U*niform *R*esource *L*ocator (URL), points to a specific internet *location* from which a resource, like a webpage, can be retrieved. However, a URL does *not* provide a way to verify that a retrieved webpage was the one we asked for. ^[A similar argument can made for a *D*igital *O*bject *I*dentifier (DOI, https://en.wikipedia.org/wiki/Digital_object_identifier).]
