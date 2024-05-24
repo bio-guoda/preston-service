@@ -166,7 +166,7 @@ server {
         add_header 'Access-Control-Allow-Origin' '*' always;
         add_header 'Access-Control-Allow-Methods' 'GET, OPTIONS' always;
         add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range' always;
-        add_header 'Access-Control-Expose-Headers' 'Content-Lewngth,Content-Range' always;
+        add_header 'Access-Control-Expose-Headers' 'Content-Length,Content-Range' always;
 
         rewrite "(.*)(hash://md5/){0,1}([0-9a-f]{32})([.][a-zA-Z0-9]+){0,1}(.*)$" $1$2$3$5 break; 
 
