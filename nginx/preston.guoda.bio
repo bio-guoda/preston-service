@@ -32,7 +32,8 @@ server {
         return 302 https://github.com/bio-guoda/preston;
     }
 
-    listen [::]:443 ssl; # managed by Certbot
+
+
     listen 443 ssl; # managed by Certbot
     ssl_certificate /etc/letsencrypt/live/preston.guoda.bio/fullchain.pem; # managed by Certbot
     ssl_certificate_key /etc/letsencrypt/live/preston.guoda.bio/privkey.pem; # managed by Certbot
@@ -51,6 +52,20 @@ server {
 	listen [::]:80;
 
 	server_name preston.guoda.bio;
+    return 404; # managed by Certbot
+
+
+}
+
+server {
+    if ($host = preston.guoda.bio) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+
+    server_name preston.guoda.bio;
+    listen 80;
     return 404; # managed by Certbot
 
 
