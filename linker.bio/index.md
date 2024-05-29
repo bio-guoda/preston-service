@@ -265,6 +265,6 @@ or, by including the following HTML fragment in your web page:
 
 Note that the corpus of tracked biodiversity datasets used to determine this FAIRness assessment can be cloned, copied, and verified. This means that others can implement FAIR assessment services (or any other kind of service using the biodiversity data archives) on the verifiably *exact* same tracked corpus as the one that https://linker.bio uses.
 
-If you'd like to learn more about how this service works, please read through [the history of the feature](https://github.com/bio-guoda/preston/issues/199) or contact the author of this document. 
+If you'd like to learn more about how this service works, please read through [the history of the feature](https://github.com/bio-guoda/preston/issues/199), review an associated [GBIF forum](https://discourse.gbif.org/t/assessing-fairness-of-biodiversity-data-through-badges-and-download-buttons/4246) discussion, or contact the author of this document. 
 
 Please note that this FAIR assessment feature was heavily influenced by discussion following the WorldFAIR project report by Trekels et al. 2023 ^[Trekels, Maarten, Debora Pignatari Drucker, José Augusto Salim, Jeff Ollerton, Jorrit Poelen, Filipi Miranda Soares, Max Rünzel, Muo Kasina, Quentin Groom, and Mariano Devoto. 2023. “WorldFAIR Project (D10.1) Agriculture-related pollinator data standards use cases report.” Zenodo. https://doi.org/10.5281/zenodo.8176978.].
