@@ -163,6 +163,7 @@ By using nimble, yet powerful, data processing tools like Preston and Nomer to m
   corpus | last updated | size (approx) | version
   --- | --- | --- | ---
   GIB (**G**BIF, **i**DigBio and **B**ioCASe)  | 2024-04-01 | ~3TB | [hash://sha256/37bdd8...](https://linker.bio/hash://sha256/37bdd8ddb12df4ee02978ca59b695afd651f94398c0fe2e1f8b182849a876bb2)
+  OBIS  | 2024-04-01 | ~40GB | [hash://sha256/61827c...](https://linker.bio/hash://sha256/61827c7de02b3c25c5755b40a7b8fa32ff696d2fb154d699b5f73758e07ab050)
   ChecklistBank  | 2024-04-01 | ~30GB | [hash://sha256/00989c...](https://linker.bio/hash://sha256/00989c740fb47e52c12c09bbd69bec4dee63aa057ac4a58b55a1042e9f7576df)
   Biodiversity Heritage Library | 2024-04-01 | ~300GB | [hash://sha256/9afaca...](https://linker.bio/hash://sha256/9afacaefe9732946005066b7cf5310020e3ab4f89a3c9e80b169e0982b5cb798) 
   GenBank PLN Division | 2023-06-28 | ~250GB | [hash://sha256/efa589...](https://linker.bio/hash://sha256/efa589e9927c8c10ac81867220982a3eb732c322ddebca6db2a9147578218ff5)
