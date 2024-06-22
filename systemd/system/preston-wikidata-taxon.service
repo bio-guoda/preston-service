@@ -1,0 +1,8 @@
+[Unit]
+Description=Tracking Wikidata Taxa
+
+[Service]
+Type=oneshot
+User=preston
+WorkingDirectory=/var/lib/preston/archives/wikidata-taxon
+ExecStart=cat /var/lib/preston/track-wikidata-taxon.sh 
