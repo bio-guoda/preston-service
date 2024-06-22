@@ -5,4 +5,4 @@ Description=Tracking Wikidata Taxa
 Type=oneshot
 User=preston
 WorkingDirectory=/var/lib/preston/archives/wikidata-taxon
-ExecStart=cat /var/lib/preston/track-wikidata-taxon.sh 
+ExecStart=/var/lib/preston/track-wikidata-taxon.sh 
