@@ -182,6 +182,10 @@ sudo ln -s /var/lib/preston/systemd/system/preston-dataone.timer /lib/systemd/sy
 sudo ln -s /var/lib/preston/systemd/system/preston-checklistbank.service /lib/systemd/system/preston-checklistbank.service
 sudo ln -s /var/lib/preston/systemd/system/preston-checklistbank.timer /lib/systemd/system/preston-checklistbank.timer
 
+sudo ln -s /var/lib/preston/systemd/system/preston-catalogueoflife.service /lib/systemd/system/preston-catalogueoflife.service
+sudo ln -s /var/lib/preston/systemd/system/preston-catalogueoflife.timer /lib/systemd/system/preston-catalogueoflife.timer
+
+
 sudo ln -s /var/lib/preston/systemd/system/preston-ala.service /lib/systemd/system/preston-ala.service
 sudo ln -s /var/lib/preston/systemd/system/preston-ala.timer /lib/systemd/system/preston-ala.timer
 
@@ -218,6 +222,9 @@ sudo systemctl start preston-dataone.timer
 
 sudo systemctl enable preston-checklistbank.timer
 sudo systemctl start preston-checklistbank.timer
+
+sudo systemctl enable preston-catalogueoflife.timer
+sudo systemctl start preston-catalogueoflife.timer
 
 sudo systemctl enable preston-ala.timer
 sudo systemctl start preston-ala.timer
