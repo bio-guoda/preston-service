@@ -1,0 +1,8 @@
+[Unit]
+Description=Preston tracks biodiversity datasets of Catalogue of Life
+
+[Service]
+Type=oneshot
+User=preston
+WorkingDirectory=/var/lib/preston/archives/catalogueoflife
+ExecStart=/usr/local/bin/preston track --tmp-dir /tmp https://download.checklistbank.org/col/latest_coldp.zip https://download.checklistbank.org/col/latest_dwca.zip https://download.checklistbank.org/col/latest_txtree.zip https://download.checklistbank.org/col/legacy_id_map.tsv
