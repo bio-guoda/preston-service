@@ -1,8 +1,8 @@
 [Unit]
-Description=Run Preston DataONE
+Description=Run Preston Catalogue of Life tracker
 
 [Timer]
-OnCalendar=monthly
+OnCalendar=weekly
 RandomizedDelaySec=86400
 
 [Install] 
