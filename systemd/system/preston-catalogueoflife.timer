@@ -2,7 +2,7 @@
 Description=Run Preston Catalogue of Life tracker
 
 [Timer]
-OnCalendar=weekly
+OnCalendar=monthly
 RandomizedDelaySec=86400
 
 [Install] 
