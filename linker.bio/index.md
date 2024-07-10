@@ -105,7 +105,7 @@ So far, https://linker.bio may appears to be a ["black box"](https://en.wikipedi
 
 Now, you may wonder: how does "linker.bio" work? And, how could I build my own "linker.bio"? 
 
-`linker.bio` is powered by [Preston](https://github.com/bio-guoda/preston). Preston builds a bridge from the content-verse (e.g., a digital fingerprint) to the content stored in physical locations. Preston is the little machine that responds when you ask for the picture of the bunny using the URL `https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2`. And, if you know how to run a program on your computer, you can run your own machine (or server) that looks up that bunny picture. In other words, with some effort, you can build your own bridge without having to ask for permission or paying some kind of license fee^[Preston is open source software.].
+`linker.bio` is powered by [Preston](https://github.com/bio-guoda/preston). Preston builds a bridge from the content-verse (e.g., a digital fingerprint) to the content stored in physical locations. Preston is the little machine that responds when you ask for the picture of the bunny using the URL [https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2](https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2). And, if you know how to run a program on your computer, you can run your own machine (or server) that looks up that bunny picture. In other words, with some effort, you can build your own bridge without having to ask for permission or paying some kind of license fee^[Preston is open source software.].
 
 For the tech savvy, you can run Preston in server mode on linux/mac ^[Windows is supported too, but you'll have to run Preston a little differently. See documentation for examples.] by executing the following in the terminal:
 
@@ -130,7 +130,7 @@ On starting the server, you'll see some cryptic messages that end with
 
 This means that the Preston server is waiting for requests. 
 
-Now, you can visit `http://localhost:8080/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2` to retrieve the bunny picture. On receiving your question, Preston will try and ask https://wikimedia.org whether is has any content in their https://commons.wikimedia.org/ library with that digital fingerprint. If so, Preston will ask Wikimedia to send that content, and then, pass it to you. The next time you ask for the bunny picture, you'll receive the picture pretty fast, because Preston remembers the content associated to the digital fingerprint and doesn't have to ask https://wikimedia.org anymore.  
+Now, you can visit [http://localhost:8080/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2](http://localhost:8080/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2) to retrieve the bunny picture. On receiving your question, Preston will try and ask https://wikimedia.org whether is has any content in their https://commons.wikimedia.org/ library with that digital fingerprint. If so, Preston will ask Wikimedia to send that content, and then, pass it to you. The next time you ask for the bunny picture, you'll receive the picture pretty fast, because Preston remembers the content associated to the digital fingerprint and doesn't have to ask [https://wikimedia.org](https://wikimedia.org) anymore.  
 
 In addition to Wikimedia Commons, Preston knows how to talk to https://zenodo.org, https://softwareheritage.org, https://dataone.org and ... other Preston servers!
 

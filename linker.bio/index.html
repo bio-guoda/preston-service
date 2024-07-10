@@ -406,8 +406,8 @@ build my own “linker.bio”?</p>
 href="https://github.com/bio-guoda/preston">Preston</a>. Preston builds
 a bridge from the content-verse (e.g., a digital fingerprint) to the
 content stored in physical locations. Preston is the little machine that
-responds when you ask for the picture of the bunny using the URL
-<code>https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2</code>.
+responds when you ask for the picture of the bunny using the URL <a
+href="https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2">https://linker.bio/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2</a>.
 And, if you know how to run a program on your computer, you can run your
 own machine (or server) that looks up that bunny picture. In other
 words, with some effort, you can build your own bridge without having to
@@ -427,16 +427,16 @@ with</p>
 <pre><code>[main] INFO org.eclipse.jetty.server.AbstractConnector - Started ServerConnector@76a4d6c{HTTP/1.1, (http/1.1)}{localhost:8080}
 [main] INFO org.eclipse.jetty.server.Server - Started @561ms</code></pre>
 <p>This means that the Preston server is waiting for requests.</p>
-<p>Now, you can visit
-<code>http://localhost:8080/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2</code>
+<p>Now, you can visit <a
+href="http://localhost:8080/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2">http://localhost:8080/hash://sha1/86fa30f32d9c557ea5d2a768e9c3595d3abb17a2</a>
 to retrieve the bunny picture. On receiving your question, Preston will
 try and ask https://wikimedia.org whether is has any content in their
 https://commons.wikimedia.org/ library with that digital fingerprint. If
 so, Preston will ask Wikimedia to send that content, and then, pass it
 to you. The next time you ask for the bunny picture, you’ll receive the
 picture pretty fast, because Preston remembers the content associated to
-the digital fingerprint and doesn’t have to ask https://wikimedia.org
-anymore.</p>
+the digital fingerprint and doesn’t have to ask <a
+href="https://wikimedia.org">https://wikimedia.org</a> anymore.</p>
 <p>In addition to Wikimedia Commons, Preston knows how to talk to
 https://zenodo.org, https://softwareheritage.org, https://dataone.org
 and … other Preston servers!</p>
