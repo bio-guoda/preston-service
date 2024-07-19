@@ -191,6 +191,8 @@ preston cat\
  --no-cache\
  --remote https://linker.bio\
  hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419\
+ | grep --after 10 'application/dwca'\
+ | grep hasVersion |\
  | preston dwc-stream\
  --no-cache\
  --remote https://linker.bio\
