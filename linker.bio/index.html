@@ -572,15 +572,17 @@ class="sourceCode numberSource numberLines"><code class="sourceCode"><span id="c
 <span id="cb8-2"><a href="#cb8-2"></a> --no-cache\</span>
 <span id="cb8-3"><a href="#cb8-3"></a> --remote https://linker.bio\</span>
 <span id="cb8-4"><a href="#cb8-4"></a> hash://sha256/a755a6ac881e977bc32f11536672bfb347cf1b7657446a8a699abb639de59419\</span>
-<span id="cb8-5"><a href="#cb8-5"></a> | preston dwc-stream\</span>
-<span id="cb8-6"><a href="#cb8-6"></a> --no-cache\</span>
-<span id="cb8-7"><a href="#cb8-7"></a> --remote https://linker.bio\</span>
-<span id="cb8-8"><a href="#cb8-8"></a> | jq -c &#39;{ &quot;src&quot;: .[&quot;http://www.w3.org/ns/prov#wasDerivedFrom&quot;], &quot;name&quot;: .[&quot;http://rs.tdwg.org/dwc/terms/scientificName&quot;] }&#39;\</span>
-<span id="cb8-9"><a href="#cb8-9"></a> | mlr --ijsonl --otsv cat\</span>
-<span id="cb8-10"><a href="#cb8-10"></a> | nomer append col\</span>
-<span id="cb8-11"><a href="#cb8-11"></a> | grep -v NONE\</span>
-<span id="cb8-12"><a href="#cb8-12"></a> | grep Curculionoidea\</span>
-<span id="cb8-13"><a href="#cb8-13"></a> | pv -l</span></code></pre></div>
+<span id="cb8-5"><a href="#cb8-5"></a> | grep --after 10 &#39;application/dwca&#39;\</span>
+<span id="cb8-6"><a href="#cb8-6"></a> | grep hasVersion |\</span>
+<span id="cb8-7"><a href="#cb8-7"></a> | preston dwc-stream\</span>
+<span id="cb8-8"><a href="#cb8-8"></a> --no-cache\</span>
+<span id="cb8-9"><a href="#cb8-9"></a> --remote https://linker.bio\</span>
+<span id="cb8-10"><a href="#cb8-10"></a> | jq -c &#39;{ &quot;src&quot;: .[&quot;http://www.w3.org/ns/prov#wasDerivedFrom&quot;], &quot;name&quot;: .[&quot;http://rs.tdwg.org/dwc/terms/scientificName&quot;] }&#39;\</span>
+<span id="cb8-11"><a href="#cb8-11"></a> | mlr --ijsonl --otsv cat\</span>
+<span id="cb8-12"><a href="#cb8-12"></a> | nomer append col\</span>
+<span id="cb8-13"><a href="#cb8-13"></a> | grep -v NONE\</span>
+<span id="cb8-14"><a href="#cb8-14"></a> | grep Curculionoidea\</span>
+<span id="cb8-15"><a href="#cb8-15"></a> | pv -l</span></code></pre></div>
 <p>where lines 1-4 implement step 1., lines 5-7 implement step 2., lines
 8-9 implement step 3., line 10 implements step 4., and lines 11-13
 implement step 5.</p>
