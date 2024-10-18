@@ -132,9 +132,10 @@ server {
 
         # repository should be defined somewhere (e.g., in /etc/hosts)
         proxy_pass http://repository:8082;
-        proxy_cache CONTENT;
-	proxy_cache_valid 200 5y;
-        add_header 'X-Proxy-Cache' $upstream_cache_status;
+        # see https://github.com/Big-Bee-Network/bif/issues/7#issuecomment-2423183712
+        # proxy_cache CONTENT;
+	# proxy_cache_valid 200 5y;
+        # add_header 'X-Proxy-Cache' $upstream_cache_status;
     }
     
     # possibly a sha1 hash in hex notation
@@ -152,9 +153,10 @@ server {
 
         # repository should be defined somewhere (e.g., in /etc/hosts)
         proxy_pass http://repository:8083;
-        proxy_cache CONTENT;
-        proxy_cache_valid 200 5y;
-        add_header 'X-Proxy-Cache' $upstream_cache_status;
+        # see https://github.com/Big-Bee-Network/bif/issues/7#issuecomment-2423183712
+        # proxy_cache CONTENT;
+        # proxy_cache_valid 200 5y;
+        # add_header 'X-Proxy-Cache' $upstream_cache_status;
     }
 
     # possibly a md5 hash in hex notation
@@ -172,9 +174,10 @@ server {
 
         # repository should be defined somewhere (e.g., in /etc/hosts)
         proxy_pass http://repository:8081;
-        proxy_cache CONTENT;
-        proxy_cache_valid 200 5y;
-        add_header 'X-Proxy-Cache' $upstream_cache_status;
+        # see https://github.com/Big-Bee-Network/bif/issues/7#issuecomment-2423183712
+        # proxy_cache CONTENT;
+        # proxy_cache_valid 200 5y;
+        # add_header 'X-Proxy-Cache' $upstream_cache_status;
     }
 
     listen [::]:443 ssl ipv6only=on; # managed by Certbot
