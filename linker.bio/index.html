@@ -62,7 +62,7 @@
       max-width: 100%;
     }
     svg {
-      height; auto;
+      height: auto;
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -169,7 +169,7 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -180,7 +180,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -232,9 +232,6 @@
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
@@ -491,7 +488,7 @@ questions.</p>
 <col style="width: 25%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>corpus</th>
 <th>last updated</th>
 <th>size (approx)</th>
@@ -499,50 +496,50 @@ questions.</p>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>GIB (<strong>G</strong>BIF, <strong>i</strong>DigBio and
 <strong>B</strong>ioCASe)</td>
-<td>2024-04-01</td>
-<td>~3TB</td>
+<td>2025-07-01</td>
+<td>~4TB</td>
 <td><a
-href="https://linker.bio/hash://sha256/37bdd8ddb12df4ee02978ca59b695afd651f94398c0fe2e1f8b182849a876bb2">hash://sha256/37bdd8…</a></td>
+href="https://linker.bio/hash://sha256/9dcf2e5497722e4f8184dffbf1e39daabb72a47ccbefb9c1177b17261ac337a5">hash://sha256/9dcf2e…</a></td>
 </tr>
-<tr class="even">
+<tr>
 <td>OBIS</td>
 <td>2024-04-01</td>
 <td>~40GB</td>
 <td><a
 href="https://linker.bio/hash://sha256/61827c7de02b3c25c5755b40a7b8fa32ff696d2fb154d699b5f73758e07ab050">hash://sha256/61827c…</a></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>ChecklistBank</td>
 <td>2024-04-01</td>
 <td>~30GB</td>
 <td><a
 href="https://linker.bio/hash://sha256/00989c740fb47e52c12c09bbd69bec4dee63aa057ac4a58b55a1042e9f7576df">hash://sha256/00989c…</a></td>
 </tr>
-<tr class="even">
+<tr>
 <td>Biodiversity Heritage Library</td>
 <td>2024-04-01</td>
 <td>~300GB</td>
 <td><a
 href="https://linker.bio/hash://sha256/9afacaefe9732946005066b7cf5310020e3ab4f89a3c9e80b169e0982b5cb798">hash://sha256/9afaca…</a></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>GenBank PLN Division</td>
 <td>2023-06-28</td>
 <td>~250GB</td>
 <td><a
 href="https://linker.bio/hash://sha256/efa589e9927c8c10ac81867220982a3eb732c322ddebca6db2a9147578218ff5">hash://sha256/efa589…</a></td>
 </tr>
-<tr class="even">
+<tr>
 <td>Nomer Corpus of Taxonomic Resources</td>
 <td>2024-03-12</td>
 <td>10GB</td>
 <td><a
 href="https://linker.bio/hash://md5/70645090fdecba640b50577e2a6f2342">hash://md5/706450…</a></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><a href="https://openalex.org">OpenAlex</a><a href="#fn13"
 class="footnote-ref" id="fnref13"
 role="doc-noteref"><sup>13</sup></a></td>
@@ -690,8 +687,8 @@ using a notation like:</p>
 <pre><code>[![](https://linker.bio/badge/10.15468/w6hvhv)](https://linker.bio/10.15468/w6hvhv)</code></pre>
 <p>or, by including the following HTML fragment in your web page:</p>
 <div class="sourceCode" id="cb10"><pre
-class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span> <span class="er">href</span><span class="ot">=</span><span class="st">&quot;https://linker.bio/10.15468/w6hvhv&quot;</span> <span class="er">target</span><span class="ot">=</span><span class="st">&quot;_blank&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">&lt;</span><span class="kw">img</span> <span class="er">src</span><span class="ot">=</span><span class="st">&quot;https://linker.bio/badge/10.15468/w6hvhv&quot;</span><span class="dt">/&gt;</span></span>
+class="sourceCode html"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;https://linker.bio/10.15468/w6hvhv&quot;</span><span class="ot"> target</span><span class="op">=</span><span class="st">&quot;_blank&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a> <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">&quot;https://linker.bio/badge/10.15468/w6hvhv&quot;</span><span class="dt">/&gt;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span></code></pre></div>
 <p>Note that the corpus of tracked biodiversity datasets used to
 determine this FAIRness assessment can be cloned, copied, and verified.
@@ -708,7 +705,7 @@ forum</a> discussion, or contact the author of this document.</p>
 by discussion following the WorldFAIR project report by Trekels et
 al. 2023 <a href="#fn18" class="footnote-ref" id="fnref18"
 role="doc-noteref"><sup>18</sup></a>.</p>
-<aside id="footnotes" class="footnotes footnotes-end-of-document"
+<section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
@@ -805,6 +802,6 @@ Project (D10.1) Agriculture-related pollinator data standards use cases
 report.” Zenodo. https://doi.org/10.5281/zenodo.8176978.<a
 href="#fnref18" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</aside>
+</section>
 </body>
 </html>
