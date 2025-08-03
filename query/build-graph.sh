@@ -4,7 +4,8 @@
 # into oxigraph  
 #
 
-GIB_VERSION=hash://sha256/a0d1df102236a0959daf70cd3cf5dd16ffdca043b53f4df08899adf883d85812
+# 2025-07-01 version
+GIB_VERSION=hash://sha256/9dcf2e5497722e4f8184dffbf1e39daabb72a47ccbefb9c1177b17261ac337a5
 
 preston ls\
  --anchor ${GIB_VERSION}\
