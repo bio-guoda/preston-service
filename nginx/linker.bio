@@ -48,7 +48,7 @@ server {
     }
 
    # redirect possible doi requests
-   location ~ "^/(badge/){0,1}(10[.])([^/]+)/(.*)$" {
+   location ~ "^/(badge/|history/){0,1}(10[.])([^/]+)/(.*)$" {
         limit_except GET OPTIONS {
            deny all;
         }
@@ -65,7 +65,7 @@ server {
     }
 
    # redirect possible uuid requests
-   location ~ "^/(badge/){0,1}urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" {
+   location ~ "^/(badge/|history/){0,1}urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$" {
         limit_except GET OPTIONS {
            deny all;
         }
@@ -82,7 +82,7 @@ server {
    }
 
    # redirect possible http[s] url requests
-   location ~ "^/(badge/){0,1}http[s]{0,1}://[^ ]+" {
+   location ~ "^/(badge/|history/){0,1}http[s]{0,1}://[^ ]+" {
         limit_except GET OPTIONS {
            deny all;
         }
@@ -100,7 +100,7 @@ server {
    } 
    
    # redirect possible content id requests
-   location ~ "^/(badge/)(hash://sha256/){0,1}([0-9a-f]{64})" {
+   location ~ "^/(badge/|history/)(hash://sha256/){0,1}([0-9a-f]{64})" {
         limit_except GET OPTIONS {
            deny all;
         }
