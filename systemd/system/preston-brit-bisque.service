@@ -1,8 +1,0 @@
-[Unit]
-Description=Tracking BRIT Image Corpus Hosted by Cyverse Bisque
-
-[Service]
-Type=oneshot
-User=preston
-WorkingDirectory=/var/lib/preston/archives/brit-bisque
-ExecStart=/var/lib/preston/preston-track-brit-bisque.sh 

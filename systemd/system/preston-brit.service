@@ -1,8 +1,0 @@
-[Unit]
-Description=Tracking BRIT Image Corpus
-
-[Service]
-Type=oneshot
-User=preston
-WorkingDirectory=/var/lib/preston/archives/brit
-ExecStart=/var/lib/preston/preston-track-brit.sh 
