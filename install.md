@@ -201,14 +201,6 @@ sudo ln -s /var/lib/preston/systemd/system/preston-wikidata-taxon.timer /lib/sys
 sudo ln -s /var/lib/preston/systemd/system/preston.service /lib/systemd/system/preston.service
 sudo ln -s /var/lib/preston/systemd/system/preston.timer /lib/systemd/system/preston.timer
 
-# deprecated services #
-
-# sudo ln -s /var/lib/preston/systemd/system/preston.service /lib/systemd/system/preston-brit.service
-# sudo ln -s /var/lib/preston/systemd/system/preston.timer /lib/systemd/system/preston-brit.timer
-
-# sudo ln -s /var/lib/preston/systemd/system/preston.service /lib/systemd/system/preston-brit-bisque.service
-# sudo ln -s /var/lib/preston/systemd/system/preston.timer /lib/systemd/system/preston-brit-bisque.timer
-
 sudo systemctl daemon-reload
 
 sudo systemctl enable preston-obis.timer
@@ -237,16 +229,6 @@ sudo systemctl start preston-wikidata.timer
 
 sudo systemctl enable preston.timer
 sudo systemctl start preston.timer
-
-# deprecated services #
-
-# sudo systemctl enable preston-brit.timer
-# sudo systemctl start preston-brit.timer
-
-# sudo systemctl enable preston-brit-bisque.timer
-# sudo systemctl start preston-brit-bisque.timer
-
-
 
 sudo ln -s /var/lib/preston/systemd/system/preston-server-md5.service /lib/systemd/system/preston-server-md5.service
 sudo ln -s /var/lib/preston/systemd/system/preston-server-sha256.service /lib/systemd/system/preston-server-sha256.service
