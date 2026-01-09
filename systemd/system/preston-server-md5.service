@@ -5,7 +5,7 @@ Description=Preston Server MD5 Universe
 Type=simple
 User=preston
 Environment=PRESTON_DIR=/tmp/preston-md5
-ExecStart=/usr/local/bin/preston server --algo md5 --port 8081 --host localhost --remotes file:///var/lib/preston/archives/bat-literature.github.io/data,file:///var/lib/preston/archives/bhl-blr/data,file:///var/lib/preston/archives/preston/data,https://zenodo.org,https://dataone.org,https://dataverse.org --no-cache --no-progress --data-dir=${PRESTON_DIR}/data --tmp-dir=${PRESTON_DIR}/tmp
+ExecStart=/usr/local/bin/preston server --algo md5 --port 8081 --host localhost --remotes file:///var/lib/preston/archives/bat-literature.github.io/data,file:///var/lib/preston/archives/ipbes-ias/data,file:///var/lib/preston/archives/bhl-blr/data,file:///var/lib/preston/archives/preston/data,https://zenodo.org,https://dataone.org,https://dataverse.org --no-cache --no-progress --data-dir=${PRESTON_DIR}/data --tmp-dir=${PRESTON_DIR}/tmp
 Restart=always
 
 [Install]
