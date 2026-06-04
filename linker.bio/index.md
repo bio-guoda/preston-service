@@ -166,7 +166,7 @@ By using nimble, yet powerful, data processing tools like Preston and Nomer to m
   OBIS  | 2024-04-01 | ~40GB | [hash://sha256/61827c...](https://linker.bio/hash://sha256/61827c7de02b3c25c5755b40a7b8fa32ff696d2fb154d699b5f73758e07ab050)
   ChecklistBank  | 2024-04-01 | ~30GB | [hash://sha256/00989c...](https://linker.bio/hash://sha256/00989c740fb47e52c12c09bbd69bec4dee63aa057ac4a58b55a1042e9f7576df)
   Biodiversity Heritage Library | 2024-04-01 | ~300GB | [hash://sha256/9afaca...](https://linker.bio/hash://sha256/9afacaefe9732946005066b7cf5310020e3ab4f89a3c9e80b169e0982b5cb798) 
-  GenBank PLN Division | 2023-06-28 | ~250GB | [hash://sha256/efa589...](https://linker.bio/hash://sha256/efa589e9927c8c10ac81867220982a3eb732c322ddebca6db2a9147578218ff5)
+  GenBank PLN Division | 2025-03-26 | ~700GB | [hash://sha256/c624d9...](https://linker.bio/hash://sha256/c624d98d480d8cfd40792f3df09ddb8d4c4959241c7bd9dcab82abef2a4c7da3)
   Nomer Corpus of Taxonomic Resources | 2024-03-12 | 10GB | [hash://md5/706450...](https://linker.bio/hash://md5/70645090fdecba640b50577e2a6f2342)
   [OpenAlex](https://openalex.org)^[[OpenAlex](https://openalex.org) is an open access index of scientific works, similar to Web of Science and Google Scholar but then without paywalls or walled gardens.] | 2023-11-01 | ~300GB | [hash://sha256/f19011...](https://linker.bio/hash://sha256/f19011fe72234cb22f4326fcc95752647a11628cdaa0d24f7d55033b06cb5653)^[See [https://gist.github.com/jhpoelen/8b263027ff13c7b788fa24866ce73bfb](https://gist.github.com/jhpoelen/8b263027ff13c7b788fa24866ce73bfb) for example usage of a versioned copy of the OpenAlex index.] 
 
